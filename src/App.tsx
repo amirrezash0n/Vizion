@@ -1,3 +1,6 @@
+import { RouterProvider } from "react-router";
+import router from "./router/routes";
+
 export default function App() {
-  return <div>Vizion</div>;
+  return <RouterProvider router={router}></RouterProvider>;
 }
