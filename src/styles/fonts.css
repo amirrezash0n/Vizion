@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "YekanBakh-Bold";
+    font-weight: 700;
+    src: url("./../YekanBakh/YekanBakh-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "YekanBakh-Heavy";
+    font-weight: 900;
+    src: url("./../YekanBakh/YekanBakh-Heavy.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "YekanBakh-Medium";
+    font-weight: 500;
+    src: url("./../YekanBakh/YekanBakh-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "YekanBakh-Regular";
+    font-weight: 400;
+    src: url("./../YekanBakh/YekanBakh-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Morabba-Bold";
+    font-weight: 700;
+    src: url("./../Morabba/Morabba-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Morabba-Light";
+    font-weight: 600;
+    src: url("./../Morabba/Morabba-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Morabba-Medium";
+    font-weight: 500;
+    src: url("./../Morabba/Morabba-Medium.woff2") format("woff2");
+}

@@ -1,7 +1,8 @@
-import { FaTachometerAlt, FaUsers } from "react-icons/fa";
-import { CiSettings } from "react-icons/ci";
+import { TbDashboard } from "react-icons/tb";
+import { RiFileList2Line } from "react-icons/ri";
+import { CiWallet } from "react-icons/ci";
+import { LuUserRound, LuTicketSlash } from "react-icons/lu";
 import type { IconType } from "react-icons";
-
 interface NavItems {
   name: string;
   path: string;
@@ -9,9 +10,11 @@ interface NavItems {
 }
 
 const navItems: NavItems[] = [
-  { name: "داشبورد", path: "/", icon: FaTachometerAlt },
-  { name: "کاربران", path: "/users", icon: FaUsers },
-  { name: "تنظیمات", path: "/settings", icon: CiSettings },
+  { name: "داشبورد کاربری", path: "/", icon: TbDashboard },
+  { name: "سفارشات من", path: "/orders", icon: RiFileList2Line },
+  { name: "کیف پول من", path: "/wallet", icon: CiWallet },
+  { name: "تیکت ها", path: "/tickets", icon: LuTicketSlash },
+  { name: "اطلاعات حساب کاربری", path: "/profile", icon: LuUserRound },
 ];
 
 export default navItems;

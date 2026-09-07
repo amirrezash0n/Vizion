@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "../components/layout/Layout";
-import Users from "../pages/Users/Users";
-import NotFound from "../pages/NotFound/NotFound";
-import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import Settings from "../pages/Settings/Settings";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import Orders from "../pages/Orders/Orders";
+import Wallet from "../pages/Wallet/Wallet";
+import Tickets from "../pages/Tickets/Tickets";
+import Profile from "../pages/Profile/Profile";
+import NotFound from "../pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +15,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Dashboard /> },
-      { path: "users", element: <Users /> },
-      { path: "settings", element: <Settings /> },
+      { path: "orders", element: <Orders /> },
+      { path: "wallet", element: <Wallet /> },
+      { path: "tickets", element: <Tickets /> },
+      { path: "profile", element: <Profile /> },
     ],
   },
   { path: "*", element: <NotFound /> },

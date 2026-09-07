@@ -1,10 +1,15 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import navItems from "../../constants/navItems";
 
 export default function Sidebar() {
   return (
-    <div className="h-screen w-64 bg-gray-900 text-white p-4 flex flex-col">
-      <h2 className="text-2xl font-bold mb-8 text-center">Vizion</h2>
+    <div className="h-screen w-75 pr-8.75 p-4 flex flex-col">
+      <Link
+        to="/"
+        className="text-text-22 mb-6.25 font-morabbaBold font-extrabold text-center text-primary"
+      >
+        Vizion
+      </Link>
       <nav className="flex-1 space-y-2">
         {navItems.map((item) => {
           return (
