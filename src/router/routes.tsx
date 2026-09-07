@@ -4,6 +4,7 @@ import Users from "../pages/Users/Users";
 import NotFound from "../pages/NotFound/NotFound";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Settings from "../pages/Settings/Settings";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Dashboard /> },
       { path: "users", element: <Users /> },
+      { path: "settings", element: <Settings /> },
     ],
   },
   { path: "*", element: <NotFound /> },

@@ -1,3 +1,3 @@
 export default function Users() {
-  return <div></div>;
+  return <div>کاربران</div>;
 }
