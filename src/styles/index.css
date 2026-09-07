@@ -22,22 +22,22 @@
     --text-text-22: 1.375rem;
 
     /* Colors */
-    --color-primary: "#FD295C";
-    --color-secondary: "#F32770";
-    --color-success: "#1EBD71";
-    --color-dark: "#31303A";
-    --color-text-primary: "#3A3944";
-    --color-text-secondary: "#494857";
-    --color-tuna: "#383742";
-    --color-dawn: "#A5A5A5";
-    --color-mobster: "#7B7892";
-    --color-gray: "#A5A3BA";
-    --color-whiteSmoke: "#F6F6F6";
-    --color-haiti: "#2F2E36";
-    --color-smokeyGrey-100: "#3F3E49";
-    --color-smokeyGrey-200: "rgba(114,114,144,0.53)";
-    --color-balticSea-100: "#292832";
-    --color-balticSea-200: "#28272E";
-    --color-balticSea-300: "#24232B";
-    --color-balticSea-400: "#24232A";
+    --color-primary: #FD295C;
+    --color-secondary: #F32770;
+    --color-success: #1EBD71;
+    --color-dark: #31303A;
+    --color-text-primary: #3A3944;
+    --color-text-secondary: #494857;
+    --color-tuna: #383742;
+    --color-dawn: #A5A5A5;
+    --color-mobster: #7B7892;
+    --color-gray: #A5A3BA;
+    --color-whiteSmoke: #F6F6F6;
+    --color-haiti: #2F2E36;
+    --color-smokeyGrey-100: #3F3E49;
+    --color-smokeyGrey-200: rgba(114, 114, 144, 0.53);
+    --color-balticSea-100: #292832;
+    --color-balticSea-200: #28272E;
+    --color-balticSea-300: #24232B;
+    --color-balticSea-400: #24232A;
 }
