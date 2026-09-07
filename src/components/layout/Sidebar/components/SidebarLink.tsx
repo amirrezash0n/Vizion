@@ -1,20 +1,18 @@
 import { NavLink } from "react-router";
-
-interface NavItem {
-  path: string;
-  name: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
+import type { NavItem } from "../../../../types";
 
 interface SidebarLinkProps {
   item: NavItem;
+  onNavigate?: () => void;
 }
-export default function SidebarLink({ item }: SidebarLinkProps) {
+
+export default function SidebarLink({ item, onNavigate }: SidebarLinkProps) {
   return (
     <NavLink
       to={item.path}
+      onClick={onNavigate}
       className={({ isActive }) =>
-        `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+        `flex items-center gap-3 px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg transition-all duration-200 ${
           isActive
             ? "bg-white-5 text-primary hover:bg-white-10"
             : "text-white/70 hover:text-white hover:bg-white-5"
@@ -30,7 +28,7 @@ export default function SidebarLink({ item }: SidebarLinkProps) {
               }`}
             />
           </span>
-          <span>{item.name}</span>
+          <span className="text-sm lg:text-base">{item.name}</span>
         </>
       )}
     </NavLink>
