@@ -1,6 +1,6 @@
 import { FaTachometerAlt, FaUsers } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
-import type { IconType } from "react-icons/lib";
+import type { IconType } from "react-icons";
 
 interface NavItems {
   name: string;
