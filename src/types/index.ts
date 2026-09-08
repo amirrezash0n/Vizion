@@ -11,3 +11,12 @@ export interface SidebarProps {
 export interface HeaderProps {
   onMenuClick: () => void;
 }
+
+export interface Stat {
+  id: number;
+  title: string;
+  value: string;
+  icon: React.ComponentType<{ size?: number }>;
+  color: string;
+  href: string;
+}

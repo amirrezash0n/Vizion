@@ -40,5 +40,9 @@
     --color-balticSea-200: #28272E;
     --color-balticSea-300: #24232B;
     --color-balticSea-400: #24232A;
-    --color-white-5: #FFFFFF0D
+    --color-white-5: #FFFFFF0D;
+    --color-offWhite: #F8F8FB;
+    --color-success: #25BB85;
+    --color-warning: #ED9446;
+    --color-danger: #FF505A;
 }
