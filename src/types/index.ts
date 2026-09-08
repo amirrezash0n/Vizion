@@ -20,3 +20,10 @@ export interface Stat {
   color: string;
   href: string;
 }
+
+export interface Notification {
+  id: number;
+  title: string;
+  message: string;
+  color: string;
+}

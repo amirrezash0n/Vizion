@@ -7,6 +7,7 @@ import Wallet from "../pages/Wallet/Wallet";
 import Tickets from "../pages/Tickets/Tickets";
 import Profile from "../pages/Profile/Profile";
 import NotFound from "../pages/NotFound/NotFound";
+import Notifications from "../pages/Notifications/Notifications";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "wallet", element: <Wallet /> },
       { path: "tickets", element: <Tickets /> },
       { path: "profile", element: <Profile /> },
+      { path: "notifications", element: <Notifications /> },
     ],
   },
   { path: "*", element: <NotFound /> },

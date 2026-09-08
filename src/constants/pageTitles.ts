@@ -4,6 +4,7 @@ const pageTitles: Record<string, string> = {
   "/wallet": "کیف پول شما",
   "/tickets": "تیکت ها",
   "/profile": "اطلاعات حساب کاربری",
+  "/notifications": "اعلانات",
 };
 
 export default pageTitles;

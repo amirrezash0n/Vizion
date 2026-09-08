@@ -21,14 +21,14 @@ export default function SidebarLink({ item, onNavigate }: SidebarLinkProps) {
     >
       {({ isActive }) => (
         <>
-          <span>
+          <span className="flex items-center">
             <item.icon
               className={`size-5 transition-colors duration-200 ${
                 isActive ? "text-primary" : "text-white/50"
               }`}
             />
           </span>
-          <span className="text-sm lg:text-base">{item.name}</span>
+          <span className="text-sm lg:text-base leading-none">{item.name}</span>
         </>
       )}
     </NavLink>
