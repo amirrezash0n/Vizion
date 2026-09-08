@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import type { Stat } from "../../../types";
 import { HiArrowSmallLeft } from "react-icons/hi2";
+import type { Stat } from "../../../../types";
 
 interface StatCardProps {
   stat: Stat;
@@ -20,7 +20,7 @@ export default function StatCard({ stat }: StatCardProps) {
             <stat.icon size={32} />
           </span>
         </div>
-        <p className="font-yekanHeavy text-3xl sm:text-4xl lg:text-5xl text-right mt-2 w-full text-balticSea-400">
+        <p className="font-yekanHeavy text-2xl lg:text-3xl xl:text-4xl text-right mt-2 w-full text-balticSea-400">
           {stat.value}
         </p>
         <Link

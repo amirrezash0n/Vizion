@@ -2,9 +2,3 @@ body {
     font-family: "YekanBakh-Medium";
     font-size: 16px;
 }
-
-.Dashboard {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}

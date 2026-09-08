@@ -1,6 +1,7 @@
-import { BsCheckLg } from "react-icons/bs";
 import { LuLoader, LuTicketSlash } from "react-icons/lu";
+import { BsCheckLg } from "react-icons/bs";
 import type { Stat } from "../types";
+import { CiWallet } from "react-icons/ci";
 
 const stats: Stat[] = [
   {
@@ -26,6 +27,14 @@ const stats: Stat[] = [
     icon: LuTicketSlash,
     color: "bg-danger",
     href: "/tickets",
+  },
+  {
+    id: 4,
+    title: "کیف پول شما",
+    value: "2,500,000",
+    icon: CiWallet,
+    color: "bg-primary",
+    href: "/wallet",
   },
 ];
 
