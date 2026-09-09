@@ -1,9 +1,6 @@
-import PageHeader from "../../components/common/PageHeader";
+import orders from "../../data/orders";
+import OrdersTable from "./OrdersTable";
 
 export default function Orders() {
-  return (
-    <div className="Orders">
-      <PageHeader />
-    </div>
-  );
+  return <OrdersTable orders={orders} />;
 }
