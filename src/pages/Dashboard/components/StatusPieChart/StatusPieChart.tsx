@@ -1,4 +1,3 @@
-// src/components/dashboard/StatusPieChart/StatusPieChart.tsx
 import {
   PieChart,
   Pie,

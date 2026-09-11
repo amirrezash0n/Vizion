@@ -5,17 +5,28 @@ interface OrderStatusBadgeProps {
 }
 
 export default function OrderStatusBadge({ status }: OrderStatusBadgeProps) {
-  const isCompleted = status === "completed";
+  const statusConfig = {
+    completed: {
+      label: "تکمیل شده",
+      className: "bg-emerald-100 text-success",
+    },
+    pending: {
+      label: "در حال انجام",
+      className: "bg-orange-100 text-warning",
+    },
+    cancelled: {
+      label: "لغو شده",
+      className: "bg-red-100 text-danger",
+    },
+  };
+
+  const config = statusConfig[status] || statusConfig.pending;
 
   return (
     <span
-      className={`font-yekanBold inline-flex whitespace-nowrap rounded-full px-4 py-2 text-xs ${
-        isCompleted
-          ? "bg-emerald-100 text-success"
-          : "bg-orange-100 text-warning"
-      }`}
+      className={`font-yekanBold inline-flex whitespace-nowrap rounded-full px-4 py-2 text-xs ${config.className}`}
     >
-      {isCompleted ? "تکمیل شده" : "در حال انجام"}
+      {config.label}
     </span>
   );
 }

@@ -1,4 +1,3 @@
-// src/components/dashboard/SalesChart/SalesChart.tsx
 import {
   AreaChart,
   Area,
