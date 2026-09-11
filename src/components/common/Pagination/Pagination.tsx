@@ -14,7 +14,10 @@ export default function Pagination({
   if (totalPages <= 1) return null;
 
   return (
-    <div className="flex items-center justify-center gap-2 py-5" dir="rtl">
+    <div
+      className="flex items-center flex-wrap justify-center gap-2 py-5"
+      dir="rtl"
+    >
       <Button
         type="button"
         variant="pagination"

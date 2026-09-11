@@ -5,9 +5,9 @@ export const variantStyles = {
   icon: "bg-text-primary text-white hover:bg-opacity-80",
   outline:
     "border border-primary text-primary hover:bg-primary hover:text-white",
-  // واریانت‌های جدید برای صفحه‌بندی
-  pagination: "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50",
-  paginationActive: "bg-red-500 text-white hover:bg-red-600",
+  pagination: "border border-gray-200 bg-white text-gray-600 hover:bg-gray-100",
+  paginationActive: "bg-primary text-white hover:bg-danger",
+  link: "bg-transparent text-primary hover:opacity-80",
 };
 
 export const sizeStyles = {
@@ -16,8 +16,8 @@ export const sizeStyles = {
   lg: "px-6 py-3 text-lg",
   icon: "size-10",
   full: "w-full px-4 py-2 text-base",
-  // سایز جدید برای دکمه‌های صفحه‌بندی
   pagination: "h-9 min-w-9 px-3 text-sm",
+  link: "p-0 text-sm",
 };
 
 export const baseStyles =
