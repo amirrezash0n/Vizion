@@ -4,6 +4,8 @@ import DataTable from "../../components/common/DataTable/DataTable";
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import { tickets } from "../../data/tickets";
 import { ticketColumns } from "./TicketColumns";
+import NoDataState from "../../components/common/EmptyState/NoDataState";
+import { FiInbox } from "react-icons/fi";
 
 export default function Tickets() {
   return (
@@ -16,7 +18,11 @@ export default function Tickets() {
           </Button>
         </Link>
       </div>
-      <DataTable data={tickets} columns={ticketColumns} pageSize={8} />
+      {tickets.length === 0 ? (
+        <NoDataState icon={FiInbox} title="هنوز تیکتی ثبت نشده!" />
+      ) : (
+        <DataTable data={tickets} columns={ticketColumns} pageSize={8} />
+      )}
     </>
   );
 }
