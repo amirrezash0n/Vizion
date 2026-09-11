@@ -1,6 +1,6 @@
 import { FaRegBell } from "react-icons/fa";
-import Button from "../../../common/Button";
 import { Link } from "react-router";
+import Button from "../../../common/Button/Button";
 
 function NotificationButton() {
   return (

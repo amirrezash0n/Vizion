@@ -1,10 +1,6 @@
 import { useLocation } from "react-router";
-import pageTitles from "../../constants/pageTitles";
-
-interface PageHeaderProps {
-  title?: string;
-  className?: string;
-}
+import pageTitles from "../../../constants/pageTitles";
+import type { PageHeaderProps } from "./PageHeaderTypes";
 
 export default function PageHeader({ title, className = "" }: PageHeaderProps) {
   const location = useLocation();

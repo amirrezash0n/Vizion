@@ -4,7 +4,7 @@ import UserInfo from "./components/UserInfo";
 import NotificationButton from "./components/NotificationButton";
 import DateTimeDisplay from "./components/DateTimeDisplay";
 import LogoutButton from "./components/LogoutButton";
-import Button from "../../common/Button";
+import Button from "../../common/Button/Button";
 
 export default function Header({ onMenuClick }: HeaderProps) {
   return (

@@ -1,5 +1,5 @@
 import { LuLogOut } from "react-icons/lu";
-import Button from "../../../common/Button";
+import Button from "../../../common/Button/Button";
 
 function LogoutButton() {
   return (

@@ -1,4 +1,4 @@
-import PageHeader from "../../components/common/PageHeader";
+import PageHeader from "../../components/common/PageHeader/PageHeader";
 
 export default function Profile() {
   return (
