@@ -26,7 +26,7 @@ export default function DataTable<T>({
     : data;
 
   return (
-    <div className="w-full" dir="rtl">
+    <div className="w-full">
       <div className="w-full overflow-x-auto rounded-2xl">
         <table className="w-full min-w-225 border-collapse">
           <thead>
@@ -34,7 +34,7 @@ export default function DataTable<T>({
               {columns.map((column) => (
                 <th
                   key={String(column.key)}
-                  className="whitespace-nowrap bg-gray-50 px-6 py-4 text-right text-sm font-medium text-gray-600"
+                  className="whitespace-nowrap bg-offWhite px-6 py-4 text-right font-morabbaMedium font-bold text-balticSea-400"
                 >
                   {column.title}
                 </th>
@@ -48,7 +48,7 @@ export default function DataTable<T>({
                 {columns.map((column) => (
                   <td
                     key={String(column.key)}
-                    className="px-6 py-4 text-right text-sm text-gray-700"
+                    className="px-6 py-4 text-right text-sm font-yekanMedium text-balticSea-400"
                   >
                     {column.render
                       ? column.render(row)
