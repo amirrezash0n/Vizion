@@ -3,6 +3,7 @@ import { RiFileList2Line } from "react-icons/ri";
 import { CiWallet } from "react-icons/ci";
 import { LuUserRound, LuTicketSlash } from "react-icons/lu";
 import { IoMdNotificationsOutline } from "react-icons/io";
+
 import type { IconType } from "react-icons";
 interface NavItems {
   name: string;

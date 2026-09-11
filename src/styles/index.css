@@ -45,4 +45,7 @@
     --color-success: #25BB85;
     --color-warning: #ED9446;
     --color-danger: #FF505A;
+
+    /* BreakPoints */
+    --breakpoint-xs: 460px;
 }
