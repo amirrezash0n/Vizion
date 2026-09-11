@@ -1,10 +1,11 @@
 import { useState } from "react";
-import DataTable from "../../components/common/DataTable/DataTable";
-import PageHeader from "../../components/common/PageHeader/PageHeader";
+import { useSearch } from "../../hooks/useSearch";
 import { orders } from "../../data/orders";
 import { orderColumns } from "./OrdersColumns";
+import DataTable from "../../components/common/DataTable/DataTable";
+import EmptyState from "../../components/common/EmptyState/EmptyState";
+import PageHeader from "../../components/common/PageHeader/PageHeader";
 import SearchBox from "./SearchBox";
-import { useSearch } from "../../hooks/useSearch";
 
 export default function Orders() {
   const [search, setSearch] = useState("");
@@ -19,11 +20,7 @@ export default function Orders() {
       {filteredOrders.length > 0 ? (
         <DataTable data={filteredOrders} columns={orderColumns} pageSize={7} />
       ) : (
-        <div className="flex min-h-40 items-center justify-center">
-          <p className="text-sm text-balticSea-400">
-            سفارشی با عنوان «{search}» پیدا نشد.
-          </p>
-        </div>
+        <EmptyState search={search} onClearSearch={() => setSearch("")} />
       )}
     </>
   );
