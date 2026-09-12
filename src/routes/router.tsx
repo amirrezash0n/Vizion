@@ -12,6 +12,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import NotFound from "../pages/NotFound/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
 import AddTicket from "../pages/Tickets/AddTicket/AddTicket";
+import NotificationDetails from "../pages/Notifications/components/NotificationDetails";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
           { path: "tickets/addTicket", element: <AddTicket /> },
           { path: "profile", element: <Profile /> },
           { path: "notifications", element: <Notifications /> },
+          { path: "notifications/:id", element: <NotificationDetails /> },
         ],
       },
     ],

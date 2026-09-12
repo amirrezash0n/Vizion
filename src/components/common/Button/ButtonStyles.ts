@@ -8,6 +8,8 @@ export const variantStyles = {
   pagination: "border border-gray-200 bg-white text-gray-600 hover:bg-gray-100",
   paginationActive: "bg-primary text-white hover:bg-danger",
   link: "bg-transparent text-primary hover:opacity-80",
+  soft: "bg-transparent text-slate hover:bg-cloud",
+  danger: "bg-transparent text-danger hover:bg-danger/10",
 };
 
 export const sizeStyles = {
@@ -19,6 +21,7 @@ export const sizeStyles = {
   full: "w-full px-4 py-2 text-base",
   pagination: "h-9 min-w-9 px-3 text-sm",
   link: "p-0 text-sm",
+  tiny: "px-2.5 py-1.5 text-[10px] xs:px-3 xs:py-2 xs:text-xs",
 };
 
 export const baseStyles =

@@ -46,7 +46,26 @@
     --color-success: #25BB85;
     --color-warning: #ED9446;
     --color-danger: #FF505A;
+    --color-softPink: #FAD7D7;
+    --color-crimson: #E93051;
+    --color-slate: #787986;
+    --color-cloud: #ECECF4;
 
     /* BreakPoints */
     --breakpoint-xs: 460px;
+
+    /* Animations */
+    --animate-fadeIn: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
