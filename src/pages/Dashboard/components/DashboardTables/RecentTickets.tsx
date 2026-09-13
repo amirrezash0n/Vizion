@@ -26,6 +26,7 @@ export default function RecentTickets() {
           data={tickets.slice(-3)}
           columns={ticketColumns}
           pagination={false}
+          dashboard={true}
         />
       )}
     </>

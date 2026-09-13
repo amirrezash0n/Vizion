@@ -26,6 +26,7 @@ export default function RecentOrders() {
           data={orders.slice(-3)}
           columns={orderColumns}
           pagination={false}
+          dashboard={true}
         />
       )}
     </>

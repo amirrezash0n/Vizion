@@ -1,10 +1,3 @@
-// src/utils/dateUtils.ts
-
-/**
- * تبدیل تاریخ به فرمت شمسی (فارسی)
- * @param dateString - تاریخ به صورت رشته (ISO)
- * @returns تاریخ شمسی به صورت رشته
- */
 export function toPersianDate(dateString: string): string {
   const date = new Date(dateString);
   return date.toLocaleDateString("fa-IR", {
@@ -14,11 +7,6 @@ export function toPersianDate(dateString: string): string {
   });
 }
 
-/**
- * تبدیل زمان به فرمت فارسی
- * @param dateString - تاریخ به صورت رشته (ISO)
- * @returns زمان فارسی به صورت رشته
- */
 export function toPersianTime(dateString: string): string {
   const date = new Date(dateString);
   return date.toLocaleTimeString("fa-IR", {
@@ -27,11 +15,6 @@ export function toPersianTime(dateString: string): string {
   });
 }
 
-/**
- * تبدیل تاریخ به متن نسبی (مثلاً «۲۴ ساعت پیش»)
- * @param dateString - تاریخ به صورت رشته (ISO)
- * @returns متن نسبی
- */
 export function getRelativeTime(dateString: string): string {
   const now = new Date();
   const date = new Date(dateString);
@@ -55,7 +38,6 @@ export function getRelativeTime(dateString: string): string {
   return `${toPersianDigits(diffInYears)} سال پیش`;
 }
 
-// تابع کمکی تبدیل اعداد به فارسی
 function toPersianDigits(input: number | string): string {
   const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
   return input

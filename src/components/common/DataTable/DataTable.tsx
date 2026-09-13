@@ -7,6 +7,7 @@ interface DataTableProps<T> {
   columns: TableColumn<T>[];
   pageSize?: number;
   pagination?: boolean;
+  dashboard?: boolean;
 }
 
 export default function DataTable<T>({
@@ -14,6 +15,7 @@ export default function DataTable<T>({
   columns,
   pageSize = 5,
   pagination = true,
+  dashboard = false,
 }: DataTableProps<T>) {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -26,7 +28,7 @@ export default function DataTable<T>({
     : data;
 
   return (
-    <div className="w-full xs:h-150.25">
+    <div className={`w-full ${dashboard ? "" : "xs:h-150.25"}`}>
       <div className="w-full h-full overflow-x-auto rounded-2xl">
         <table className="w-full min-w-225 border-collapse">
           <thead>
