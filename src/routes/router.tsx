@@ -13,6 +13,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
 import AddTicket from "../pages/Tickets/AddTicket/AddTicket";
 import NotificationDetails from "../pages/Notifications/components/NotificationDetails";
+import OrderDetails from "../pages/Orders/OrderDetails/OrderDetails";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <Dashboard /> },
           { path: "orders", element: <Orders /> },
+          { path: "orders/:id", element: <OrderDetails /> },
           { path: "wallet", element: <Wallet /> },
           { path: "tickets", element: <Tickets /> },
           { path: "tickets/addTicket", element: <AddTicket /> },

@@ -9,4 +9,12 @@ export interface Order {
   icon: string;
   paymentNumber: string;
   date: string;
+  email: string;
+  phone: string;
+  accountType: string;
+  region: string;
+  warranty: string;
+  deliveryMethod: string;
+  discountCode?: string;
+  finalPrice: number;
 }

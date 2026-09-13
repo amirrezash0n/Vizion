@@ -1,9 +1,8 @@
-// src/constants/orderColumns.tsx
 import type { TableColumn } from "../../types/table";
 import type { Order } from "../../types/order";
 import OrderStatusBadge from "../../components/ui/OrderStatusBadge";
 import { RiArrowLeftSLine } from "react-icons/ri";
-import Button from "../../components/common/Button/Button";
+import { Link } from "react-router";
 
 export const orderColumns: TableColumn<Order>[] = [
   {
@@ -67,13 +66,16 @@ export const orderColumns: TableColumn<Order>[] = [
   {
     key: "id",
     title: "عملیات",
-    render: () => (
-      <Button variant="link" size="link" className="gap-0.5 font-yekanMedium">
+    render: (order) => (
+      <Link
+        to={`/orders/${order.id}`}
+        className="flex items-center gap-0.5 whitespace-nowrap text-sm text-primary font-yekanMedium transition-opacity hover:opacity-80"
+      >
         <span>مشاهده</span>
         <span className="flex items-center">
           <RiArrowLeftSLine size={16} />
         </span>
-      </Button>
+      </Link>
     ),
   },
 ];
