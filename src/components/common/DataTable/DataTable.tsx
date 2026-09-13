@@ -26,8 +26,8 @@ export default function DataTable<T>({
     : data;
 
   return (
-    <div className="w-full">
-      <div className="w-full overflow-x-auto rounded-2xl">
+    <div className="w-full xs:h-150.25">
+      <div className="w-full h-full overflow-x-auto rounded-2xl">
         <table className="w-full min-w-225 border-collapse">
           <thead>
             <tr>
