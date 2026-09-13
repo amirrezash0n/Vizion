@@ -1,3 +1,5 @@
+import { toPersianDigits } from "./number.utils";
+
 export function toPersianDate(dateString: string): string {
   const date = new Date(dateString);
   return date.toLocaleDateString("fa-IR", {
@@ -36,11 +38,4 @@ export function getRelativeTime(dateString: string): string {
 
   const diffInYears = Math.floor(diffInMonths / 12);
   return `${toPersianDigits(diffInYears)} سال پیش`;
-}
-
-function toPersianDigits(input: number | string): string {
-  const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-  return input
-    .toString()
-    .replace(/\d/g, (digit) => persianDigits[parseInt(digit)]);
 }

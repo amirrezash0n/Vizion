@@ -4,7 +4,7 @@ import BankOption from "./BankOption";
 import {
   toEnglishDigits,
   formatPersianNumber,
-} from "../../../utils/numberHelpers";
+} from "../../../utils/number.utils";
 import { banks } from "../../../constants/banks";
 
 export default function WalletChargeForm() {

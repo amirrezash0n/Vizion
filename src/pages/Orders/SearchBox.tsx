@@ -1,5 +1,5 @@
 import { FiSearch } from "react-icons/fi";
-import { cn } from "../../utils/helpers";
+import { cn } from "../../utils/class.utils";
 import type { InputHTMLAttributes } from "react";
 
 interface SearchBoxProps extends InputHTMLAttributes<HTMLInputElement> {

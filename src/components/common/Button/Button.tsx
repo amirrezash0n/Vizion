@@ -1,4 +1,4 @@
-import { cn } from "../../../utils/helpers";
+import { cn } from "../../../utils/class.utils";
 import { baseStyles, sizeStyles, variantStyles } from "./ButtonStyles";
 import type { ButtonProps } from "./ButtonTypes";
 
