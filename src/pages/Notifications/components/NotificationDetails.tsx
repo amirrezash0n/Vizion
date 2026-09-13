@@ -1,3 +1,4 @@
+// src/pages/Notifications/NotificationDetails/NotificationDetails.tsx
 import { useNavigate, useParams } from "react-router";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaCircle, FaTrash } from "react-icons/fa";
@@ -5,6 +6,7 @@ import { useState, useEffect } from "react";
 import PageHeader from "../../../components/common/PageHeader/PageHeader";
 import Button from "../../../components/common/Button/Button";
 import { useNotificationStore } from "../../../store/notificationStore";
+import { toPersianDate, toPersianTime } from "../../../utils/dateUtils";
 
 export default function NotificationDetails() {
   const navigate = useNavigate();
@@ -60,7 +62,7 @@ export default function NotificationDetails() {
             <Button
               variant="ghost"
               onClick={() => navigate(-1)}
-              className="w-7 h-7 xs:w-8 xs:h-8 rounded-lgf rotate-180 hover:bg-dawn/10 transition-colors p-0"
+              className="w-7 h-7 xs:w-8 xs:h-8 rounded-lg rotate-180 hover:bg-dawn/10 transition-colors p-0"
             >
               <IoIosArrowBack
                 size={18}
@@ -86,8 +88,10 @@ export default function NotificationDetails() {
               />
             </Button>
           </div>
+
           <span className="font-morabbaLight text-[10px] xs:text-xs text-dawn">
-            {notification.time} - {notification.date}
+            {toPersianTime(notification.createdAt)} -{" "}
+            {toPersianDate(notification.createdAt)}
           </span>
         </div>
 
@@ -103,7 +107,7 @@ export default function NotificationDetails() {
               )}
               <span className="truncate">{notification.title}</span>
             </h2>
-            <p className="font-yekanMedium text-xs xs:text-sm text-balticSea-400 leading-6 xs:leading-7 text-justify">
+            <p className="font-morabbaMedium text-xs xs:text-sm text-balticSea-400 leading-6 xs:leading-7 text-justify">
               {notification.fullText}
             </p>
           </div>

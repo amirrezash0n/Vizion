@@ -1,6 +1,7 @@
 import { FaCircle } from "react-icons/fa";
 import { Link } from "react-router";
 import type { Notification } from "../../../types/notification";
+import { getRelativeTime } from "../../../utils/dateUtils";
 
 interface NotificationItemProps {
   notification: Notification;
@@ -9,7 +10,7 @@ interface NotificationItemProps {
 export default function NotificationItem({
   notification,
 }: NotificationItemProps) {
-  const { id, title, time, isRead } = notification;
+  const { id, title, isRead, createdAt } = notification;
 
   return (
     <Link
@@ -38,7 +39,7 @@ export default function NotificationItem({
           </p>
         </div>
         <p className="font-yekanRegular text-[10px] xs:text-xs text-dawn">
-          {time}
+          {getRelativeTime(createdAt)}
         </p>
       </div>
     </Link>

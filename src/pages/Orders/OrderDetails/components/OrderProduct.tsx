@@ -1,4 +1,3 @@
-// src/pages/Orders/OrderDetails/components/OrderProduct.tsx
 import OrderStatusBadge from "../../../../components/ui/OrderStatusBadge";
 import type { Order } from "../../../../types/order";
 
