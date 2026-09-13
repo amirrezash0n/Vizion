@@ -69,6 +69,8 @@ export default function Notifications() {
               title="جدید ها"
               type="new"
               notifications={newNotifications}
+              initialCount={3}
+              step={3}
             />
 
             <div className="mt-4 xs:mt-6">
@@ -76,6 +78,8 @@ export default function Notifications() {
                 title="خوانده شده"
                 type="read"
                 notifications={readNotifications}
+                initialCount={3}
+                step={3}
               />
             </div>
           </>
