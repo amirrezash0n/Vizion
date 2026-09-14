@@ -11,7 +11,7 @@ interface NavItems {
   icon: IconType;
 }
 
-const navItems: NavItems[] = [
+export const NAV_ITEMS: NavItems[] = [
   { name: "داشبورد کاربری", path: "/", icon: TbDashboard },
   { name: "سفارشات من", path: "/orders", icon: RiFileList2Line },
   { name: "کیف پول من", path: "/wallet", icon: CiWallet },
@@ -23,5 +23,3 @@ const navItems: NavItems[] = [
     icon: IoMdNotificationsOutline,
   },
 ];
-
-export default navItems;
