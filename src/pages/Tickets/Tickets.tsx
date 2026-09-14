@@ -47,6 +47,7 @@ export default function Tickets() {
         <NoDataState icon={FiInbox} title="نتیجه‌ای پیدا نشد!" />
       ) : (
         <DataTable
+          key={statusFilter}
           data={filteredTickets}
           columns={ticketColumns}
           pageSize={8}

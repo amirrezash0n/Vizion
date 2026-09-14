@@ -56,7 +56,12 @@ export default function Orders() {
       ) : filteredOrders.length === 0 ? (
         <NoDataState icon={FiSearch} title="نتیجه‌ای پیدا نشد" />
       ) : (
-        <DataTable data={filteredOrders} columns={orderColumns} pageSize={7} />
+        <DataTable
+          key={`${search}-${statusFilter}`}
+          data={filteredOrders}
+          columns={orderColumns}
+          pageSize={7}
+        />
       )}
     </>
   );
