@@ -1,23 +1,17 @@
 import { useState } from "react";
 import Button from "../../../../components/common/Button/Button";
 import ImageUploadButton from "./ImageUploadButton";
-
-const departments = [
-  { id: "", label: "یک گزینه را انتخاب کنید" },
-  { id: "support", label: "پشتیبانی" },
-  { id: "financial", label: "مالی" },
-  { id: "technical", label: "فنی" },
-];
+import { departments } from "../../../../constants/departments";
 
 export default function TicketForm() {
   const [title, setTitle] = useState("");
   const [department, setDepartment] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     console.log({ title, department, message });
-  };
+  }
 
   return (
     <form
@@ -30,11 +24,10 @@ export default function TicketForm() {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-6 mb-5">
-        {/* عنوان تیکت */}
         <div>
-          <label className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-2">
+          <h4 className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-2">
             عنوان تیکت
-          </label>
+          </h4>
           <input
             type="text"
             value={title}
@@ -94,22 +87,23 @@ export default function TicketForm() {
           className="w-full bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-primary outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 placeholder:text-dawn placeholder:font-yekanRegular transition-colors resize-none"
         />
       </div>
+      <div className="flex items-center flex-wrap gap-3 justify-between">
+        <div className="flex flex-wrap items-center gap-3">
+          <ImageUploadButton onUpload={() => {}} />
+          <span className="font-yekanMedium text-[10px] xs:text-xs text-balticSea-400">
+            تصویری از مشکل خود دارید؟
+          </span>
+        </div>
 
-      <div className="flex flex-wrap items-center gap-3 mb-6">
-        <span className="font-yekanMedium text-[10px] xs:text-xs text-balticSea-400">
-          تصویری از مشکل خود دارید؟
-        </span>
-        <ImageUploadButton onUpload={() => {}} />
+        <Button
+          type="submit"
+          variant="primary"
+          size="xs"
+          className="font-yekanBold rounded-xl"
+        >
+          ارسال تیکت
+        </Button>
       </div>
-
-      <Button
-        type="submit"
-        variant="primary"
-        size="xs"
-        className="font-yekanBold rounded-xl"
-      >
-        ارسال تیکت
-      </Button>
     </form>
   );
 }

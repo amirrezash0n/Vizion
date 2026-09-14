@@ -10,7 +10,7 @@ export default function AddTicket() {
   return (
     <div>
       <PageHeader />
-      <div className="flex items-center justify-between mt-6 mb-4" dir="rtl">
+      <div className="flex items-center justify-between mt-6 mb-10" dir="rtl">
         <div className="flex items-center gap-3">
           <Button
             variant="ghost"

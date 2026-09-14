@@ -14,6 +14,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import AddTicket from "../pages/Tickets/AddTicket/AddTicket";
 import NotificationDetails from "../pages/Notifications/components/NotificationDetails";
 import OrderDetails from "../pages/Orders/OrderDetails/OrderDetails";
+import type { RouteHandle } from "./router.types";
 
 const router = createBrowserRouter([
   {
@@ -24,15 +25,51 @@ const router = createBrowserRouter([
         element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
-          { index: true, element: <Dashboard /> },
-          { path: "orders", element: <Orders /> },
-          { path: "orders/:id", element: <OrderDetails /> },
-          { path: "wallet", element: <Wallet /> },
-          { path: "tickets", element: <Tickets /> },
-          { path: "tickets/addTicket", element: <AddTicket /> },
-          { path: "profile", element: <Profile /> },
-          { path: "notifications", element: <Notifications /> },
-          { path: "notifications/:id", element: <NotificationDetails /> },
+          {
+            index: true,
+            element: <Dashboard />,
+            handle: { title: "داشبورد کاربری" } satisfies RouteHandle,
+          },
+          {
+            path: "orders",
+            element: <Orders />,
+            handle: { title: "سفارشات من" } satisfies RouteHandle,
+          },
+          {
+            path: "orders/:id",
+            element: <OrderDetails />,
+            handle: { title: "جزئیات سفارش" } satisfies RouteHandle,
+          },
+          {
+            path: "wallet",
+            element: <Wallet />,
+            handle: { title: "کیف پول من" } satisfies RouteHandle,
+          },
+          {
+            path: "tickets",
+            element: <Tickets />,
+            handle: { title: "تیکت ها" } satisfies RouteHandle,
+          },
+          {
+            path: "tickets/addTicket",
+            element: <AddTicket />,
+            handle: { title: "افزودن تیکت جدید" } satisfies RouteHandle,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+            handle: { title: "اطلاعات حساب کاربری" } satisfies RouteHandle,
+          },
+          {
+            path: "notifications",
+            element: <Notifications />,
+            handle: { title: "اعلانات" } satisfies RouteHandle,
+          },
+          {
+            path: "notifications/:id",
+            element: <NotificationDetails />,
+            handle: { title: "جزئیات اعلان" } satisfies RouteHandle,
+          },
         ],
       },
     ],
