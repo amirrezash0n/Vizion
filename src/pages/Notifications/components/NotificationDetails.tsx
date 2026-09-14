@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "react-router";
-import { IoIosArrowBack } from "react-icons/io";
 import { FaCircle, FaTrash } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import PageHeader from "../../../components/common/PageHeader/PageHeader";
 import Button from "../../../components/common/Button/Button";
 import { useNotificationStore } from "../../../store/notificationStore";
 import { toPersianDate, toPersianTime } from "../../../utils/date.utils";
+import BackButton from "../../../components/common/BackButton/BackButton";
 
 export default function NotificationDetails() {
   const navigate = useNavigate();
@@ -25,6 +25,7 @@ export default function NotificationDetails() {
   if (!notification) {
     return (
       <div>
+        <BackButton />
         <PageHeader />
         <div className="bg-offWhite rounded-2xl p-8 max-w-2xl mx-auto mt-4 text-center animate-fadeIn">
           <p className="font-morabbaMedium text-sm text-dawn">
@@ -45,6 +46,7 @@ export default function NotificationDetails() {
 
   return (
     <div>
+      <BackButton />
       <PageHeader />
       <div
         className={`
@@ -57,36 +59,20 @@ export default function NotificationDetails() {
           className="flex items-center justify-between mb-4 xs:mb-6"
           dir="rtl"
         >
-          <div className="flex items-center gap-1.5 xs:gap-2">
-            <Button
-              variant="ghost"
-              onClick={() => navigate(-1)}
-              className="w-7 h-7 xs:w-8 xs:h-8 rounded-lg rotate-180 hover:bg-dawn/10 transition-colors p-0"
-            >
-              <IoIosArrowBack
-                size={18}
-                className="xs:hidden text-balticSea-400"
-              />
-              <IoIosArrowBack
-                size={20}
-                className="hidden xs:block text-balticSea-400"
-              />
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={handleDelete}
-              className="w-7 h-7 xs:w-8 xs:h-8 rounded-lg hover:bg-danger/10 transition-colors group p-0"
-            >
-              <FaTrash
-                size={12}
-                className="xs:hidden text-dawn group-hover:text-danger transition-colors"
-              />
-              <FaTrash
-                size={14}
-                className="hidden xs:block text-dawn group-hover:text-danger transition-colors"
-              />
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            onClick={handleDelete}
+            className="w-7 h-7 xs:w-8 xs:h-8 rounded-lg hover:bg-danger/10 transition-colors group p-0"
+          >
+            <FaTrash
+              size={12}
+              className="xs:hidden text-dawn group-hover:text-danger transition-colors"
+            />
+            <FaTrash
+              size={14}
+              className="hidden xs:block text-dawn group-hover:text-danger transition-colors"
+            />
+          </Button>
 
           <span className="font-morabbaLight text-[10px] xs:text-xs text-dawn">
             {toPersianTime(notification.createdAt)} -{" "}

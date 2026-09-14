@@ -14,7 +14,7 @@ export default function Orders() {
   const hasOrders = orders.length > 0;
   return (
     <>
-      <div className="flex justify-between items-start flex-wrap gap-3 mb-4">
+      <div className="flex justify-between items-start flex-wrap gap-3">
         <PageHeader />
         {hasOrders ? (
           <SearchBox

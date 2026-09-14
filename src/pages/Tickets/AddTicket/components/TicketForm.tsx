@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../../../../components/common/Button/Button";
 import ImageUploadButton from "./ImageUploadButton";
 import { departments } from "../../../../constants/departments";
+import { FiChevronDown } from "react-icons/fi";
 
 export default function TicketForm() {
   const [title, setTitle] = useState("");
@@ -16,10 +17,10 @@ export default function TicketForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-offWhite rounded-[20px] p-4 xs:p-6 sm:p-8"
+      className="bg-iceBlue rounded-[20px] p-4 xs:p-6 sm:p-8"
       dir="rtl"
     >
-      <h2 className="font-yekanBold text-sm xs:text-base text-balticSea-400 mb-6">
+      <h2 className="font-yekanMedium text-base xs:text-lg text-balticSea-400 mb-6">
         افزودن تیکت جدید
       </h2>
 
@@ -45,7 +46,7 @@ export default function TicketForm() {
             <select
               value={department}
               onChange={(e) => setDepartment(e.target.value)}
-              className="w-full appearance-none bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-primary outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 transition-colors cursor-pointer"
+              className="w-full appearance-none bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-danger outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 transition-colors cursor-pointer"
             >
               {departments.map((dept) => (
                 <option key={dept.id} value={dept.id} disabled={dept.id === ""}>
@@ -55,21 +56,7 @@ export default function TicketForm() {
             </select>
 
             <span className="absolute left-3 xs:left-4 top-1/2 -translate-y-1/2 pointer-events-none text-dawn">
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 4.5L6 7.5L9 4.5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <FiChevronDown size={14} />
             </span>
           </div>
         </div>
@@ -84,13 +71,13 @@ export default function TicketForm() {
           onChange={(e) => setMessage(e.target.value)}
           rows={8}
           placeholder="متن تیکت را وارد کنید ..."
-          className="w-full bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-primary outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 placeholder:text-dawn placeholder:font-yekanRegular transition-colors resize-none"
+          className="w-full bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-danger outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 placeholder:text-dawn placeholder:font-yekanRegular transition-colors resize-none"
         />
       </div>
       <div className="flex items-center flex-wrap gap-3 justify-between">
         <div className="flex flex-wrap items-center gap-3">
           <ImageUploadButton onUpload={() => {}} />
-          <span className="font-yekanMedium text-[10px] xs:text-xs text-balticSea-400">
+          <span className="font-yekanMedium text-[10px] xs:text-xs text-mobster">
             تصویری از مشکل خود دارید؟
           </span>
         </div>

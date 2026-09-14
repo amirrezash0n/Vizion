@@ -10,7 +10,7 @@ export default function UserInfo() {
       <div className="flex items-center gap-2 lg:gap-2.5">
         <img
           className="size-6 lg:size-7 rounded-full object-cover"
-          src="./images/panel-Image.jpg"
+          src="/images/panel-Image.jpg"
           alt="پروفایل کاربر"
         />
         <span className="font-morabbaLight text-xs lg:text-sm hidden sm:block">

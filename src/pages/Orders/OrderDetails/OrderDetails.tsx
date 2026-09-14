@@ -6,6 +6,7 @@ import OrderProduct from "./components/OrderProduct";
 import PaymentSection from "./sections/PaymentSection";
 import AccountSection from "./sections/AccountSection";
 import ContactSection from "./sections/ContactSection";
+import BackButton from "../../../components/common/BackButton/BackButton";
 
 export default function OrderDetails() {
   const { id } = useParams<{ id: string }>();
@@ -26,6 +27,7 @@ export default function OrderDetails() {
 
   return (
     <div>
+      <BackButton />
       <PageHeader />
 
       <div className="bg-offWhite rounded-[20px] p-4 xs:p-6 sm:p-8 max-w-5xl mx-auto mt-4 animate-fadeIn">
