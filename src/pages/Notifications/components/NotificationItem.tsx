@@ -1,7 +1,7 @@
 import { FaCircle } from "react-icons/fa";
 import { Link } from "react-router";
 import type { Notification } from "../../../types/notification";
-import { getRelativeTime } from "../../../utils/dateUtils";
+import { getRelativeTime } from "../../../utils/date.utils";
 
 interface NotificationItemProps {
   notification: Notification;

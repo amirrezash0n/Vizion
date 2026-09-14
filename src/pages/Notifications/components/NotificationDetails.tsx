@@ -1,4 +1,3 @@
-// src/pages/Notifications/NotificationDetails/NotificationDetails.tsx
 import { useNavigate, useParams } from "react-router";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaCircle, FaTrash } from "react-icons/fa";
@@ -6,7 +5,7 @@ import { useState, useEffect } from "react";
 import PageHeader from "../../../components/common/PageHeader/PageHeader";
 import Button from "../../../components/common/Button/Button";
 import { useNotificationStore } from "../../../store/notificationStore";
-import { toPersianDate, toPersianTime } from "../../../utils/dateUtils";
+import { toPersianDate, toPersianTime } from "../../../utils/date.utils";
 
 export default function NotificationDetails() {
   const navigate = useNavigate();
