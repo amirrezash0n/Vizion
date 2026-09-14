@@ -18,8 +18,8 @@ const makeMessage = (
 const singleQuestion = (date: string, text?: string): TicketMessage[] => [
   makeMessage(
     1,
-    "سروش محمدی",
-    "/images/avatar1.png",
+    "علی جاهد",
+    "/images/avatar1.jpg",
     date,
     "question",
     text || loremText,
@@ -30,15 +30,15 @@ const questionAndAnswer = (qDate: string, aDate: string): TicketMessage[] => [
   makeMessage(
     1,
     "سروش محمدی",
-    "/images/panel-Image.jpg",
+    "/images/avatar2.jpg",
     qDate,
     "question",
     loremText,
   ),
   makeMessage(
     2,
-    "آرمین سابیت",
-    "/images/panel-Image.jpg",
+    "نرگس بیات",
+    "/images/avatar3.jpg",
     aDate,
     "answer",
     shortLorem,
