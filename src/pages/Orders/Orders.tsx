@@ -37,15 +37,15 @@ export default function Orders() {
         <PageHeader />
         {hasOrders && (
           <div className="flex items-center gap-2 xs:gap-3">
-            <SearchBox
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
             <StatusFilter
               label="وضعیت پرداخت"
               options={STATUS_OPTIONS_ORDERS}
               value={statusFilter}
               onChange={setStatusFilter}
+            />
+            <SearchBox
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         )}
