@@ -1,4 +1,49 @@
-import type { Ticket } from "../types/ticket";
+import type { Ticket, TicketMessage } from "../types/ticket";
+
+const loremText =
+  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد. کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می‌طلبد.";
+
+const shortLorem =
+  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.";
+
+const makeMessage = (
+  id: number,
+  name: string,
+  avatar: string,
+  date: string,
+  type: "question" | "answer",
+  text: string,
+): TicketMessage => ({ id, name, avatar, date, type, text });
+
+const singleQuestion = (date: string, text?: string): TicketMessage[] => [
+  makeMessage(
+    1,
+    "سروش محمدی",
+    "/images/avatar1.png",
+    date,
+    "question",
+    text || loremText,
+  ),
+];
+
+const questionAndAnswer = (qDate: string, aDate: string): TicketMessage[] => [
+  makeMessage(
+    1,
+    "سروش محمدی",
+    "/images/panel-Image.jpg",
+    qDate,
+    "question",
+    loremText,
+  ),
+  makeMessage(
+    2,
+    "آرمین سابیت",
+    "/images/panel-Image.jpg",
+    aDate,
+    "answer",
+    shortLorem,
+  ),
+];
 
 export const tickets: Ticket[] = [
   {
@@ -9,6 +54,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "مشکل سفارش",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۱ - ۱۰:۱۵", "۱۴۰۴/۰۴/۰۱ - ۱۱:۲۰"),
   },
   {
     id: 2,
@@ -18,6 +64,10 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "پرداخت",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۰۲ - ۱۲:۳۰",
+      "سلام، پرداخت من انجام شده ولی سفارش هنوز تایید نشده. لطفاً بررسی کنید.",
+    ),
   },
   {
     id: 3,
@@ -27,6 +77,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "حساب کاربری",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۳ - ۰۹:۴۵", "۱۴۰۴/۰۴/۰۳ - ۱۰:۳۰"),
   },
   {
     id: 4,
@@ -36,6 +87,7 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "پیگیری",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۴ - ۱۶:۲۰", "۱۴۰۴/۰۴/۰۴ - ۱۷:۰۰"),
   },
   {
     id: 5,
@@ -45,6 +97,10 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "ورود",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۰۵ - ۱۱:۱۰",
+      "نمی‌تونم وارد حساب کاربری‌ام بشم. رمز عبورم رو هم درست وارد می‌کنم.",
+    ),
   },
   {
     id: 6,
@@ -54,6 +110,7 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "بازگشت وجه",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۶ - ۱۴:۵۵", "۱۴۰۴/۰۴/۰۶ - ۱۵:۴۰"),
   },
   {
     id: 7,
@@ -63,6 +120,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "مشکل سفارش",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۷ - ۱۸:۳۰", "۱۴۰۴/۰۴/۰۷ - ۱۹:۱۰"),
   },
   {
     id: 8,
@@ -72,6 +130,7 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "پرداخت",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۸ - ۰۸:۴۰", "۱۴۰۴/۰۴/۰۸ - ۰۹:۳۰"),
   },
   {
     id: 9,
@@ -81,6 +140,10 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "فعال سازی",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۰۹ - ۱۳:۲۵",
+      "محصولی که خریدم هنوز فعال نشده. لطفاً پیگیری کنید.",
+    ),
   },
   {
     id: 10,
@@ -90,6 +153,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "پیگیری",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۰ - ۱۵:۴۵", "۱۴۰۴/۰۴/۱۰ - ۱۶:۳۰"),
   },
   {
     id: 11,
@@ -99,6 +163,10 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "ثبت سفارش",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۱۱ - ۱۰:۲۰",
+      "موقع ثبت سفارش خطا میده و سفارش ثبت نمیشه.",
+    ),
   },
   {
     id: 12,
@@ -108,6 +176,7 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "تراکنش",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۲ - ۱۷:۱۰", "۱۴۰۴/۰۴/۱۲ - ۱۸:۰۰"),
   },
   {
     id: 13,
@@ -117,6 +186,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "فعال سازی",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۳ - ۰۹:۳۰", "۱۴۰۴/۰۴/۱۳ - ۱۰:۴۰"),
   },
   {
     id: 14,
@@ -126,6 +196,10 @@ export const tickets: Ticket[] = [
     department: "حساب کاربری",
     type: "اطلاعات حساب",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۱۴ - ۱۲:۴۰",
+      "می‌خوام ایمیل حساب کاربری‌ام رو تغییر بدم.",
+    ),
   },
   {
     id: 15,
@@ -135,6 +209,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "مشکل فنی",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۵ - ۱۴:۲۰", "۱۴۰۴/۰۴/۱۵ - ۱۵:۱۰"),
   },
   {
     id: 16,
@@ -144,6 +219,7 @@ export const tickets: Ticket[] = [
     department: "فروش",
     type: "تمدید",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۶ - ۱۶:۱۵", "۱۴۰۴/۰۴/۱۶ - ۱۷:۰۰"),
   },
   {
     id: 17,
@@ -153,6 +229,10 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "پرداخت",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۱۷ - ۱۱:۵۰",
+      "پرداخت آنلاین من ناموفق بود ولی مبلغ کم شد.",
+    ),
   },
   {
     id: 18,
@@ -162,6 +242,7 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "پیگیری",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۸ - ۱۳:۱۰", "۱۴۰۴/۰۴/۱۸ - ۱۴:۰۰"),
   },
   {
     id: 19,
@@ -171,6 +252,10 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "تحویل",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۱۹ - ۱۵:۳۰",
+      "محصول رو خریدم ولی هنوز دریافت نکردم.",
+    ),
   },
   {
     id: 20,
@@ -180,6 +265,7 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "لغو سفارش",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۰ - ۱۰:۴۵", "۱۴۰۴/۰۴/۲۰ - ۱۱:۳۰"),
   },
   {
     id: 21,
@@ -189,6 +275,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "حساب کاربری",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۱ - ۱۷:۲۵", "۱۴۰۴/۰۴/۲۱ - ۱۸:۱۰"),
   },
   {
     id: 22,
@@ -198,6 +285,10 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "بازگشت وجه",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۲۲ - ۰۹:۱۵",
+      "درخواست بازگشت وجه من هنوز بررسی نشده.",
+    ),
   },
   {
     id: 23,
@@ -207,6 +298,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "فعال سازی",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۳ - ۱۲:۵۵", "۱۴۰۴/۰۴/۲۳ - ۱۳:۴۰"),
   },
   {
     id: 24,
@@ -216,6 +308,7 @@ export const tickets: Ticket[] = [
     department: "حساب کاربری",
     type: "امنیت",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۴ - ۱۴:۳۳", "۱۴۰۴/۰۴/۲۴ - ۱۵:۱۵"),
   },
   {
     id: 25,
@@ -225,6 +318,10 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "پرداخت",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۲۵ - ۱۶:۴۰",
+      "پرداخت من دوبار کم شد ولی سفارش ثبت نشد.",
+    ),
   },
   {
     id: 26,
@@ -234,6 +331,7 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "پیگیری",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۶ - ۱۰:۱۰", "۱۴۰۴/۰۴/۲۶ - ۱۱:۰۰"),
   },
   {
     id: 27,
@@ -243,6 +341,10 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "تحویل",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۴/۰۴/۲۷ - ۱۳:۲۰",
+      "لینک محصول برام ارسال نشده.",
+    ),
   },
   {
     id: 28,
@@ -252,6 +354,7 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "استرداد",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۸ - ۱۵:۵۰", "۱۴۰۴/۰۴/۲۸ - ۱۶:۳۰"),
   },
   {
     id: 29,
@@ -261,6 +364,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "ورود",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۹ - ۱۱:۳۵", "۱۴۰۴/۰۴/۲۹ - ۱۲:۲۰"),
   },
   {
     id: 30,
@@ -270,6 +374,7 @@ export const tickets: Ticket[] = [
     department: "فروش",
     type: "محصول",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۴/۰۴/۳۰ - ۱۸:۱۰", "۱۴۰۴/۰۴/۳۰ - ۱۹:۰۰"),
   },
   {
     id: 31,
@@ -279,6 +384,10 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "تراکنش",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۵/۰۵/۰۱ - ۰۹:۴۰",
+      "تراکنش من ثبت نشده ولی مبلغ کم شد.",
+    ),
   },
   {
     id: 32,
@@ -288,6 +397,7 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "بررسی سفارش",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۲ - ۱۲:۱۰", "۱۴۰۵/۰۵/۰۲ - ۱۳:۰۰"),
   },
   {
     id: 33,
@@ -297,6 +407,7 @@ export const tickets: Ticket[] = [
     department: "حساب کاربری",
     type: "اطلاعات حساب",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۳ - ۱۴:۴۵", "۱۴۰۵/۰۵/۰۳ - ۱۵:۳۰"),
   },
   {
     id: 34,
@@ -306,6 +417,10 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "تحویل",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۵/۰۵/۰۴ - ۱۶:۳۰",
+      "محصولی که خریدم رو دریافت نکردم.",
+    ),
   },
   {
     id: 35,
@@ -315,6 +430,7 @@ export const tickets: Ticket[] = [
     department: "فروش",
     type: "تمدید",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۵ - ۱۰:۲۵", "۱۴۰۵/۰۵/۰۵ - ۱۱:۱۰"),
   },
   {
     id: 36,
@@ -324,6 +440,10 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "مشکل سفارش",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۵/۰۵/۰۶ - ۱۳:۵۵",
+      "سفارش اخیرم با مشکل مواجه شده.",
+    ),
   },
   {
     id: 37,
@@ -333,6 +453,7 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "پیگیری",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۷ - ۱۵:۱۵", "۱۴۰۵/۰۵/۰۷ - ۱۶:۰۰"),
   },
   {
     id: 38,
@@ -342,6 +463,10 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "پرداخت",
     status: "pending",
+    messages: singleQuestion(
+      "۱۴۰۵/۰۵/۰۸ - ۱۱:۴۰",
+      "پرداخت اینترنتی من ناموفق بود.",
+    ),
   },
   {
     id: 39,
@@ -351,6 +476,7 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "لغو سفارش",
     status: "closed",
+    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۹ - ۱۷:۲۰", "۱۴۰۵/۰۵/۰۹ - ۱۸:۱۰"),
   },
   {
     id: 40,
@@ -360,5 +486,6 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "فعال سازی",
     status: "answered",
+    messages: questionAndAnswer("۱۴۰۵/۰۵/۱۰ - ۱۹:۰۰", "۱۴۰۵/۰۵/۱۰ - ۱۹:۴۵"),
   },
 ];

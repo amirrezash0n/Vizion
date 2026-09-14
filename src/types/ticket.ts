@@ -1,4 +1,14 @@
 export type TicketStatus = "answered" | "pending" | "closed";
+export type MessageType = "question" | "answer";
+
+export interface TicketMessage {
+  id: number;
+  name: string;
+  avatar: string;
+  date: string;
+  type: MessageType;
+  text: string;
+}
 
 export interface Ticket {
   id: number;
@@ -8,4 +18,5 @@ export interface Ticket {
   department: string;
   type: string;
   status: TicketStatus;
+  messages: TicketMessage[];
 }
