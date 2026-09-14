@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Button from "../../../../components/common/Button/Button";
 import ImageUploadButton from "./ImageUploadButton";
-import { departments } from "../../../../constants/departments";
 import { FiChevronDown } from "react-icons/fi";
+import { DEPARTMENTS } from "../../../../constants/departments";
 
 export default function TicketForm() {
   const [title, setTitle] = useState("");
@@ -48,7 +48,7 @@ export default function TicketForm() {
               onChange={(e) => setDepartment(e.target.value)}
               className="w-full appearance-none bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-danger outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 transition-colors cursor-pointer"
             >
-              {departments.map((dept) => (
+              {DEPARTMENTS.map((dept) => (
                 <option key={dept.id} value={dept.id} disabled={dept.id === ""}>
                   {dept.label}
                 </option>

@@ -3,7 +3,7 @@ import { BsCheckLg } from "react-icons/bs";
 import type { Stat } from "../types";
 import { CiWallet } from "react-icons/ci";
 
-const stats: Stat[] = [
+export const STATS: Stat[] = [
   {
     id: 1,
     title: "سفارشات تکمیل شده",
@@ -37,5 +37,3 @@ const stats: Stat[] = [
     href: "/wallet",
   },
 ];
-
-export default stats;

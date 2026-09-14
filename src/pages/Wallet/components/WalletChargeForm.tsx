@@ -5,7 +5,7 @@ import {
   toEnglishDigits,
   formatPersianNumber,
 } from "../../../utils/number.utils";
-import { banks } from "../../../constants/banks";
+import { BANKS } from "../../../constants/banks";
 
 export default function WalletChargeForm() {
   const [amount, setAmount] = useState("");
@@ -60,7 +60,7 @@ export default function WalletChargeForm() {
           بانک مورد نظر جهت پرداخت
         </span>
         <div className="space-y-2.5">
-          {banks.map((bank) => (
+          {BANKS.map((bank) => (
             <BankOption
               key={bank.id}
               id={bank.id}

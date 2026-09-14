@@ -5,13 +5,13 @@ import { LuUserRound, LuTicketSlash } from "react-icons/lu";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
 import type { IconType } from "react-icons";
-interface NavItems {
+interface NavItem {
   name: string;
   path: string;
   icon: IconType;
 }
 
-export const NAV_ITEMS: NavItems[] = [
+export const NAV_ITEMS: NavItem[] = [
   { name: "داشبورد کاربری", path: "/", icon: TbDashboard },
   { name: "سفارشات من", path: "/orders", icon: RiFileList2Line },
   { name: "کیف پول من", path: "/wallet", icon: CiWallet },

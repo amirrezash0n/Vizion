@@ -1,3 +1,5 @@
+import type { IconType } from "react-icons";
+
 export interface NavItem {
   path: string;
   name: string;
@@ -16,7 +18,7 @@ export interface Stat {
   id: number;
   title: string;
   value: string;
-  icon: React.ComponentType<{ size?: number }>;
+  icon: IconType;
   color: string;
   href: string;
 }
