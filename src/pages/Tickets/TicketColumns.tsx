@@ -1,8 +1,8 @@
 import { RiArrowLeftSLine } from "react-icons/ri";
 import type { TableColumn } from "../../types/table";
 import type { Ticket } from "../../types/ticket";
-import Button from "../../components/common/Button/Button";
 import TicketStatusBadge from "../../components/ui/TicketStatusBadge";
+import { Link } from "react-router";
 
 export const ticketColumns: TableColumn<Ticket>[] = [
   {
@@ -58,13 +58,14 @@ export const ticketColumns: TableColumn<Ticket>[] = [
   {
     key: "id",
     title: "عملیات",
-    render: () => (
-      <Button variant="link" size="link" className="gap-0.5 font-yekanMedium">
+    render: (ticket) => (
+      <Link
+        to={`/tickets/${ticket.id}`}
+        className="flex items-center gap-0.5 whitespace-nowrap text-sm text-primary font-yekanMedium transition-opacity hover:opacity-80"
+      >
         <span>مشاهده</span>
-        <span className="flex items-center">
-          <RiArrowLeftSLine size={16} />
-        </span>
-      </Button>
+        <RiArrowLeftSLine size={16} />
+      </Link>
     ),
   },
 ];

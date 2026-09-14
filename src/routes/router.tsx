@@ -15,6 +15,8 @@ import AddTicket from "../pages/Tickets/AddTicket/AddTicket";
 import NotificationDetails from "../pages/Notifications/components/NotificationDetails";
 import OrderDetails from "../pages/Orders/OrderDetails/OrderDetails";
 import type { RouteHandle } from "./router.types";
+import TicketDetails from "../pages/Tickets/TicketDetails/TicketDetails";
+import { PAGE_TITLES } from "../constants/pageTitles";
 
 const router = createBrowserRouter([
   {
@@ -28,47 +30,54 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
-            handle: { title: "داشبورد کاربری" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.DASHBOARD } satisfies RouteHandle,
           },
           {
             path: "orders",
             element: <Orders />,
-            handle: { title: "سفارشات من" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.ORDERS } satisfies RouteHandle,
           },
           {
             path: "orders/:id",
             element: <OrderDetails />,
-            handle: { title: "جزئیات سفارش" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.ORDER_DETAILS } satisfies RouteHandle,
           },
           {
             path: "wallet",
             element: <Wallet />,
-            handle: { title: "کیف پول من" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.WALLET } satisfies RouteHandle,
           },
           {
             path: "tickets",
             element: <Tickets />,
-            handle: { title: "تیکت ها" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.TICKETS } satisfies RouteHandle,
+          },
+          {
+            path: "tickets/:id",
+            element: <TicketDetails />,
+            handle: { title: PAGE_TITLES.TICKET_DETAILS },
           },
           {
             path: "tickets/addTicket",
             element: <AddTicket />,
-            handle: { title: "افزودن تیکت جدید" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.ADD_TICKET } satisfies RouteHandle,
           },
           {
             path: "profile",
             element: <Profile />,
-            handle: { title: "اطلاعات حساب کاربری" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.PROFILE } satisfies RouteHandle,
           },
           {
             path: "notifications",
             element: <Notifications />,
-            handle: { title: "اعلانات" } satisfies RouteHandle,
+            handle: { title: PAGE_TITLES.NOTIFICATIONS } satisfies RouteHandle,
           },
           {
             path: "notifications/:id",
             element: <NotificationDetails />,
-            handle: { title: "جزئیات اعلان" } satisfies RouteHandle,
+            handle: {
+              title: PAGE_TITLES.NOTIFICATION_DETAILS,
+            } satisfies RouteHandle,
           },
         ],
       },
