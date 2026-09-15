@@ -38,37 +38,37 @@
 
 ### 🏠 داشبورد کاربری
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](./screenshots/dashboard.png)
 
 _نمای کلی داشبورد با کارت‌های آماری، نمودار فروش هفتگی و وضعیت سفارشات_
 
 ### 📦 سفارشات من
 
-![Orders](screenshots/orders.png)
+![Orders](./screenshots/orders.png)
 
 _مدیریت سفارشات با قابلیت جستجو، فیلتر بر اساس وضعیت پرداخت و صفحه‌بندی هوشمند_
 
 ### 💰 کیف پول من
 
-![Wallet](screenshots/wallet.png)
+![Wallet](./screenshots/wallet.png)
 
 _مدیریت موجودی، شارژ کیف پول و مشاهده تراکنش‌های اخیر_
 
 ### 🎫 تیکت‌ها
 
-![Tickets](screenshots/tickets.png)
+![Tickets](./screenshots/tickets.png)
 
 _سیستم تیکتینگ کامل با فیلتر وضعیت، مشاهده جزئیات و امکان پاسخ‌دهی_
 
 ### 🔔 اعلان‌ات
 
-![Notifications](screenshots/notifications.png)
+![Notifications](./screenshots/notifications.png)
 
 _نمایش اعلان‌ها با گروه‌بندی جدید/خوانده‌شده و نمایش زمان نسبی_
 
 ### 👤 اطلاعات حساب کاربری
 
-![Profile](screenshots/profile.png)
+![Profile](./screenshots/profile.png)
 
 _مدیریت اطلاعات پروفایل و تغییر رمز عبور_
 
