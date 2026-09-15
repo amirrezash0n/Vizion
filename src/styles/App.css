@@ -33,6 +33,11 @@
     height: 0;
 }
 
+*::-webkit-scrollbar-track {
+    margin: 12px 0;
+    background: transparent;
+}
+
 body {
     font-family: "YekanBakh-Medium";
     font-size: 16px;
