@@ -36,7 +36,7 @@ export default function Orders() {
       <div className="flex justify-between items-start flex-wrap gap-3 mb-4">
         <PageHeader />
         {hasOrders && (
-          <div className="flex items-center gap-2 xs:gap-3">
+          <div className="flex items-center gap-2 xs:gap-3 [flex-wrap:balance]">
             <StatusFilter
               label="وضعیت پرداخت"
               options={STATUS_OPTIONS_ORDERS}
