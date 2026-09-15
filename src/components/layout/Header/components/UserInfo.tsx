@@ -1,7 +1,9 @@
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink } from "react-router";
+import useAuthStore from "../../../../store/authStore";
 
 export default function UserInfo() {
+  const user = useAuthStore((state) => state.user);
   return (
     <NavLink
       to="/profile"
@@ -10,11 +12,11 @@ export default function UserInfo() {
       <div className="flex items-center gap-2 lg:gap-2.5">
         <img
           className="size-6 lg:size-7 rounded-full object-cover"
-          src="/images/panel-Image.jpg"
-          alt="پروفایل کاربر"
+          src={user?.avatar}
+          alt={user?.fullName}
         />
         <span className="font-morabbaLight text-xs lg:text-sm hidden sm:block">
-          امیررضا شورورزی
+          {user?.fullName}
         </span>
       </div>
       <IoIosArrowBack size={18} className="text-gray-400 hidden sm:block" />

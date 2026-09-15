@@ -10,8 +10,9 @@ export default function Login() {
     login(
       {
         id: 1,
-        name: "Amir",
-        email: "amir@example.com",
+        fullName: "امیررضا شورورزی",
+        email: "shourvarziamirreza@gmail.com",
+        avatar: "/images/panel-Image.jpg",
       },
       "fake-token",
     );
