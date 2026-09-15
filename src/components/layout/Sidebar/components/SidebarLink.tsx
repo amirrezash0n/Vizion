@@ -21,13 +21,11 @@ export default function SidebarLink({ item, onNavigate }: SidebarLinkProps) {
     >
       {({ isActive }) => (
         <>
-          <span className="flex items-center">
-            <item.icon
-              className={`size-5 transition-colors duration-200 ${
-                isActive ? "text-primary" : "text-white/50"
-              }`}
-            />
-          </span>
+          <item.icon
+            className={`size-5 transition-colors duration-200 ${
+              isActive ? "text-primary" : "text-white/50"
+            }`}
+          />
           <span className="text-sm lg:text-base leading-none">{item.name}</span>
         </>
       )}
