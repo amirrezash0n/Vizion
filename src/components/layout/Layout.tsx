@@ -1,14 +1,11 @@
-import { useState } from "react";
 import { Outlet } from "react-router";
 import Header from "./Header/Header";
 import SidebarMobile from "./Sidebar/components/SidebarMobile";
 import SidebarDesktop from "./Sidebar/components/SidebarDesktop";
+import useSidebar from "../../hooks/useSidebar";
 
 export default function Layout() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const closeSidebar = () => setIsSidebarOpen(false);
-  const openSidebar = () => setIsSidebarOpen(true);
+  const { isSidebarOpen, closeSidebar, openSidebar } = useSidebar();
 
   return (
     <div className="flex h-screen text-white bg-balticSea-300">
