@@ -13,7 +13,11 @@
 
 ## 🔗 Live Demo
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Vizion-FD295C?style=for-the-badge)](https://vizion.vercel.app)
+<div align="center">
+
+**🚀 You can see the live demo here:**
+
+[![Live Demo](https://img.shields.io/badge/Visit-Vizion-FD295C?style=for-the-badge&logo=vercel&logoColor=white)](https://vizion-pink.vercel.app)
 
 </div>
 
