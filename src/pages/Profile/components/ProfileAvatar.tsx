@@ -12,7 +12,7 @@ export default function ProfileAvatar({
         <img
           src={avatar}
           alt={name}
-          className="w-20 h-20 xs:w-24 xs:h-24 rounded-full object-cover border-2 border-white shadow-md"
+          className="size-16 xs:w-20 xs:h-20 rounded-full object-cover border-2 border-white shadow-md"
         />
         <button
           type="button"

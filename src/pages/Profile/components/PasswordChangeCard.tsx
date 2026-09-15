@@ -25,7 +25,7 @@ export default function PasswordChangeCard() {
   };
 
   return (
-    <div className="bg-offWhite rounded-[20px] p-4 xs:p-6 sm:p-8">
+    <div className="bg-offWhite rounded-[20px] p-4 xs:p-5 sm:p-6">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="space-y-4 xs:space-y-5"

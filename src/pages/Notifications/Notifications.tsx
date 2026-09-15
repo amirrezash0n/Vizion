@@ -19,10 +19,10 @@ export default function Notifications() {
     <div>
       <PageHeader />
 
-      <div className="bg-offWhite rounded-[20px] p-4 xs:p-6 sm:p-8 w-full md:w-151 mx-auto mt-12 overflow-hidden">
+      <div className="bg-offWhite rounded-[20px] p-4 xs:p-5 sm:p-6 w-full max-w-md mx-auto mt-8 overflow-hidden animate-fadeIn">
         <div className="flex items-center justify-between mb-3 xs:mb-5">
           <div className="relative flex justify-start w-32.5 h-11.75">
-            <div className="absolute -right-6.5 xs:-right-9 sm:-right-12 flex items-center font-morabbaBold gap-1.5 bg-primary text-white px-3.5 xs:px-5.5 py-2 xs:py-2.5 rounded-tl-full rounded-bl-full">
+            <div className="absolute -right-6 xs:-right-8 sm:-right-10 flex items-center font-morabbaBold gap-1.5 bg-primary text-white px-3.5 xs:px-5.5 py-2 xs:py-2.5 rounded-tl-full rounded-bl-full">
               <IoMdNotificationsOutline size={18} className="xs:hidden" />
               <IoMdNotificationsOutline
                 size={20}
