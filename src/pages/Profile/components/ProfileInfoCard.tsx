@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import FormInput from "./FormInput";
 import ProfileAvatar from "./ProfileAvatar";
 import Button from "../../../components/common/Button/Button";
+import { PROFILE_VALIDATION } from "../schemas/profileValidation";
 
 interface ProfileFormData {
   fullName: string;
@@ -52,26 +53,14 @@ export default function ProfileInfoCard({
           label="نام و نام خانوادگی"
           placeholder="نام خود را وارد کنید ..."
           error={errors.fullName?.message}
-          {...register("fullName", {
-            required: "نام و نام خانوادگی الزامی است",
-            minLength: {
-              value: 3,
-              message: "نام باید حداقل ۳ کاراکتر باشد",
-            },
-          })}
+          {...register("fullName", PROFILE_VALIDATION.fullName)}
         />
 
         <FormInput
           label="شماره تماس"
           placeholder="شماره تماس خود را وارد کنید ..."
           error={errors.phone?.message}
-          {...register("phone", {
-            required: "شماره تماس الزامی است",
-            pattern: {
-              value: /^[0-9]{11}$/,
-              message: "شماره تماس باید ۱۱ رقم باشد",
-            },
-          })}
+          {...register("phone", PROFILE_VALIDATION.phone)}
         />
 
         <FormInput
@@ -79,13 +68,7 @@ export default function ProfileInfoCard({
           placeholder="ایمیل خود را وارد کنید ..."
           type="email"
           error={errors.email?.message}
-          {...register("email", {
-            required: "ایمیل الزامی است",
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: "فرمت ایمیل صحیح نیست",
-            },
-          })}
+          {...register("email", PROFILE_VALIDATION.email)}
         />
 
         <div className="flex justify-start pt-2" dir="rtl">
