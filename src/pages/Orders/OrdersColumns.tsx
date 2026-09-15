@@ -1,8 +1,12 @@
 import type { TableColumn } from "../../types/table";
 import type { Order } from "../../types/order";
-import OrderStatusBadge from "../../components/ui/OrderStatusBadge";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { Link } from "react-router";
+import StatusBadge from "../../components/ui/StatusBadge/StatusBadge.tsx";
+import {
+  ORDER_FALLBACK_STATUS,
+  ORDER_STATUS_CONFIG,
+} from "../../constants/statusConfig";
 
 export const orderColumns: TableColumn<Order>[] = [
   {
@@ -61,7 +65,13 @@ export const orderColumns: TableColumn<Order>[] = [
   {
     key: "status",
     title: "وضعیت پرداخت",
-    render: (order) => <OrderStatusBadge status={order.status} />,
+    render: (order) => (
+      <StatusBadge
+        status={order.status}
+        statusConfig={ORDER_STATUS_CONFIG}
+        fallbackStatus={ORDER_FALLBACK_STATUS}
+      />
+    ),
   },
   {
     key: "id",

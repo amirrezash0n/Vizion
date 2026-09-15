@@ -27,7 +27,13 @@ export interface OrderStatusOptions {
   value: "all" | "completed" | "pending" | "cancelled";
   label: string;
 }
+
 export interface TicketStatusOptions {
   value: "all" | "answered" | "pending" | "closed";
   label: string;
+}
+
+export interface StatusConfig {
+  label: string;
+  className: string;
 }

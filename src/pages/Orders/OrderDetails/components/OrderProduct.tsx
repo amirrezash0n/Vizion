@@ -1,4 +1,8 @@
-import OrderStatusBadge from "../../../../components/ui/OrderStatusBadge";
+import StatusBadge from "../../../../components/ui/StatusBadge/StatusBadge";
+import {
+  ORDER_FALLBACK_STATUS,
+  ORDER_STATUS_CONFIG,
+} from "../../../../constants/statusConfig";
 import type { Order } from "../../../../types/order";
 
 interface OrderProductProps {
@@ -31,7 +35,11 @@ export default function OrderProduct({ order }: OrderProductProps) {
         </div>
 
         <div className="flex items-center gap-3">
-          <OrderStatusBadge status={order.status} />
+          <StatusBadge
+            status={order.status}
+            statusConfig={ORDER_STATUS_CONFIG}
+            fallbackStatus={ORDER_FALLBACK_STATUS}
+          />
           <span className="font-yekanBold text-base text-primary">
             {order.finalPrice.toLocaleString("fa-IR")}
             <span className="mr-1 text-[10px] text-dawn">تومان</span>

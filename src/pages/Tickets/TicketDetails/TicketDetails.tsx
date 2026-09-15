@@ -2,11 +2,15 @@ import { useParams } from "react-router";
 import { FiMessageSquare } from "react-icons/fi";
 import PageHeader from "../../../components/common/PageHeader/PageHeader";
 import NoDataState from "../../../components/common/EmptyState/NoDataState";
-import TicketStatusBadge from "../../../components/ui/TicketStatusBadge";
 import TicketMessage from "./components/TicketMessage";
 import TicketReplyForm from "./components/TicketReplyForm";
 import { tickets } from "../../../data/tickets";
 import BackButton from "../../../components/common/BackButton/BackButton";
+import StatusBadge from "../../../components/ui/StatusBadge/StatusBadge";
+import {
+  TICKET_FALLBACK_STATUS,
+  TICKET_STATUS_CONFIG,
+} from "../../../constants/statusConfig";
 
 export default function TicketDetails() {
   const { id } = useParams<{ id: string }>();
@@ -76,7 +80,11 @@ export default function TicketDetails() {
 
         <div className="mt-6 xs:mt-8 pt-6 border-t border-dashed border-cloud">
           <div className="flex items-center gap-2 mb-4" dir="rtl">
-            <TicketStatusBadge status={ticket.status} />
+            <StatusBadge
+              status={ticket.status}
+              statusConfig={TICKET_STATUS_CONFIG}
+              fallbackStatus={TICKET_FALLBACK_STATUS}
+            />
             <span className="font-morabbaMedium text-[10px] xs:text-xs text-dawn">
               {getStatusMessage()}
             </span>

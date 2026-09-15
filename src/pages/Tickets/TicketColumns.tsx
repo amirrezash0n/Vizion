@@ -1,8 +1,12 @@
 import { RiArrowLeftSLine } from "react-icons/ri";
 import type { TableColumn } from "../../types/table";
 import type { Ticket } from "../../types/ticket";
-import TicketStatusBadge from "../../components/ui/TicketStatusBadge";
 import { Link } from "react-router";
+import StatusBadge from "../../components/ui/StatusBadge/StatusBadge.tsx";
+import {
+  TICKET_FALLBACK_STATUS,
+  TICKET_STATUS_CONFIG,
+} from "../../constants/statusConfig";
 
 export const ticketColumns: TableColumn<Ticket>[] = [
   {
@@ -53,7 +57,13 @@ export const ticketColumns: TableColumn<Ticket>[] = [
   {
     key: "status",
     title: "وضعیت تیکت",
-    render: (ticket) => <TicketStatusBadge status={ticket.status} />,
+    render: (ticket) => (
+      <StatusBadge
+        status={ticket.status}
+        statusConfig={TICKET_STATUS_CONFIG}
+        fallbackStatus={TICKET_FALLBACK_STATUS}
+      />
+    ),
   },
   {
     key: "id",
