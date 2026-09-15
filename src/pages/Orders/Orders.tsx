@@ -8,10 +8,15 @@ import StatusFilter from "../../components/common/Filter/StatusFilter";
 import { orders } from "../../data/orders";
 import { orderColumns } from "./OrdersColumns";
 import { STATUS_OPTIONS_ORDERS } from "../../constants/orderStatusOptions";
+import { useSearchParams } from "react-router";
 
 export default function Orders() {
+  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState(
+    () => searchParams.get("status") || "all",
+  );
+
   const filteredOrders = useMemo(() => {
     let result = orders;
 

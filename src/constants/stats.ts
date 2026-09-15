@@ -10,7 +10,7 @@ export const STATS: Stat[] = [
     value: "21",
     icon: BsCheckLg,
     color: "bg-success",
-    href: "/orders",
+    href: "/orders?status=completed",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ export const STATS: Stat[] = [
     value: "10",
     icon: LuLoader,
     color: "bg-warning",
-    href: "/orders",
+    href: "/orders?status=pending",
   },
   {
     id: 3,
