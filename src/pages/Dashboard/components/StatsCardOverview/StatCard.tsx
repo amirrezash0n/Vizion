@@ -21,7 +21,7 @@ export default function StatCard({ stat }: StatCardProps) {
           </span>
         </div>
         <p className="font-yekanHeavy text-2xl lg:text-3xl xl:text-4xl text-right mt-2 w-full text-balticSea-400">
-          {stat.value}
+          {stat.value.toLocaleString("fa-IR")}
         </p>
         <Link
           className="flex items-center justify-between w-full"

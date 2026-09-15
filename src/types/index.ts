@@ -17,7 +17,7 @@ export interface HeaderProps {
 export interface Stat {
   id: number;
   title: string;
-  value: string;
+  value: number;
   icon: IconType;
   color: string;
   href: string;

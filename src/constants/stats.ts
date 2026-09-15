@@ -7,7 +7,7 @@ export const STATS: Stat[] = [
   {
     id: 1,
     title: "سفارشات تکمیل شده",
-    value: "21",
+    value: 21,
     icon: BsCheckLg,
     color: "bg-success",
     href: "/orders?status=completed",
@@ -15,7 +15,7 @@ export const STATS: Stat[] = [
   {
     id: 2,
     title: "سفارشات در حال انجام",
-    value: "10",
+    value: 10,
     icon: LuLoader,
     color: "bg-warning",
     href: "/orders?status=pending",
@@ -23,7 +23,7 @@ export const STATS: Stat[] = [
   {
     id: 3,
     title: "تیکت های شما",
-    value: "5",
+    value: 5,
     icon: LuTicketSlash,
     color: "bg-danger",
     href: "/tickets",
@@ -31,7 +31,7 @@ export const STATS: Stat[] = [
   {
     id: 4,
     title: "کیف پول شما",
-    value: "2,500,000",
+    value: 2500000,
     icon: CiWallet,
     color: "bg-primary",
     href: "/wallet",
