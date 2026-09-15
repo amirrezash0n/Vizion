@@ -1,8 +1,11 @@
 import { NAV_ITEMS } from "../../../constants/navItems";
-import type { SidebarProps } from "../../../types";
 import SidebarLink from "./components/SidebarLink";
 import SidebarTitle from "./components/SidebarTitle";
 import SupportCard from "./components/SupportCard";
+
+export interface SidebarProps {
+  onNavigate?: () => void;
+}
 
 export default function Sidebar({ onNavigate }: SidebarProps) {
   return (

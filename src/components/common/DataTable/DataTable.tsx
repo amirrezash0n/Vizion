@@ -1,6 +1,9 @@
+// src/components/common/DataTable/DataTable.tsx
 import { useState } from "react";
 import Pagination from "../Pagination/Pagination";
 import type { TableColumn } from "../../../types/table";
+import DataTableHead from "./components/DataTableHead";
+import DataTableBody from "./components/DataTableBody";
 
 interface DataTableProps<T> {
   data: T[];
@@ -8,6 +11,7 @@ interface DataTableProps<T> {
   pageSize?: number;
   pagination?: boolean;
   dashboard?: boolean;
+  getRowId?: (row: T) => string | number;
 }
 
 export default function DataTable<T>({
@@ -16,56 +20,35 @@ export default function DataTable<T>({
   pageSize = 5,
   pagination = true,
   dashboard = false,
+  getRowId,
 }: DataTableProps<T>) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(data.length / pageSize);
 
-  const startIndex = (currentPage - 1) * pageSize;
+  const safeCurrentPage = Math.min(currentPage, totalPages) || 1;
+  const startIndex = (safeCurrentPage - 1) * pageSize;
 
   const paginatedData = pagination
     ? data.slice(startIndex, startIndex + pageSize)
     : data;
 
   return (
-    <div className={`w-full ${dashboard ? "" : "xs:h-150.25"}`}>
-      <div className="w-full h-full overflow-x-auto rounded-2xl">
+    <div className={`w-full ${dashboard ? "" : "h-150.25"}`}>
+      <div className="size-full overflow-x-auto rounded-2xl scrollbar-hide-mobile">
         <table className="w-full min-w-225 border-collapse">
-          <thead>
-            <tr>
-              {columns.map((column) => (
-                <th
-                  key={String(column.key)}
-                  className="whitespace-nowrap bg-offWhite px-6 py-4 text-right font-morabbaMedium font-bold text-balticSea-400"
-                >
-                  {column.title}
-                </th>
-              ))}
-            </tr>
-          </thead>
-
-          <tbody>
-            {paginatedData.map((row, rowIndex) => (
-              <tr key={rowIndex} className="border-t border-gray-100 bg-white">
-                {columns.map((column) => (
-                  <td
-                    key={String(column.key)}
-                    className="px-6 py-4 text-right text-sm font-yekanMedium text-balticSea-400"
-                  >
-                    {column.render
-                      ? column.render(row)
-                      : String(row[column.key])}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
+          <DataTableHead columns={columns} />
+          <DataTableBody
+            paginatedData={paginatedData}
+            columns={columns}
+            getRowId={getRowId}
+          />
         </table>
       </div>
 
       {pagination && (
         <Pagination
-          currentPage={currentPage}
+          currentPage={safeCurrentPage}
           totalPages={totalPages}
           onPageChange={setCurrentPage}
         />

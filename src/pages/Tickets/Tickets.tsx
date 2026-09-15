@@ -51,6 +51,7 @@ export default function Tickets() {
           data={filteredTickets}
           columns={ticketColumns}
           pageSize={8}
+          getRowId={(ticket) => ticket.id}
         />
       )}
     </>

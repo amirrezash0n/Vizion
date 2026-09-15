@@ -5,15 +5,6 @@ export interface NavItem {
   name: string;
   icon: React.ComponentType<{ className?: string }>;
 }
-
-export interface SidebarProps {
-  onNavigate?: () => void;
-}
-
-export interface SidebarCloseButtonProps {
-  onClose: () => void;
-}
-
 export interface HeaderProps {
   onMenuClick: () => void;
 }

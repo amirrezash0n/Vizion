@@ -8,31 +8,19 @@ import StatusFilter from "../../components/common/Filter/StatusFilter";
 import { orders } from "../../data/orders";
 import { orderColumns } from "./OrdersColumns";
 import { STATUS_OPTIONS_ORDERS } from "../../constants/orderStatusOptions";
-import { useSearchParams } from "react-router";
+import { useSearchParamState } from "../../hooks/useSearchParamState";
+import { useSearch } from "../../hooks/useSearch";
 
 export default function Orders() {
-  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState(
-    () => searchParams.get("status") || "all",
-  );
+  const [statusFilter, setStatusFilter] = useSearchParamState("status", "all");
+
+  const searchedOrders = useSearch(orders, search, "title");
 
   const filteredOrders = useMemo(() => {
-    let result = orders;
-
-    if (search.trim()) {
-      const searchValue = search.trim().toLowerCase();
-      result = result.filter((order) =>
-        order.title.toLowerCase().includes(searchValue),
-      );
-    }
-
-    if (statusFilter !== "all") {
-      result = result.filter((order) => order.status === statusFilter);
-    }
-
-    return result;
-  }, [search, statusFilter]);
+    if (statusFilter === "all") return searchedOrders;
+    return searchedOrders.filter((order) => order.status === statusFilter);
+  }, [searchedOrders, statusFilter]);
 
   const hasOrders = orders.length > 0;
 
@@ -66,6 +54,7 @@ export default function Orders() {
           data={filteredOrders}
           columns={orderColumns}
           pageSize={7}
+          getRowId={(order) => order.id}
         />
       )}
     </>

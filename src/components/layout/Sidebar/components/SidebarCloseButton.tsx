@@ -1,5 +1,8 @@
 import { FiX } from "react-icons/fi";
-import type { SidebarCloseButtonProps } from "../../../../types";
+
+export interface SidebarCloseButtonProps {
+  onClose: () => void;
+}
 
 export default function SidebarCloseButton({
   onClose,

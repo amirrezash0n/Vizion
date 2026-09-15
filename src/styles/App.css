@@ -38,6 +38,25 @@
     background: transparent;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (max-width: 640px) {
+    .scrollbar-hide-mobile::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar-hide-mobile {
+        scrollbar-width: none;
+    }
+}
+
 body {
     font-family: "YekanBakh-Medium";
     font-size: 16px;
