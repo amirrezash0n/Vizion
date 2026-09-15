@@ -10,6 +10,10 @@ export interface SidebarProps {
   onNavigate?: () => void;
 }
 
+export interface SidebarCloseButtonProps {
+  onClose: () => void;
+}
+
 export interface HeaderProps {
   onMenuClick: () => void;
 }

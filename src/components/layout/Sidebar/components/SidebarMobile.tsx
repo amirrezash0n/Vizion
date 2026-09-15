@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Sidebar from "../Sidebar";
-import { FiX } from "react-icons/fi";
+import SidebarCloseButton from "./SidebarCloseButton";
 
 interface SidebarMobileProps {
   isSidebarOpen: boolean;
@@ -37,13 +37,7 @@ export default function SidebarMobile({
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
             <Sidebar onNavigate={closeSidebar} />
-            {/* Close Button */}
-            <button
-              onClick={closeSidebar}
-              className="absolute top-4 left-4 z-10 text-white hover:bg-white/10 rounded-lg p-2 transition-colors"
-            >
-              <FiX size={20} />
-            </button>
+            <SidebarCloseButton onClose={closeSidebar} />
           </motion.div>
         </motion.div>
       )}
