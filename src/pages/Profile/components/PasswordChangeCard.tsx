@@ -1,29 +1,26 @@
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import FormInput from "./FormInput";
 import Button from "../../../components/common/Button/Button";
-
-interface PasswordFormData {
-  currentPassword: string;
-  newPassword: string;
-  confirmPassword: string;
-}
+import type { PasswordFormData } from "../../../types/profile";
 
 export default function PasswordChangeCard() {
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     reset,
     formState: { errors },
   } = useForm<PasswordFormData>({
     mode: "onBlur",
   });
 
-  const newPassword = watch("newPassword");
+  const newPassword = useWatch({
+    control,
+    name: "newPassword",
+  });
 
   const onSubmit = (data: PasswordFormData) => {
     console.log("Password data:", data);
-    // API call
     reset();
   };
 

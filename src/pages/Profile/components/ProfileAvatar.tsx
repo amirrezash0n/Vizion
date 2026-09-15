@@ -1,10 +1,5 @@
 import { FiPlus } from "react-icons/fi";
-
-interface ProfileAvatarProps {
-  name: string;
-  phone: string;
-  avatar: string;
-}
+import type { ProfileAvatarProps } from "../../../types/profile";
 
 export default function ProfileAvatar({
   name,

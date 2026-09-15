@@ -3,12 +3,7 @@ import FormInput from "./FormInput";
 import ProfileAvatar from "./ProfileAvatar";
 import Button from "../../../components/common/Button/Button";
 import { PROFILE_VALIDATION } from "../schemas/profileValidation";
-
-interface ProfileFormData {
-  fullName: string;
-  phone: string;
-  email: string;
-}
+import type { ProfileFormData } from "../../../types/profile";
 
 interface ProfileInfoCardProps {
   defaultValues: ProfileFormData;
