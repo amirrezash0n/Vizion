@@ -1,10 +1,10 @@
-# 🎨 Vizion - پنل مدیریت فروشگاهی
+# 🎨 Vizion - Online Store Admin Panel
 
 <div align="center">
 
 ![Vizion Logo](https://img.shields.io/badge/Vizion-Panel-FD295C?style=for-the-badge)
 
-**یک پنل مدیریت مدرن، ریسپانسیو و کاربرپسند برای فروشگاه‌های آنلاین**
+**A modern, responsive and user-friendly admin panel for online stores**
 
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -15,293 +15,248 @@
 
 ---
 
-## 📖 درباره پروژه
+## 📖 About The Project
 
-**Vizion** یک پنل مدیریت فروشگاهی مدرن است که با هدف ارائه یک تجربه کاربری روان، سریع و زیبا طراحی شده است. این پروژه شامل تمام بخش‌های مورد نیاز یک پنل مدیریت حرفه‌ای از جمله مدیریت سفارشات، تیکت‌های پشتیبانی، کیف پول، اعلان‌ها و اطلاعات کاربری می‌باشد.
+**Vizion** is a modern online store admin panel designed to provide a smooth, fast and beautiful user experience. This project includes all the essential features of a professional admin panel, such as order management, support tickets, wallet, notifications, and user profile.
 
-### ✨ ویژگی‌های کلیدی
+### ✨ Key Features
 
-- 🎨 **طراحی مدرن و مینیمال** با استفاده از Tailwind CSS نسخه ۴
-- 📱 **کاملاً ریسپانسیو** برای موبایل، تبلت و دسکتاپ
-- 🌐 **پشتیبانی کامل از RTL** و فونت‌های فارسی (YekanBakh, Morabba)
-- ⚡ **عملکرد بالا** با Vite و React 19
-- 🎯 **Type-Safe** با TypeScript
-- 🔄 **مدیریت State** با Zustand
-- 📊 **نمودارهای تعاملی** با Recharts
-- 🎬 **انیمیشن‌های نرم** با Framer Motion
-- 🔔 **اعلان‌های Toast** با React Hot Toast
-- 📝 **مدیریت فرم‌ها** با React Hook Form
+- 🎨 **Modern & Minimal Design** using Tailwind CSS v4
+- 📱 **Fully Responsive** for mobile, tablet and desktop
+- 🌐 **Complete RTL Support** with Persian fonts (YekanBakh, Morabba)
+- ⚡ **High Performance** with Vite and React 19
+- 🎯 **Type-Safe** with TypeScript
+- 🔄 **State Management** with Zustand
+- 📊 **Interactive Charts** with Recharts
+- 🎬 **Smooth Animations** with Framer Motion
+- 🔔 **Toast Notifications** with React Hot Toast
+- 📝 **Form Management** with React Hook Form
 
 ---
 
-## 📸 تصاویر پروژه
+## 📸 Screenshots
 
-### 🏠 داشبورد کاربری
+### 🏠 Dashboard
 
 ![Dashboard](./screenshots/dashboard.png)
 
-_نمای کلی داشبورد با کارت‌های آماری، نمودار فروش هفتگی و وضعیت سفارشات_
+_Overview of the dashboard with stat cards, weekly sales chart and order status_
 
-### 📦 سفارشات من
+### 📦 Orders
 
 ![Orders](./screenshots/orders.png)
 
-_مدیریت سفارشات با قابلیت جستجو، فیلتر بر اساس وضعیت پرداخت و صفحه‌بندی هوشمند_
+_Order management with search, payment status filter and smart pagination_
 
-### 💰 کیف پول من
+### 💰 Wallet
 
 ![Wallet](./screenshots/wallet.png)
 
-_مدیریت موجودی، شارژ کیف پول و مشاهده تراکنش‌های اخیر_
+_Balance management, wallet charging and recent transactions_
 
-### 🎫 تیکت‌ها
+### 🎫 Tickets
 
 ![Tickets](./screenshots/tickets.png)
 
-_سیستم تیکتینگ کامل با فیلتر وضعیت، مشاهده جزئیات و امکان پاسخ‌دهی_
+_Complete ticketing system with status filter, details view and reply option_
 
-### 🔔 اعلان‌ات
+### 🔔 Notifications
 
 ![Notifications](./screenshots/notifications.png)
 
-_نمایش اعلان‌ها با گروه‌بندی جدید/خوانده‌شده و نمایش زمان نسبی_
+_Notifications with new/read grouping and relative time display_
 
-### 👤 اطلاعات حساب کاربری
+### 👤 Profile
 
 ![Profile](./screenshots/profile.png)
 
-_مدیریت اطلاعات پروفایل و تغییر رمز عبور_
+_Profile information management and password change_
 
 ---
 
-## 🛠️ تکنولوژی‌های استفاده شده
+## 🛠️ Tech Stack
 
 ### Frontend Core
 
-| تکنولوژی         | نسخه | کاربرد           |
-| :--------------- | :--- | :--------------- |
-| **React**        | 19.2 | کتابخانه اصلی UI |
-| **TypeScript**   | 5.x  | Type-Safety      |
-| **Vite**         | 6.x  | Build Tool       |
-| **React Router** | 8.3  | مدیریت مسیرها    |
+| Technology       | Version | Purpose         |
+| :--------------- | :------ | :-------------- |
+| **React**        | 19.2    | Main UI library |
+| **TypeScript**   | 5.x     | Type-Safety     |
+| **Vite**         | 6.x     | Build Tool      |
+| **React Router** | 8.3     | Routing         |
 
 ### Styling & UI
 
-| تکنولوژی          | نسخه | کاربرد     |
-| :---------------- | :--- | :--------- |
-| **Tailwind CSS**  | 4.3  | استایل‌دهی |
-| **Framer Motion** | 13.2 | انیمیشن‌ها |
-| **React Icons**   | 5.7  | آیکون‌ها   |
-| **Recharts**      | 3.10 | نمودارها   |
+| Technology        | Version | Purpose    |
+| :---------------- | :------ | :--------- |
+| **Tailwind CSS**  | 4.3     | Styling    |
+| **Framer Motion** | 13.2    | Animations |
+| **React Icons**   | 5.7     | Icons      |
+| **Recharts**      | 3.10    | Charts     |
 
 ### State & Data
 
-| تکنولوژی            | نسخه | کاربرد           |
-| :------------------ | :--- | :--------------- |
-| **Zustand**         | 5.0  | مدیریت State     |
-| **Axios**           | 1.20 | درخواست‌های HTTP |
-| **React Hook Form** | 7.87 | مدیریت فرم‌ها    |
+| Technology          | Version | Purpose          |
+| :------------------ | :------ | :--------------- |
+| **Zustand**         | 5.0     | State Management |
+| **Axios**           | 1.20    | HTTP Requests    |
+| **React Hook Form** | 7.87    | Form Management  |
 
 ### Utilities
 
-| تکنولوژی                      | نسخه | کاربرد        |
-| :---------------------------- | :--- | :------------ |
-| **clsx** + **tailwind-merge** | -    | ترکیب کلاس‌ها |
-| **React Hot Toast**           | 2.6  | اعلان‌ها      |
+| Technology                    | Version | Purpose       |
+| :---------------------------- | :------ | :------------ |
+| **clsx** + **tailwind-merge** | -       | Class Merging |
+| **React Hot Toast**           | 2.6     | Notifications |
 
 ---
 
-## 📂 ساختار پروژه
+## 🚀 Installation & Setup
 
-```
-Vizion/
-├── public/
-│   ├── fonts/                  # فونت‌های فارسی
-│   └── images/                 # تصاویر
-├── screenshots/                # تصاویر README
-├── src/
-│   ├── components/
-│   │   ├── common/             # کامپوننت‌های مشترک
-│   │   │   ├── Button/
-│   │   │   ├── DataTable/
-│   │   │   ├── EmptyState/
-│   │   │   ├── Filter/
-│   │   │   ├── PageHeader/
-│   │   │   └── Pagination/
-│   │   ├── layout/             # Layout اصلی
-│   │   ├── notifications/      # کامپوننت‌های اعلان
-│   │   └── ui/                 # کامپوننت‌های UI
-│   ├── constants/              # ثابت‌ها
-│   ├── data/                   # داده‌های نمونه
-│   ├── hooks/                  # هوک‌های سفارشی
-│   ├── pages/                  # صفحات اصلی
-│   │   ├── Dashboard/
-│   │   ├── Orders/
-│   │   ├── Wallet/
-│   │   ├── Tickets/
-│   │   ├── Notifications/
-│   │   ├── Profile/
-│   │   ├── Login/
-│   │   └── Signup/
-│   ├── router/                 # تنظیمات مسیریابی
-│   ├── store/                  # Zustand Stores
-│   ├── styles/                 # استایل‌ها و فونت‌ها
-│   ├── types/                  # تایپ‌های TypeScript
-│   └── utils/                  # توابع کمکی
-├── README.md
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
-```
+### Prerequisites
 
----
+- Node.js v18 or higher
+- npm or yarn
 
-## 🚀 نصب و اجرا
-
-### پیش‌نیازها
-
-- Node.js نسخه ۱۸ یا بالاتر
-- npm یا yarn
-
-### مراحل نصب
+### Installation Steps
 
 ```bash
-# ۱. کلون کردن پروژه
+# 1. Clone the repository
 git clone https://github.com/amirrezash0n/vizion.git
 
-# ۲. ورود به پوشه پروژه
+# 2. Navigate to project folder
 cd vizion
 
-# ۳. نصب وابستگی‌ها
+# 3. Install dependencies
 npm install
 
-# ۴. اجرای پروژه در حالت توسعه
+# 4. Run development server
 npm run dev
 
-# ۵. Build برای production
+# 5. Build for production
 npm run build
 ```
 
-پروژه در آدرس `http://localhost:5173` در دسترس خواهد بود.
+The project will be available at `http://localhost:5173`.
 
 ---
 
-## 🎯 ویژگی‌های پیاده‌سازی شده
+## 🎯 Implemented Features
 
-### ✅ بخش‌های اصلی
+### ✅ Main Sections
 
-- [x] **داشبورد** با کارت‌های آماری و نمودارها
-- [x] **سفارشات** با جستجو، فیلتر و صفحه‌بندی
-- [x] **کیف پول** با شارژ و تاریخچه تراکنش‌ها
-- [x] **تیکت‌ها** با سیستم پاسخ‌دهی
-- [x] **اعلان‌ها** با گروه‌بندی و نمایش زمان نسبی
-- [x] **پروفایل کاربری** با تغییر رمز عبور
-- [x] **صفحات خطا** (404)
+- [x] **Dashboard** with stat cards and charts
+- [x] **Orders** with search, filter and pagination
+- [x] **Wallet** with charging and transaction history
+- [x] **Tickets** with reply system
+- [x] **Notifications** with grouping and relative time
+- [x] **User Profile** with password change
+- [x] **Error Pages** (404)
 
-### ✅ قابلیت‌های فنی
+### ✅ Technical Features
 
-- [x] **مسیریابی محافظت‌شده** (Protected Routes)
-- [x] **مدیریت State** با Zustand + Persist
-- [x] **کامپوننت‌های قابل استفاده مجدد**
-- [x] **صفحه‌بندی هوشمند** با Ellipsis
-- [x] **تبدیل اعداد به فارسی**
-- [x] **نمایش زمان نسبی** (Relative Time)
-- [x] **RTL** کامل
-- [x] **ریسپانسیو** کامل
+- [x] **Protected Routes**
+- [x] **State Management** with Zustand + Persist
+- [x] **Reusable Components**
+- [x] **Smart Pagination** with Ellipsis
+- [x] **Persian Number Conversion**
+- [x] **Relative Time Display**
+- [x] **Full RTL Support**
+- [x] **Fully Responsive**
 
-### 🚧 در حال توسعه
+### 🚧 In Development
 
-- [ ] **اتصال به Backend** (Supabase)
-- [ ] **احراز هویت کامل** (Login/Signup)
-- [ ] **تست‌های واحد**
+- [ ] **Backend Integration** (Supabase)
+- [ ] **Full Authentication** (Login/Signup)
+- [ ] **Unit Tests**
 - [ ] **Dark Mode**
 
 ---
 
-## 🎨 طراحی
+## 🎨 Design
 
-### پالت رنگی
+### Color Palette
 
-| رنگ               | کد        | کاربرد        |
-| :---------------- | :-------- | :------------ |
-| **Primary**       | `#FD295C` | رنگ اصلی برند |
-| **Secondary**     | `#F32770` | رنگ مکمل      |
-| **Success**       | `#25BB85` | وضعیت موفق    |
-| **Warning**       | `#ED9446` | هشدار         |
-| **Danger**        | `#FF505A` | خطا           |
-| **BalticSea-400** | `#24232A` | پس‌زمینه تیره |
+| Color             | Code      | Usage           |
+| :---------------- | :-------- | :-------------- |
+| **Primary**       | `#FD295C` | Brand primary   |
+| **Secondary**     | `#F32770` | Complementary   |
+| **Success**       | `#25BB85` | Success state   |
+| **Warning**       | `#ED9446` | Warning state   |
+| **Danger**        | `#FF505A` | Error state     |
+| **BalticSea-400** | `#24232A` | Dark background |
 
-### فونت‌ها
+### Fonts
 
 - **YekanBakh** (Regular, Medium, Bold, Heavy)
 - **Morabba** (Light, Medium, Bold)
 
 ---
 
-## 💡 درباره توسعه
+## 💡 About Development
 
-این پروژه با تمرکز بر **یادگیری و پیاده‌سازی استانداردهای روز** ساخته شده است. در فرآیند توسعه، از **ابزارهای هوش مصنوعی (DeepSeek)** به عنوان دستیار برای:
+This project was built with a focus on **learning and implementing modern standards**. During development, **AI tools (DeepSeek)** were used as an assistant for:
 
-- 🔍 **بررسی و رفع باگ‌ها**
-- 🏗️ **طراحی معماری کامپوننت‌ها**
-- 📐 **بهبود ساختار کد و Type-Safety**
-- 🎨 **طراحی UI/UX**
+- 🔍 **Bug fixing and debugging**
+- 🏗️ **Component architecture design**
+- 📐 **Code structure and Type-Safety improvement**
+- 🎨 **UI/UX design**
 
-استفاده شده است. تمام کدها **درک شده**، **تست شده** و **مطابق نیاز پروژه** سفارشی‌سازی شده‌اند.
+All code has been **understood**, **tested** and **customized** according to the project's needs.
 
 ---
 
-## 📌 نکات فنی
+## 📌 Technical Notes
 
-### صفحه‌بندی هوشمند
+### Smart Pagination
 
-پیاده‌سازی الگوی **Ellipsis** برای صفحه‌بندی با تعداد زیاد صفحات:
+Implementation of the **Ellipsis** pattern for pagination with many pages:
 
 ```
-۱ ۲ ۳ ۴ ... ۵۰
-۱ ... ۲۵ ۲۶ ۲۷ ... ۵۰
-۱ ... ۴۷ ۴۸ ۴۹ ۵۰
+1 2 3 4 ... 50
+1 ... 25 26 27 ... 50
+1 ... 47 48 49 50
 ```
 
-### مدیریت State
+### State Management
 
-- **Zustand** برای State سراسری
-- **Persist Middleware** برای ذخیره در LocalStorage
-- **Partialize** برای ذخیره فقط فیلدهای مورد نیاز
+- **Zustand** for global state
+- **Persist Middleware** for LocalStorage
+- **Partialize** to store only required fields
 
-### کامپوننت‌های قابل استفاده مجدد
+### Reusable Components
 
-- `Button` با ۱۰+ واریانت و سایز
-- `DataTable` با صفحه‌بندی و اسکرول
-- `Pagination` با Ellipsis
-- `Filter` برای فیلتر کردن داده‌ها
-- `EmptyState` برای حالت‌های خالی
-
----
-
-## 🤝 مشارکت
-
-اگه می‌خوای به بهبود این پروژه کمک کنی:
-
-1. پروژه رو Fork کن
-2. یه Branch جدید بساز (`git checkout -b feature/amazing-feature`)
-3. تغییرات رو Commit کن (`git commit -m 'Add amazing feature'`)
-4. Branch رو Push کن (`git push origin feature/amazing-feature`)
-5. یه Pull Request باز کن
+- `Button` with 10+ variants and sizes
+- `DataTable` with pagination and scroll
+- `Pagination` with Ellipsis
+- `Filter` for filtering data
+- `EmptyState` for empty states
 
 ---
 
-## 📄 لایسنس
+## 🤝 Contributing
 
-این پروژه تحت لایسنس **MIT** منتشر شده است.
+If you'd like to contribute to this project:
+
+1. Fork the project
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-## 📞 تماس با من
+## 📄 License
+
+This project is licensed under the **MIT** License.
+
+---
+
+## 📞 Contact Me
 
 <div align="center">
 
-**امیررضا شورورزی**
+**Amirreza Shourvarzi**
 
 [![GitHub](https://img.shields.io/badge/GitHub-amirrezash0n-181717?logo=github)](https://github.com/amirrezash0n)
 [![Email](https://img.shields.io/badge/Email-shourvarziamirreza@gmail.com-EA4335?logo=gmail)](mailto:shourvarziamirreza@gmail.com)
@@ -313,7 +268,7 @@ npm run build
 
 <div align="center">
 
-**⭐ اگه این پروژه برات مفید بود، یه ستاره بده! ⭐**
+**⭐ If you found this project useful, give it a star! ⭐**
 
 Made with ❤️ by [Amirreza Shourvarzi](https://github.com/amirrezash0n)
 
