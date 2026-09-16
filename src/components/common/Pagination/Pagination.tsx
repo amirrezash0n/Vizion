@@ -1,11 +1,6 @@
 import Button from "../Button/Button";
-
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-  siblingsCount?: number;
-}
+import { generatePagination } from "./Pagination.utils";
+import type { PaginationProps } from "./Pagination.types";
 
 export default function Pagination({
   currentPage,
@@ -15,52 +10,18 @@ export default function Pagination({
 }: PaginationProps) {
   if (totalPages <= 1) return null;
 
-  const generatePagination = (): (number | string)[] => {
-    const totalNumbers = siblingsCount * 2 + 5;
-
-    if (totalPages <= totalNumbers) {
-      return Array.from({ length: totalPages }, (_, i) => i + 1);
-    }
-
-    const leftSiblingIndex = Math.max(currentPage - siblingsCount, 1);
-    const rightSiblingIndex = Math.min(currentPage + siblingsCount, totalPages);
-
-    const shouldShowLeftDots = leftSiblingIndex > 2;
-    const shouldShowRightDots = rightSiblingIndex < totalPages - 1;
-
-    if (!shouldShowLeftDots && shouldShowRightDots) {
-      const leftItemCount = 3 + 2 * siblingsCount;
-      const leftRange = Array.from({ length: leftItemCount }, (_, i) => i + 1);
-      return [...leftRange, "...", totalPages];
-    }
-
-    if (shouldShowLeftDots && !shouldShowRightDots) {
-      const rightItemCount = 3 + 2 * siblingsCount;
-      const rightRange = Array.from(
-        { length: rightItemCount },
-        (_, i) => totalPages - rightItemCount + i + 1,
-      );
-      return [1, "...", ...rightRange];
-    }
-
-    if (shouldShowLeftDots && shouldShowRightDots) {
-      const middleRange = Array.from(
-        { length: rightSiblingIndex - leftSiblingIndex + 1 },
-        (_, i) => leftSiblingIndex + i,
-      );
-      return [1, "...", ...middleRange, "...", totalPages];
-    }
-
-    return [];
-  };
-
-  const paginationRange = generatePagination();
+  const paginationRange = generatePagination(
+    currentPage,
+    totalPages,
+    siblingsCount,
+  );
 
   return (
     <div
       className="flex items-center justify-center gap-1.5 xs:gap-2 py-4 xs:py-5 flex-wrap"
       dir="rtl"
     >
+      {/* Prev Button */}
       <Button
         type="button"
         variant="pagination"
@@ -73,6 +34,7 @@ export default function Pagination({
         <span className="xs:hidden">‹</span>
       </Button>
 
+      {/* Page Numbers */}
       {paginationRange.map((page, index) => {
         if (page === "...") {
           return (
@@ -102,6 +64,7 @@ export default function Pagination({
         );
       })}
 
+      {/* Next Button */}
       <Button
         type="button"
         variant="pagination"
