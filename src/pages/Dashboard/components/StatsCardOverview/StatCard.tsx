@@ -20,9 +20,11 @@ export default function StatCard({ stat }: StatCardProps) {
             <stat.icon size={32} />
           </span>
         </div>
-        <p className="mt-2 w-full text-right font-yekanHeavy text-2xl text-balticSea-400 lg:text-3xl xl:text-4xl">
+
+        <h3 className="mt-2 w-full text-right font-yekanHeavy text-2xl text-balticSea-400 lg:text-3xl xl:text-4xl">
           {stat.value.toLocaleString("fa-IR")}
-        </p>
+        </h3>
+
         <Link
           className="flex w-full items-center justify-between"
           to={stat.href}
