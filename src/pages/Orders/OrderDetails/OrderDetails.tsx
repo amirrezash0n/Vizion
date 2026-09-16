@@ -1,7 +1,6 @@
 import { useParams } from "react-router";
 import { orders } from "../../../data/orders";
 import PageHeader from "../../../components/common/PageHeader/PageHeader";
-import OrderHeader from "./components/OrderHeader";
 import OrderProduct from "./components/OrderProduct";
 import PaymentSection from "./sections/PaymentSection";
 import AccountSection from "./sections/AccountSection";
@@ -27,11 +26,10 @@ export default function OrderDetails() {
 
   return (
     <div>
-      <BackButton />
       <PageHeader />
+      <BackButton />
 
       <div className="mx-auto mt-4 max-w-5xl animate-fadeIn rounded-[20px] bg-offWhite p-4 xs:p-6 sm:p-8">
-        <OrderHeader date={order.date} />
         <OrderProduct order={order} />
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">

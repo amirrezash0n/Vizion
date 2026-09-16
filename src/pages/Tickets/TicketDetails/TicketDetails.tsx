@@ -47,9 +47,8 @@ export default function TicketDetails() {
 
   return (
     <div>
-      <BackButton />
-
       <PageHeader />
+      <BackButton />
 
       <div className="mx-auto mt-4 max-w-4xl animate-fadeIn rounded-[20px] bg-offWhite p-4 xs:p-6 sm:p-8">
         <div className="mb-6 flex">
