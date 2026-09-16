@@ -13,7 +13,7 @@ export const ticketColumns: TableColumn<Ticket>[] = [
     key: "title",
     title: "عنوان تیکت",
     render: (ticket) => (
-      <span className="whitespace-nowrap font-morabbaMedium text-balticSea-400">
+      <span className="font-morabbaMedium whitespace-nowrap text-balticSea-400">
         {ticket.title}
       </span>
     ),
@@ -22,7 +22,7 @@ export const ticketColumns: TableColumn<Ticket>[] = [
     key: "createdAt",
     title: "تاریخ ساخت تیکت",
     render: (ticket) => (
-      <span className="whitespace-nowrap text-sm font-morabbaMedium text-balticSea-400">
+      <span className="font-morabbaMedium text-sm whitespace-nowrap text-balticSea-400">
         {ticket.createdAt}
       </span>
     ),
@@ -31,7 +31,7 @@ export const ticketColumns: TableColumn<Ticket>[] = [
     key: "updatedAt",
     title: "آخرین آپدیت تیکت",
     render: (ticket) => (
-      <span className="whitespace-nowrap text-sm font-morabbaMedium text-balticSea-400">
+      <span className="font-morabbaMedium text-sm whitespace-nowrap text-balticSea-400">
         {ticket.updatedAt}
       </span>
     ),
@@ -40,7 +40,7 @@ export const ticketColumns: TableColumn<Ticket>[] = [
     key: "department",
     title: "دپارتمان",
     render: (ticket) => (
-      <span className="whitespace-nowrap text-sm font-morabbaMedium text-balticSea-400">
+      <span className="font-morabbaMedium text-sm whitespace-nowrap text-balticSea-400">
         {ticket.department}
       </span>
     ),
@@ -49,7 +49,7 @@ export const ticketColumns: TableColumn<Ticket>[] = [
     key: "type",
     title: "نوع تیکت",
     render: (ticket) => (
-      <span className="whitespace-nowrap text-sm font-morabbaMedium text-balticSea-400">
+      <span className="font-morabbaMedium text-sm whitespace-nowrap text-balticSea-400">
         {ticket.type}
       </span>
     ),
@@ -71,7 +71,7 @@ export const ticketColumns: TableColumn<Ticket>[] = [
     render: (ticket) => (
       <Link
         to={`/tickets/${ticket.id}`}
-        className="flex items-center gap-0.5 whitespace-nowrap text-sm text-primary font-yekanMedium transition-opacity hover:opacity-80"
+        className="flex items-center gap-0.5 font-yekanMedium text-sm whitespace-nowrap text-primary transition-opacity hover:opacity-80"
       >
         <span>مشاهده</span>
         <RiArrowLeftSLine size={16} />

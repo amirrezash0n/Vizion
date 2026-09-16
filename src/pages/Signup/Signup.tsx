@@ -9,19 +9,19 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-balticSea-400 p-4">
-      <div className="w-full max-w-123.75 bg-offWhite rounded-3xl p-6 xs:p-8 sm:p-10 min-h-166 flex flex-col justify-center">
-        <div className="text-center mb-8">
-          <h1 className="font-morabbaBold text-3xl xs:text-4xl text-primary">
+    <div className="flex min-h-screen items-center justify-center bg-balticSea-400 p-4">
+      <div className="flex min-h-166 w-full max-w-123.75 flex-col justify-center rounded-3xl bg-offWhite p-6 xs:p-8 sm:p-10">
+        <div className="mb-8 text-center">
+          <h1 className="font-morabbaBold text-3xl text-primary xs:text-4xl">
             ویزیون
           </h1>
         </div>
 
-        <div className="text-center mb-10" dir="rtl">
-          <h2 className="font-yekanBold text-lg xs:text-xl text-balticSea-400 mb-2">
+        <div className="mb-10 text-center" dir="rtl">
+          <h2 className="mb-2 font-yekanBold text-lg text-balticSea-400 xs:text-xl">
             ایجاد حساب کاربری
           </h2>
-          <p className="font-morabbaMedium text-xs xs:text-sm text-dawn">
+          <p className="font-morabbaMedium text-xs text-dawn xs:text-sm">
             برای ساخت حساب کاربری روی دکمه زیر کلیک کنید
           </p>
         </div>
@@ -31,19 +31,19 @@ export default function Signup() {
           variant="primary"
           size="full"
           onClick={handleSignup}
-          className="font-yekanBold rounded-xl mb-4"
+          className="mb-4 rounded-xl font-yekanBold"
         >
           میخوام ثبت نام بشم
         </Button>
 
         <p
-          className="text-center font-morabbaMedium text-xs xs:text-sm text-dawn"
+          className="text-center font-morabbaMedium text-xs text-dawn xs:text-sm"
           dir="rtl"
         >
           قبلا ثبت‌نام کرده‌اید؟{" "}
           <Link
             to="/login"
-            className="font-yekanBold text-primary hover:text-secondary transition-colors"
+            className="font-yekanBold text-primary transition-colors hover:text-secondary"
           >
             ورود
           </Link>

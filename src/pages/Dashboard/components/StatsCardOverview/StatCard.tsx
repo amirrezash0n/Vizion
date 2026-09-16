@@ -8,10 +8,10 @@ interface StatCardProps {
 
 export default function StatCard({ stat }: StatCardProps) {
   return (
-    <div className="bg-offWhite h-34 sm:h-38 pb-4 pr-4 pl-4 rounded-xl">
+    <div className="h-34 rounded-xl bg-offWhite pr-4 pb-4 pl-4 sm:h-38">
       <div className="flex flex-col items-start justify-between overflow-hidden">
         <div
-          className={`${stat.color} flex items-end -mt-8 mb-2 p-3 rounded-full h-21.25 text-white`}
+          className={`${stat.color} -mt-8 mb-2 flex h-21.25 items-end rounded-full p-3 text-white`}
         >
           <span className="sm:hidden">
             <stat.icon size={20} />
@@ -20,14 +20,14 @@ export default function StatCard({ stat }: StatCardProps) {
             <stat.icon size={32} />
           </span>
         </div>
-        <p className="font-yekanHeavy text-2xl lg:text-3xl xl:text-4xl text-right mt-2 w-full text-balticSea-400">
+        <p className="mt-2 w-full text-right font-yekanHeavy text-2xl text-balticSea-400 lg:text-3xl xl:text-4xl">
           {stat.value.toLocaleString("fa-IR")}
         </p>
         <Link
-          className="flex items-center justify-between w-full"
+          className="flex w-full items-center justify-between"
           to={stat.href}
         >
-          <p className="font-yekanBold text-balticSea-400 text-xs sm:text-sm">
+          <p className="font-yekanBold text-xs text-balticSea-400 sm:text-sm">
             {stat.title}
           </p>
           <span className="text-balticSea-400">

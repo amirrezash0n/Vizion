@@ -12,10 +12,10 @@ export default function SidebarLink({ item, onNavigate }: SidebarLinkProps) {
       to={item.path}
       onClick={onNavigate}
       className={({ isActive }) =>
-        `flex items-center gap-3 px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg transition-all duration-200 ${
+        `flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 lg:px-4 lg:py-3 ${
           isActive
-            ? "bg-white-5 text-primary hover:bg-white-10"
-            : "text-white/70 hover:text-white hover:bg-white-5"
+            ? "hover:bg-white-10 bg-white-5 text-primary"
+            : "text-white/70 hover:bg-white-5 hover:text-white"
         }`
       }
     >
@@ -26,7 +26,7 @@ export default function SidebarLink({ item, onNavigate }: SidebarLinkProps) {
               isActive ? "text-primary" : "text-white/50"
             }`}
           />
-          <span className="text-sm lg:text-base leading-none">{item.name}</span>
+          <span className="text-sm leading-none lg:text-base">{item.name}</span>
         </>
       )}
     </NavLink>

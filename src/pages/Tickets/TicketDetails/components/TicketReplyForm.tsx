@@ -19,10 +19,10 @@ export default function TicketReplyForm({ onSubmit }: TicketReplyFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-6 xs:mt-8 pt-6 border-t border-dashed border-cloud"
+      className="mt-6 border-t border-dashed border-cloud pt-6 xs:mt-8"
       dir="rtl"
     >
-      <label className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-3">
+      <label className="mb-3 block font-yekanBold text-xs text-balticSea-400 xs:text-sm">
         پاسخ شما
       </label>
       <textarea
@@ -30,14 +30,14 @@ export default function TicketReplyForm({ onSubmit }: TicketReplyFormProps) {
         onChange={(e) => setText(e.target.value)}
         rows={4}
         placeholder="پاسخ خود را وارد کنید ..."
-        className="w-full bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-primary outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 placeholder:text-dawn placeholder:font-yekanRegular transition-colors resize-none mb-4"
+        className="mb-4 w-full resize-none rounded-xl border border-cloud bg-white px-3 py-2.5 font-yekanMedium text-xs text-balticSea-400 transition-colors outline-none placeholder:font-yekanRegular placeholder:text-dawn focus:border-primary xs:px-4 xs:py-3 xs:text-sm"
       />
       <div className="flex justify-end">
         <Button
           type="submit"
           variant="primary"
           size="xs"
-          className="font-yekanBold rounded-xl gap-1.5"
+          className="gap-1.5 rounded-xl font-yekanBold"
           disabled={!text.trim()}
         >
           <FiSend size={14} className="rotate-180" />

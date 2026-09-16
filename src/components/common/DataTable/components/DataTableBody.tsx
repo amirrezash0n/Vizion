@@ -21,7 +21,7 @@ export default function DataTableBody<T>({
           {columns.map((column) => (
             <td
               key={String(column.key)}
-              className="px-6 py-4 text-right text-sm font-yekanMedium text-balticSea-400"
+              className="px-6 py-4 text-right font-yekanMedium text-sm text-balticSea-400"
             >
               {column.render ? column.render(row) : String(row[column.key])}
             </td>

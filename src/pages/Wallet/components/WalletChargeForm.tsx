@@ -27,19 +27,14 @@ export default function WalletChargeForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-offWhite rounded-[20px] p-4 xs:p-6"
+      className="rounded-[20px] bg-offWhite p-4 xs:p-6"
     >
       <div className="mb-5" dir="rtl">
-        <label className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-2">
+        <label className="mb-2 block font-yekanBold text-xs text-balticSea-400 xs:text-sm">
           مبلغ شارژ
         </label>
         <div
-          className={`
-            flex items-center justify-between gap-2
-            bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3
-            border transition-all
-            ${amount ? "border-primary" : "border-cloud"}
-          `}
+          className={`flex items-center justify-between gap-2 rounded-xl border bg-white px-3 py-2.5 transition-all xs:px-4 xs:py-3 ${amount ? "border-primary" : "border-cloud"} `}
         >
           <input
             type="text"
@@ -47,16 +42,16 @@ export default function WalletChargeForm() {
             value={amount}
             onChange={handleAmountChange}
             placeholder="۲۵۰,۰۰۰"
-            className="flex-1 bg-transparent outline-none font-yekanBold text-sm xs:text-base text-balticSea-400 placeholder:text-dawn"
+            className="flex-1 bg-transparent font-yekanBold text-sm text-balticSea-400 outline-none placeholder:text-dawn xs:text-base"
           />
-          <span className="font-morabbaMedium text-[10px] xs:text-xs text-dawn shrink-0">
+          <span className="shrink-0 font-morabbaMedium text-[10px] text-dawn xs:text-xs">
             تومان
           </span>
         </div>
       </div>
 
       <div className="mb-5" dir="rtl">
-        <span className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-3">
+        <span className="mb-3 block font-yekanBold text-xs text-balticSea-400 xs:text-sm">
           بانک مورد نظر جهت پرداخت
         </span>
         <div className="space-y-2.5">
@@ -77,7 +72,7 @@ export default function WalletChargeForm() {
         type="submit"
         variant="primary"
         size="full"
-        className="font-yekanBold rounded-xl"
+        className="rounded-xl font-yekanBold"
       >
         شارژ کیف پول
       </Button>

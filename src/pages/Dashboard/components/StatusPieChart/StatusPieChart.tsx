@@ -10,8 +10,8 @@ import { statusData } from "../../../../data/dashboard/statusData";
 
 export default function StatusPieChart() {
   return (
-    <div className="bg-balticSea-300 rounded-xl p-6 border border-white-5">
-      <h2 className="font-yekanBold text-lg text-whiteSmoke mb-6">
+    <div className="rounded-xl border border-white-5 bg-balticSea-300 p-6">
+      <h2 className="mb-6 font-yekanBold text-lg text-whiteSmoke">
         وضعیت سفارشات
       </h2>
 

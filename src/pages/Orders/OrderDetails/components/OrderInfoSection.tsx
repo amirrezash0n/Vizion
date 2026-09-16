@@ -10,8 +10,8 @@ export default function OrderInfoSection({
   children,
 }: OrderInfoSectionProps) {
   return (
-    <div className="bg-white rounded-2xl p-4 border border-cloud">
-      <h3 className="font-yekanBold text-xs text-balticSea-400 mb-3 pb-2 border-b border-dashed border-cloud">
+    <div className="rounded-2xl border border-cloud bg-white p-4">
+      <h3 className="mb-3 border-b border-dashed border-cloud pb-2 font-yekanBold text-xs text-balticSea-400">
         {title}
       </h3>
       <div className="space-y-2.5">{children}</div>

@@ -7,7 +7,7 @@ export default function AddTicket() {
     <div>
       <BackButton className="mt-6 mb-10" />
       <PageHeader />
-      <div className="max-w-4xl mx-auto">
+      <div className="mx-auto max-w-4xl">
         <TicketForm />
       </div>
     </div>

@@ -10,7 +10,7 @@ function NotificationButton() {
     <Link to="/notifications">
       <Button className="relative" variant="icon" size="icon">
         {hasUnread && (
-          <div className="absolute size-2 top-2.5 right-2.5 bg-primary rounded-full animate-pulse" />
+          <div className="absolute top-2.5 right-2.5 size-2 animate-pulse rounded-full bg-primary" />
         )}
         <FaRegBell size={20} />
       </Button>

@@ -18,7 +18,7 @@ export default function Pagination({
 
   return (
     <div
-      className="flex items-center justify-center gap-1.5 xs:gap-2 py-4 xs:py-5 flex-wrap"
+      className="flex flex-wrap items-center justify-center gap-1.5 py-4 xs:gap-2 xs:py-5"
       dir="rtl"
     >
       {/* Prev Button */}
@@ -28,7 +28,7 @@ export default function Pagination({
         size="pagination"
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
-        className="font-yekanMedium text-xs xs:text-sm px-2 xs:px-3"
+        className="px-2 font-yekanMedium text-xs xs:px-3 xs:text-sm"
       >
         <span className="hidden xs:inline">قبلی</span>
         <span className="xs:hidden">‹</span>
@@ -40,7 +40,7 @@ export default function Pagination({
           return (
             <span
               key={`dots-${index}`}
-              className="flex h-8 w-8 xs:h-9 xs:w-9 items-center justify-center text-xs xs:text-sm text-dawn font-yekanMedium"
+              className="flex h-8 w-8 items-center justify-center font-yekanMedium text-xs text-dawn xs:h-9 xs:w-9 xs:text-sm"
             >
               ...
             </span>
@@ -56,7 +56,7 @@ export default function Pagination({
             type="button"
             variant={isActive ? "paginationActive" : "pagination"}
             size="pagination"
-            className="w-8 h-8 xs:w-9 xs:h-9 text-xs xs:text-sm font-yekanMedium"
+            className="h-8 w-8 font-yekanMedium text-xs xs:h-9 xs:w-9 xs:text-sm"
             onClick={() => onPageChange(pageNumber)}
           >
             {pageNumber.toLocaleString("fa-IR")}
@@ -71,7 +71,7 @@ export default function Pagination({
         size="pagination"
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
-        className="font-yekanMedium text-xs xs:text-sm px-2 xs:px-3"
+        className="px-2 font-yekanMedium text-xs xs:px-3 xs:text-sm"
       >
         <span className="hidden xs:inline">بعدی</span>
         <span className="xs:hidden">›</span>

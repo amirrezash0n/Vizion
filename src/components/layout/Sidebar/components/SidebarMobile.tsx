@@ -30,7 +30,7 @@ export default function SidebarMobile({
           />
           {/* Sidebar */}
           <motion.div
-            className="absolute right-0 top-0 h-full"
+            className="absolute top-0 right-0 h-full"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}

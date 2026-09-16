@@ -22,9 +22,9 @@ export default function Tickets() {
 
   return (
     <>
-      <div className="flex justify-between items-start flex-wrap gap-3 mb-4">
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
         <PageHeader />
-        <div className="flex items-center gap-2 xs:gap-3 [flex-wrap:balance]">
+        <div className="flex [flex-wrap:balance] items-center gap-2 xs:gap-3">
           {hasTickets && (
             <StatusFilter
               label="وضعیت تیکت"

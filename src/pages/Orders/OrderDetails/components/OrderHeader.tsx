@@ -10,11 +10,11 @@ export default function OrderHeader({ date }: OrderHeaderProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-between mb-6" dir="rtl">
+    <div className="mb-6 flex items-center justify-between" dir="rtl">
       <Button
         variant="ghost"
         onClick={() => navigate(-1)}
-        className="w-8 h-8 rounded-lg rotate-180 hover:bg-dawn/10 transition-colors p-0"
+        className="h-8 w-8 rotate-180 rounded-lg p-0 transition-colors hover:bg-dawn/10"
       >
         <IoIosArrowBack size={20} className="text-balticSea-400" />
       </Button>

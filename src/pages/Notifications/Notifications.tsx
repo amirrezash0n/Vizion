@@ -19,10 +19,10 @@ export default function Notifications() {
     <div>
       <PageHeader />
 
-      <div className="bg-offWhite rounded-[20px] p-4 xs:p-5 sm:p-6 w-full max-w-md mx-auto mt-8 overflow-hidden animate-fadeIn">
-        <div className="flex items-center justify-between mb-3 xs:mb-5">
-          <div className="relative flex justify-start w-32.5 h-11.75">
-            <div className="absolute -right-6 xs:-right-8 sm:-right-10 flex items-center font-morabbaBold gap-1.5 bg-primary text-white px-3.5 xs:px-5.5 py-2 xs:py-2.5 rounded-tl-full rounded-bl-full">
+      <div className="mx-auto mt-8 w-full max-w-md animate-fadeIn overflow-hidden rounded-[20px] bg-offWhite p-4 xs:p-5 sm:p-6">
+        <div className="mb-3 flex items-center justify-between xs:mb-5">
+          <div className="relative flex h-11.75 w-32.5 justify-start">
+            <div className="absolute -right-6 flex items-center gap-1.5 rounded-tl-full rounded-bl-full bg-primary px-3.5 py-2 font-morabbaBold text-white xs:-right-8 xs:px-5.5 xs:py-2.5 sm:-right-10">
               <IoMdNotificationsOutline size={18} className="xs:hidden" />
               <IoMdNotificationsOutline
                 size={20}
@@ -41,7 +41,7 @@ export default function Notifications() {
                 onClick={markAllAsRead}
                 disabled={!hasUnread}
                 title="همه را خوانده‌شده کن"
-                className="rounded-lg transition-colors font-yekanMedium"
+                className="rounded-lg font-yekanMedium transition-colors"
               >
                 <MdDoneAll size={16} />
                 <span className="hidden xs:inline">همش خوانده شد</span>
@@ -52,7 +52,7 @@ export default function Notifications() {
                 size="tiny"
                 onClick={deleteAllNotifications}
                 title="حذف همه اعلان‌ها"
-                className="rounded-lg transition-colors font-yekanMedium"
+                className="rounded-lg font-yekanMedium transition-colors"
               >
                 <MdDeleteSweep size={16} />
                 <span className="hidden xs:inline">حذف همه</span>

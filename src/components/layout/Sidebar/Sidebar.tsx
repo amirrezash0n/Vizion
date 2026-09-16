@@ -9,10 +9,10 @@ export interface SidebarProps {
 
 export default function Sidebar({ onNavigate }: SidebarProps) {
   return (
-    <div className="h-screen w-64 lg:w-75 px-4 lg:pr-8.75 pt-4 lg:pt-6.25 flex flex-col text-white bg-balticSea-300">
+    <div className="flex h-screen w-64 flex-col bg-balticSea-300 px-4 pt-4 text-white lg:w-75 lg:pt-6.25 lg:pr-8.75">
       <SidebarTitle onMenuClick={onNavigate} />
 
-      <nav className="flex-1 space-y-2 mt-6">
+      <nav className="mt-6 flex-1 space-y-2">
         {NAV_ITEMS.map((item) => (
           <SidebarLink key={item.path} item={item} onNavigate={onNavigate} />
         ))}

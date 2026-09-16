@@ -13,37 +13,37 @@ export default function TransactionHistory() {
   };
 
   return (
-    <div className="bg-offWhite rounded-[20px] p-4 xs:p-6 w-full h-full flex flex-col">
-      <h2 className="font-morabbaBold text-base xs:text-xl text-black text-right mb-6 shrink-0">
+    <div className="flex h-full w-full flex-col rounded-[20px] bg-offWhite p-4 xs:p-6">
+      <h2 className="mb-6 shrink-0 text-right font-morabbaBold text-base text-black xs:text-xl">
         تراکنش های اخیر شما
       </h2>
 
-      <div className="flex-1 min-h-0 overflow-y-auto pl-1 custom-scrollbar space-y-2 xs:space-y-3">
+      <div className="custom-scrollbar min-h-0 flex-1 space-y-2 overflow-y-auto pl-1 xs:space-y-3">
         {transactions.map((tx) => {
           const config = typeConfig[tx.type];
           return (
             <div
               key={tx.id}
-              className="flex items-center justify-between gap-3 bg-white rounded-xl px-3 xs:px-4 py-3"
+              className="flex items-center justify-between gap-3 rounded-xl bg-white px-3 py-3 xs:px-4"
               dir="rtl"
             >
               <span
-                className={`font-yekanBold text-[10px] xs:text-xs px-2.5 xs:px-3 py-1 xs:py-1.5 rounded-lg shrink-0 ${config.className}`}
+                className={`shrink-0 rounded-lg px-2.5 py-1 font-yekanBold text-[10px] xs:px-3 xs:py-1.5 xs:text-xs ${config.className}`}
               >
                 {config.label}
               </span>
 
-              <div className="flex-1 text-right min-w-0">
-                <p className="font-yekanMedium text-xs xs:text-sm text-balticSea-400 truncate">
+              <div className="min-w-0 flex-1 text-right">
+                <p className="truncate font-yekanMedium text-xs text-balticSea-400 xs:text-sm">
                   {tx.title}
                 </p>
-                <p className="font-morabbaLight text-[10px] xs:text-xs text-dawn mt-0.5">
+                <p className="mt-0.5 font-morabbaLight text-[10px] text-dawn xs:text-xs">
                   {tx.date}
                 </p>
               </div>
 
               <div
-                className={`text-left shrink-0 ${tx.type === "charge" ? "text-success" : "text-danger"}`}
+                className={`shrink-0 text-left ${tx.type === "charge" ? "text-success" : "text-danger"}`}
               >
                 <span className="font-yekanBold text-xs xs:text-sm">
                   {tx.amount.toLocaleString("fa-IR")}

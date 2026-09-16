@@ -12,11 +12,11 @@ export default function ProfileAvatar({
         <img
           src={avatar}
           alt={name}
-          className="size-16 xs:w-20 xs:h-20 rounded-full object-cover border-2 border-white shadow-md"
+          className="size-16 rounded-full border-2 border-white object-cover shadow-md xs:h-20 xs:w-20"
         />
         <button
           type="button"
-          className="absolute -bottom-1 -left-1 flex items-center justify-center w-7 h-7 xs:w-8 xs:h-8 rounded-full bg-primary text-white shadow-md hover:bg-secondary transition-colors"
+          className="absolute -bottom-1 -left-1 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white shadow-md transition-colors hover:bg-secondary xs:h-8 xs:w-8"
           aria-label="تغییر تصویر"
         >
           <FiPlus size={14} />
@@ -25,15 +25,15 @@ export default function ProfileAvatar({
 
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
-          <span className="font-morabbaMedium text-[10px] xs:text-xs text-dawn">
+          <span className="font-morabbaMedium text-[10px] text-dawn xs:text-xs">
             نام کاربری:
           </span>
         </div>
-        <span className="font-yekanBold text-sm xs:text-base text-balticSea-400">
+        <span className="font-yekanBold text-sm text-balticSea-400 xs:text-base">
           {name}
         </span>
         <span
-          className="font-morabbaMedium text-[10px] xs:text-xs text-dawn"
+          className="font-morabbaMedium text-[10px] text-dawn xs:text-xs"
           dir="ltr"
         >
           {phone}

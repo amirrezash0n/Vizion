@@ -22,19 +22,19 @@ export default function TicketMessage({
           <img
             src={avatar}
             alt={name}
-            className="w-9 h-9 xs:w-10 xs:h-10 rounded-full object-cover shrink-0"
+            className="h-9 w-9 shrink-0 rounded-full object-cover xs:h-10 xs:w-10"
           />
-          <span className="font-yekanBold text-xs xs:text-sm text-balticSea-400">
+          <span className="font-yekanBold text-xs text-balticSea-400 xs:text-sm">
             {name}
           </span>
         </div>
-        <span className="font-morabbaLight text-[10px] xs:text-xs text-dawn shrink-0">
+        <span className="shrink-0 font-morabbaLight text-[10px] text-dawn xs:text-xs">
           {date}
         </span>
       </div>
 
-      <div className="bg-white rounded-2xl p-4 xs:p-5 border border-cloud">
-        <p className="font-yekanMedium text-xs xs:text-sm text-balticSea-400 leading-6 xs:leading-7 text-justify">
+      <div className="rounded-2xl border border-cloud bg-white p-4 xs:p-5">
+        <p className="text-justify font-yekanMedium text-xs leading-6 text-balticSea-400 xs:text-sm xs:leading-7">
           {text}
         </p>
       </div>

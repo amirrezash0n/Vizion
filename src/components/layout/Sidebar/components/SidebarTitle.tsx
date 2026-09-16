@@ -8,7 +8,7 @@ export default function SidebarTitle({ onMenuClick }: SidebarTitleProps) {
   return (
     <Link
       to="/"
-      className="w-20 text-text-22 mb-6.25 font-morabbaBold font-extrabold text-right text-primary"
+      className="mb-6.25 w-20 text-right font-morabbaBold text-text-22 font-extrabold text-primary"
       onClick={onMenuClick}
     >
       ویزیون

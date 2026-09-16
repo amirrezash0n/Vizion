@@ -55,7 +55,7 @@ export default function StatusFilter({
 
       {isOpen && (
         <div
-          className="absolute top-full mt-2 right-0 w-full min-w-max bg-white rounded-xl border border-cloud shadow-lg z-50 overflow-hidden animate-fadeIn"
+          className="absolute top-full right-0 z-50 mt-2 w-full min-w-max animate-fadeIn overflow-hidden rounded-xl border border-cloud bg-white shadow-lg"
           dir="rtl"
         >
           {options.map((option) => (

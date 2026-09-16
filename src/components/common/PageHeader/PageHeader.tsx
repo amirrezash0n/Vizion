@@ -9,7 +9,7 @@ export default function PageHeader({ title, className = "" }: PageHeaderProps) {
 
   return (
     <div className={cn("mb-4 sm:mb-5 lg:mb-5.5", className)}>
-      <h2 className="text-2xl sm:text-3xl font-morabbaBold text-balticSea-400 mt-2">
+      <h2 className="mt-2 font-morabbaBold text-2xl text-balticSea-400 sm:text-3xl">
         {pageTitle}
       </h2>
     </div>

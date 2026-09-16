@@ -17,16 +17,16 @@ export default function TicketForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-iceBlue rounded-[20px] p-4 xs:p-6 sm:p-8"
+      className="rounded-[20px] bg-iceBlue p-4 xs:p-6 sm:p-8"
       dir="rtl"
     >
-      <h2 className="font-yekanMedium text-base xs:text-lg text-balticSea-400 mb-6">
+      <h2 className="mb-6 font-yekanMedium text-base text-balticSea-400 xs:text-lg">
         افزودن تیکت جدید
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-6 mb-5">
+      <div className="mb-5 grid grid-cols-1 gap-4 xs:gap-6 sm:grid-cols-2">
         <div>
-          <h4 className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-2">
+          <h4 className="mb-2 block font-yekanBold text-xs text-balticSea-400 xs:text-sm">
             عنوان تیکت
           </h4>
           <input
@@ -34,19 +34,19 @@ export default function TicketForm() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="عنوان را وارد کنید ..."
-            className="w-full bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-primary outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 placeholder:text-dawn placeholder:font-yekanRegular transition-colors"
+            className="w-full rounded-xl border border-cloud bg-white px-3 py-2.5 font-yekanMedium text-xs text-balticSea-400 transition-colors outline-none placeholder:font-yekanRegular placeholder:text-dawn focus:border-primary xs:px-4 xs:py-3 xs:text-sm"
           />
         </div>
 
         <div>
-          <label className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-2">
+          <label className="mb-2 block font-yekanBold text-xs text-balticSea-400 xs:text-sm">
             دپارتمان
           </label>
           <div className="relative">
             <select
               value={department}
               onChange={(e) => setDepartment(e.target.value)}
-              className="w-full appearance-none bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-danger outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 transition-colors cursor-pointer"
+              className="w-full cursor-pointer appearance-none rounded-xl border border-cloud bg-white px-3 py-2.5 font-yekanMedium text-xs text-balticSea-400 transition-colors outline-none focus:border-danger xs:px-4 xs:py-3 xs:text-sm"
             >
               {DEPARTMENTS.map((dept) => (
                 <option key={dept.id} value={dept.id} disabled={dept.id === ""}>
@@ -55,7 +55,7 @@ export default function TicketForm() {
               ))}
             </select>
 
-            <span className="absolute left-3 xs:left-4 top-1/2 -translate-y-1/2 pointer-events-none text-dawn">
+            <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-dawn xs:left-4">
               <FiChevronDown size={14} />
             </span>
           </div>
@@ -63,7 +63,7 @@ export default function TicketForm() {
       </div>
 
       <div className="mb-5">
-        <span className="block font-yekanBold text-xs xs:text-sm text-balticSea-400 mb-2">
+        <span className="mb-2 block font-yekanBold text-xs text-balticSea-400 xs:text-sm">
           متن تیکت
         </span>
         <textarea
@@ -71,13 +71,13 @@ export default function TicketForm() {
           onChange={(e) => setMessage(e.target.value)}
           rows={8}
           placeholder="متن تیکت را وارد کنید ..."
-          className="w-full bg-white rounded-xl px-3 xs:px-4 py-2.5 xs:py-3 border border-cloud focus:border-danger outline-none font-yekanMedium text-xs xs:text-sm text-balticSea-400 placeholder:text-dawn placeholder:font-yekanRegular transition-colors resize-none"
+          className="w-full resize-none rounded-xl border border-cloud bg-white px-3 py-2.5 font-yekanMedium text-xs text-balticSea-400 transition-colors outline-none placeholder:font-yekanRegular placeholder:text-dawn focus:border-danger xs:px-4 xs:py-3 xs:text-sm"
         />
       </div>
-      <div className="flex items-center flex-wrap gap-3 justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
           <ImageUploadButton onUpload={() => {}} />
-          <span className="font-yekanMedium text-[10px] xs:text-xs text-mobster">
+          <span className="font-yekanMedium text-[10px] text-mobster xs:text-xs">
             تصویری از مشکل خود دارید؟
           </span>
         </div>
@@ -86,7 +86,7 @@ export default function TicketForm() {
           type="submit"
           variant="primary"
           size="xs"
-          className="font-yekanBold rounded-xl"
+          className="rounded-xl font-yekanBold"
         >
           ارسال تیکت
         </Button>

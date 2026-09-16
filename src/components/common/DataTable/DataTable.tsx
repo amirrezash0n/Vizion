@@ -35,7 +35,7 @@ export default function DataTable<T>({
 
   return (
     <div className={`w-full ${dashboard ? "" : "h-150.25"}`}>
-      <div className="size-full overflow-x-auto rounded-2xl scrollbar-hide-mobile">
+      <div className="scrollbar-hide-mobile size-full overflow-x-auto rounded-2xl">
         <table className="w-full min-w-225 border-collapse">
           <DataTableHead columns={columns} />
           <DataTableBody

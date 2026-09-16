@@ -17,14 +17,14 @@ export const orderColumns: TableColumn<Order>[] = [
         <img
           src={order.icon}
           alt={order.title}
-          className="h-11 w-11 shrink-0 rounded-full object-contain"
+          className="size-11 shrink-0 rounded-full object-contain"
         />
         <div className="text-right">
-          <p className="whitespace-nowrap text-sm font-yekanMedium text-balticSea-400">
+          <p className="font-yekanMedium text-sm whitespace-nowrap text-balticSea-400">
             {order.title}
           </p>
           {order.subtitle && (
-            <p className="mt-1 text-xs font-yekanMedium text-dawn">
+            <p className="mt-1 font-yekanMedium text-xs text-dawn">
               {order.subtitle}
             </p>
           )}
@@ -36,7 +36,7 @@ export const orderColumns: TableColumn<Order>[] = [
     key: "paymentNumber",
     title: "شماره پرداخت",
     render: (order) => (
-      <span className="whitespace-nowrap text-sm font-yekanMedium text-balticSea-400">
+      <span className="font-yekanMedium text-sm whitespace-nowrap text-balticSea-400">
         {order.paymentNumber}
       </span>
     ),
@@ -45,7 +45,7 @@ export const orderColumns: TableColumn<Order>[] = [
     key: "date",
     title: "تاریخ پرداخت",
     render: (order) => (
-      <span className="whitespace-nowrap text-sm font-yekanMedium text-balticSea-400">
+      <span className="font-yekanMedium text-sm whitespace-nowrap text-balticSea-400">
         {order.date}
       </span>
     ),
@@ -54,7 +54,7 @@ export const orderColumns: TableColumn<Order>[] = [
     key: "price",
     title: "مبلغ پرداخت",
     render: (order) => (
-      <div className="whitespace-nowrap text-xl font-yekanBold text-balticSea-400">
+      <div className="font-yekanBold text-xl whitespace-nowrap text-balticSea-400">
         <span className="font-semibold">
           {order.price.toLocaleString("fa-IR")}
         </span>
@@ -79,7 +79,7 @@ export const orderColumns: TableColumn<Order>[] = [
     render: (order) => (
       <Link
         to={`/orders/${order.id}`}
-        className="flex items-center gap-0.5 whitespace-nowrap text-sm text-primary font-yekanMedium transition-opacity hover:opacity-80"
+        className="flex items-center gap-0.5 font-yekanMedium text-sm whitespace-nowrap text-primary transition-opacity hover:opacity-80"
       >
         <span>مشاهده</span>
         <span className="flex items-center">

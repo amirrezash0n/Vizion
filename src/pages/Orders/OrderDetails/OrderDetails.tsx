@@ -16,7 +16,7 @@ export default function OrderDetails() {
     return (
       <div>
         <PageHeader />
-        <div className="bg-offWhite rounded-2xl p-8 max-w-2xl mx-auto mt-4 text-center animate-fadeIn">
+        <div className="mx-auto mt-4 max-w-2xl animate-fadeIn rounded-2xl bg-offWhite p-8 text-center">
           <p className="font-morabbaMedium text-sm text-dawn">
             سفارش مورد نظر پیدا نشد!
           </p>
@@ -30,11 +30,11 @@ export default function OrderDetails() {
       <BackButton />
       <PageHeader />
 
-      <div className="bg-offWhite rounded-[20px] p-4 xs:p-6 sm:p-8 max-w-5xl mx-auto mt-4 animate-fadeIn">
+      <div className="mx-auto mt-4 max-w-5xl animate-fadeIn rounded-[20px] bg-offWhite p-4 xs:p-6 sm:p-8">
         <OrderHeader date={order.date} />
         <OrderProduct order={order} />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <PaymentSection order={order} />
           <AccountSection order={order} />
           <ContactSection order={order} />

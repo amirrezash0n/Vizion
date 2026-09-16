@@ -3,70 +3,70 @@
 @import "./App.css";
 
 @theme {
-    /* Fonts */
+  /* Fonts */
 
-    /* YekanBakh Fonts */
-    --font-yekanBold: "YekanBakh-Bold";
-    --font-yekanHeavy: "YekanBakh-Heavy";
-    --font-yekanMedium: "YekanBakh-Medium";
-    --font-yekanRegular: "YekanBakh-Regular";
-    /* Morabba Fonts */
-    --font-morabbaBold: "Morabba-Bold";
-    --font-morabbaLight: "Morabba-Light";
-    --font-morabbaMedium: "Morabba-Medium";
+  /* YekanBakh Fonts */
+  --font-yekanBold: "YekanBakh-Bold";
+  --font-yekanHeavy: "YekanBakh-Heavy";
+  --font-yekanMedium: "YekanBakh-Medium";
+  --font-yekanRegular: "YekanBakh-Regular";
+  /* Morabba Fonts */
+  --font-morabbaBold: "Morabba-Bold";
+  --font-morabbaLight: "Morabba-Light";
+  --font-morabbaMedium: "Morabba-Medium";
 
-    /* Fonts Weight */
-    --font-weight-extrabold: 800;
+  /* Fonts Weight */
+  --font-weight-extrabold: 800;
 
-    /* Font Sizes */
-    --text-text-22: 1.375rem;
+  /* Font Sizes */
+  --text-text-22: 1.375rem;
 
-    /* Colors */
-    --color-primary: #FD295C;
-    --color-secondary: #F32770;
-    --color-success: #1EBD71;
-    --color-dark: #31303A;
-    --color-text-primary: #3A3944;
-    --color-text-secondary: #494857;
-    --color-tuna: #383742;
-    --color-dawn: #A5A5A5;
-    --color-mobster: #7B7892;
-    --color-gray: #A5A3BA;
-    --color-whiteSmoke: #F6F6F6;
-    --color-haiti: #2F2E36;
-    --color-smokeyGrey-100: #3F3E49;
-    --color-smokeyGrey-200: rgba(114, 114, 144, 0.53);
-    --color-balticSea-100: #292832;
-    --color-balticSea-200: #28272E;
-    --color-balticSea-300: #24232B;
-    --color-balticSea-400: #24232A;
-    --color-white-5: #FFFFFF0D;
-    --color-offWhite: #F8F8FB;
-    --color-mobster: #B2B2BE;
-    --color-success: #25BB85;
-    --color-warning: #ED9446;
-    --color-danger: #FF505A;
-    --color-softPink: #FAD7D7;
-    --color-crimson: #E93051;
-    --color-slate: #787986;
-    --color-cloud: #ECECF4;
-    --color-iceBlue: #F1F5FC;
+  /* Colors */
+  --color-primary: #fd295c;
+  --color-secondary: #f32770;
+  --color-success: #1ebd71;
+  --color-dark: #31303a;
+  --color-text-primary: #3a3944;
+  --color-text-secondary: #494857;
+  --color-tuna: #383742;
+  --color-dawn: #a5a5a5;
+  --color-mobster: #7b7892;
+  --color-gray: #a5a3ba;
+  --color-whiteSmoke: #f6f6f6;
+  --color-haiti: #2f2e36;
+  --color-smokeyGrey-100: #3f3e49;
+  --color-smokeyGrey-200: rgba(114, 114, 144, 0.53);
+  --color-balticSea-100: #292832;
+  --color-balticSea-200: #28272e;
+  --color-balticSea-300: #24232b;
+  --color-balticSea-400: #24232a;
+  --color-white-5: #ffffff0d;
+  --color-offWhite: #f8f8fb;
+  --color-mobster: #b2b2be;
+  --color-success: #25bb85;
+  --color-warning: #ed9446;
+  --color-danger: #ff505a;
+  --color-softPink: #fad7d7;
+  --color-crimson: #e93051;
+  --color-slate: #787986;
+  --color-cloud: #ececf4;
+  --color-iceBlue: #f1f5fc;
 
-    /* BreakPoints */
-    --breakpoint-xs: 460px;
+  /* BreakPoints */
+  --breakpoint-xs: 460px;
 
-    /* Animations */
-    --animate-fadeIn: fadeIn 0.4s ease-out;
+  /* Animations */
+  --animate-fadeIn: fadeIn 0.4s ease-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

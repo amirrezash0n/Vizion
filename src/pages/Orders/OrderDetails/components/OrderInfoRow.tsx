@@ -11,11 +11,11 @@ export default function OrderInfoRow({
 }: OrderInfoRowProps) {
   return (
     <div className="flex items-center justify-between gap-2">
-      <span className="font-morabbaMedium text-[10px] xs:text-xs text-dawn shrink-0">
+      <span className="shrink-0 font-morabbaMedium text-[10px] text-dawn xs:text-xs">
         {label}:
       </span>
       <span
-        className={`font-yekanBold text-[10px] xs:text-xs truncate ${valueClassName}`}
+        className={`truncate font-yekanBold text-[10px] xs:text-xs ${valueClassName}`}
       >
         {value}
       </span>

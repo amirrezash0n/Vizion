@@ -29,8 +29,8 @@ export default function NotificationGroup({
     <div className="space-y-2 xs:space-y-3">
       <div className="flex justify-start">
         <span
-          className={`font-yekanBold text-[10px] xs:text-xs px-2.5 xs:px-3 py-1 xs:py-1.5 rounded-lg ${
-            type === "new" ? "text-crimson bg-softPink" : "text-slate bg-cloud"
+          className={`rounded-lg px-2.5 py-1 font-yekanBold text-[10px] xs:px-3 xs:py-1.5 xs:text-xs ${
+            type === "new" ? "bg-softPink text-crimson" : "bg-cloud text-slate"
           }`}
         >
           {title}
@@ -50,7 +50,7 @@ export default function NotificationGroup({
               variant="ghost"
               size="link"
               onClick={() => setVisibleCount((prev) => prev + step)}
-              className="font-yekanMedium text-[10px] xs:text-xs text-black underline hover:opacity-80 transition-opacity p-0 rounded-none"
+              className="rounded-none p-0 font-yekanMedium text-[10px] text-black underline transition-opacity hover:opacity-80 xs:text-xs"
             >
               نمایش بیشتر
             </Button>
@@ -59,7 +59,7 @@ export default function NotificationGroup({
               variant="ghost"
               size="link"
               onClick={() => setVisibleCount(initialCount)}
-              className="font-yekanMedium text-[10px] xs:text-xs text-slate underline hover:opacity-80 transition-opacity p-0 rounded-none"
+              className="rounded-none p-0 font-yekanMedium text-[10px] text-slate underline transition-opacity hover:opacity-80 xs:text-xs"
             >
               نمایش کمتر
             </Button>

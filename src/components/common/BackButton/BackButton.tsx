@@ -15,12 +15,12 @@ export default function BackButton({ className = "" }: BackButtonProps) {
       variant="ghost"
       onClick={() => navigate(-1)}
       className={cn(
-        "flex items-center gap-1.5 p-1.5 my-3 xs:my-5 rounded-lg hover:bg-dawn/10 transition-colors",
+        "my-3 flex items-center gap-1.5 rounded-lg p-1.5 transition-colors hover:bg-dawn/10 xs:my-5",
         className,
       )}
     >
       <TiArrowBack size={20} className="text-balticSea-400" />
-      <span className="font-morabbaMedium font-semibold text-sm xs:text-base text-balticSea-400">
+      <span className="font-morabbaMedium text-sm font-semibold text-balticSea-400 xs:text-base">
         بازگشت
       </span>
     </Button>

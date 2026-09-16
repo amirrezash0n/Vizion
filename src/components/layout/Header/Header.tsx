@@ -8,7 +8,7 @@ import Button from "../../common/Button/Button";
 
 export default function Header({ onMenuClick }: HeaderProps) {
   return (
-    <header className="flex justify-between items-center text-white bg-balticSea-300 pt-3 sm:pt-4 lg:pt-7 pl-3 sm:pl-4 lg:pl-5 pr-3 sm:pr-4 lg:pr-5">
+    <header className="flex items-center justify-between bg-balticSea-300 pt-3 pr-3 pl-3 text-white sm:pt-4 sm:pr-4 sm:pl-4 lg:pt-7 lg:pr-5 lg:pl-5">
       <div className="flex items-center gap-2 sm:gap-3">
         <Button
           onClick={onMenuClick}

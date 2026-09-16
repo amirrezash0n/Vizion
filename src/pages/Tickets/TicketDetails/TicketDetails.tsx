@@ -21,7 +21,7 @@ export default function TicketDetails() {
     return (
       <div>
         <PageHeader />
-        <div className="bg-offWhite rounded-2xl p-8 max-w-3xl mx-auto mt-4 text-center animate-fadeIn">
+        <div className="mx-auto mt-4 max-w-3xl animate-fadeIn rounded-2xl bg-offWhite p-8 text-center">
           <p className="font-morabbaMedium text-sm text-dawn">
             تیکت مورد نظر پیدا نشد!
           </p>
@@ -51,9 +51,9 @@ export default function TicketDetails() {
 
       <PageHeader />
 
-      <div className="bg-offWhite rounded-[20px] p-4 xs:p-6 sm:p-8 max-w-4xl mx-auto mt-4 animate-fadeIn">
-        <div className="flex mb-6">
-          <span className="font-yekanBold text-xs xs:text-sm text-balticSea-400">
+      <div className="mx-auto mt-4 max-w-4xl animate-fadeIn rounded-[20px] bg-offWhite p-4 xs:p-6 sm:p-8">
+        <div className="mb-6 flex">
+          <span className="font-yekanBold text-xs text-balticSea-400 xs:text-sm">
             #{ticket.id.toLocaleString("fa-IR")}
           </span>
         </div>
@@ -78,14 +78,14 @@ export default function TicketDetails() {
           </div>
         )}
 
-        <div className="mt-6 xs:mt-8 pt-6 border-t border-dashed border-cloud">
-          <div className="flex items-center gap-2 mb-4" dir="rtl">
+        <div className="mt-6 border-t border-dashed border-cloud pt-6 xs:mt-8">
+          <div className="mb-4 flex items-center gap-2" dir="rtl">
             <StatusBadge
               status={ticket.status}
               statusConfig={TICKET_STATUS_CONFIG}
               fallbackStatus={TICKET_FALLBACK_STATUS}
             />
-            <span className="font-morabbaMedium text-[10px] xs:text-xs text-dawn">
+            <span className="font-morabbaMedium text-[10px] text-dawn xs:text-xs">
               {getStatusMessage()}
             </span>
           </div>

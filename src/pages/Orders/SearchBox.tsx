@@ -14,9 +14,9 @@ export default function SearchBox({
   return (
     <div
       className={cn(
-        "flex items-center gap-3 w-60 h-11 px-4 py-3",
-        "bg-gray-100 rounded-2xl",
-        "transition-all mb-4 xs:mb-0",
+        "flex h-11 w-60 items-center gap-3 px-4 py-3",
+        "rounded-2xl bg-gray-100",
+        "mb-4 transition-all xs:mb-0",
         className,
       )}
     >
@@ -26,11 +26,11 @@ export default function SearchBox({
         className={cn(
           "flex-1 bg-transparent outline-none",
           "font-morabbaMedium text-sm text-balticSea-400",
-          "placeholder:text-dawn placeholder:font-yekanRegular",
+          "placeholder:font-yekanRegular placeholder:text-dawn",
         )}
         {...rest}
       />
-      <FiSearch size={20} className="text-balticSea-400 shrink-0" />
+      <FiSearch size={20} className="shrink-0 text-balticSea-400" />
     </div>
   );
 }

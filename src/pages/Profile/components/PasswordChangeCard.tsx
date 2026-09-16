@@ -25,7 +25,7 @@ export default function PasswordChangeCard() {
   };
 
   return (
-    <div className="bg-offWhite rounded-[20px] p-4 xs:p-5 sm:p-6">
+    <div className="rounded-[20px] bg-offWhite p-4 xs:p-5 sm:p-6">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="space-y-4 xs:space-y-5"
@@ -71,7 +71,7 @@ export default function PasswordChangeCard() {
             type="submit"
             variant="primary"
             size="sm"
-            className="font-yekanBold rounded-xl"
+            className="rounded-xl font-yekanBold"
           >
             تغییر رمز عبور
           </Button>

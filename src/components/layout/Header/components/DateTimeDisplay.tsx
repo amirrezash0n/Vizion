@@ -4,9 +4,9 @@ import useDateTime from "../../../../hooks/useDateTime";
 function DateTimeDisplay() {
   const { time, date } = useDateTime();
   return (
-    <div className="flex items-center gap-x-3 lg:gap-x-4 py-2 lg:py-2.5 px-2.5 lg:px-3 ml-1 h-9 lg:h-10 bg-text-primary rounded-xl">
+    <div className="ml-1 flex h-9 items-center gap-x-3 rounded-xl bg-text-primary px-2.5 py-2 lg:h-10 lg:gap-x-4 lg:px-3 lg:py-2.5">
       <FiCalendar size={18} className="text-gray-400" />
-      <div className="flex items-center gap-3 lg:gap-6 font-yekanMedium font-black whitespace-nowrap text-xs lg:text-sm">
+      <div className="flex items-center gap-3 font-yekanMedium text-xs font-black whitespace-nowrap lg:gap-6 lg:text-sm">
         <span>{time}</span>
         <span>{date}</span>
       </div>

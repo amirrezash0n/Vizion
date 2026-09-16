@@ -11,22 +11,22 @@ interface OrderProductProps {
 
 export default function OrderProduct({ order }: OrderProductProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6" dir="rtl">
-      <div className="md:col-span-1 flex items-center justify-center">
-        <div className="relative w-32 h-32 xs:w-40 xs:h-40 flex items-center justify-center">
+    <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-3" dir="rtl">
+      <div className="flex items-center justify-center md:col-span-1">
+        <div className="relative flex h-32 w-32 items-center justify-center xs:h-40 xs:w-40">
           <div className="absolute inset-0 rounded-full bg-primary/5 blur-xl" />
 
           <img
             src={order.icon}
             alt={order.title}
-            className="relative w-full h-full object-contain [image-rendering:-webkit-optimize-contrast] drop-shadow-sm rounded-full"
+            className="relative h-full w-full rounded-full object-contain drop-shadow-sm [image-rendering:-webkit-optimize-contrast]"
           />
         </div>
       </div>
 
-      <div className="md:col-span-2 flex flex-col justify-center gap-3">
+      <div className="flex flex-col justify-center gap-3 md:col-span-2">
         <div>
-          <h1 className="font-yekanBold text-base xs:text-lg text-balticSea-400 mb-1">
+          <h1 className="mb-1 font-yekanBold text-base text-balticSea-400 xs:text-lg">
             {order.title}
           </h1>
           <p className="font-morabbaMedium text-xs text-dawn">

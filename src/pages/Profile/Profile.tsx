@@ -17,7 +17,7 @@ export default function Profile() {
     <div>
       <PageHeader />
 
-      <div className="max-w-md mx-auto mt-4 space-y-4 xs:space-y-5 animate-fadeIn">
+      <div className="mx-auto mt-4 max-w-md animate-fadeIn space-y-4 xs:space-y-5">
         <ProfileInfoCard
           avatar={user.avatar}
           username={user.username}

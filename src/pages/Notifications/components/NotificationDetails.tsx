@@ -27,7 +27,7 @@ export default function NotificationDetails() {
       <div>
         <BackButton />
         <PageHeader />
-        <div className="bg-offWhite rounded-2xl p-8 max-w-2xl mx-auto mt-4 text-center animate-fadeIn">
+        <div className="mx-auto mt-4 max-w-2xl animate-fadeIn rounded-2xl bg-offWhite p-8 text-center">
           <p className="font-morabbaMedium text-sm text-dawn">
             اعلان مورد نظر پیدا نشد!
           </p>
@@ -49,50 +49,46 @@ export default function NotificationDetails() {
       <BackButton />
       <PageHeader />
       <div
-        className={`
-          bg-offWhite rounded-2xl p-4 xs:p-6 sm:p-8 max-w-2xl mx-auto mt-4
-          transition-all duration-300
-          ${isDeleting ? "opacity-0 scale-95" : "opacity-100 scale-100 animate-fadeIn"}
-        `}
+        className={`mx-auto mt-4 max-w-2xl rounded-2xl bg-offWhite p-4 transition-all duration-300 xs:p-6 sm:p-8 ${isDeleting ? "scale-95 opacity-0" : "scale-100 animate-fadeIn opacity-100"} `}
       >
         <div
-          className="flex items-center justify-between mb-4 xs:mb-6"
+          className="mb-4 flex items-center justify-between xs:mb-6"
           dir="rtl"
         >
           <Button
             variant="ghost"
             onClick={handleDelete}
-            className="w-7 h-7 xs:w-8 xs:h-8 rounded-lg hover:bg-danger/10 transition-colors group p-0"
+            className="group h-7 w-7 rounded-lg p-0 transition-colors hover:bg-danger/10 xs:h-8 xs:w-8"
           >
             <FaTrash
               size={12}
-              className="xs:hidden text-dawn group-hover:text-danger transition-colors"
+              className="text-dawn transition-colors group-hover:text-danger xs:hidden"
             />
             <FaTrash
               size={14}
-              className="hidden xs:block text-dawn group-hover:text-danger transition-colors"
+              className="hidden text-dawn transition-colors group-hover:text-danger xs:block"
             />
           </Button>
 
-          <span className="font-morabbaLight text-[10px] xs:text-xs text-dawn">
+          <span className="font-morabbaLight text-[10px] text-dawn xs:text-xs">
             {toPersianTime(notification.createdAt)} -{" "}
             {toPersianDate(notification.createdAt)}
           </span>
         </div>
 
         <div className="flex gap-3 xs:gap-4" dir="rtl">
-          <div className="border-r-2 border-dashed border-primary/40 self-stretch" />
-          <div className="flex-1 space-y-3 xs:space-y-4 min-w-0">
-            <h2 className="flex items-center gap-2 font-yekanBold text-sm xs:text-base text-balticSea-400">
+          <div className="self-stretch border-r-2 border-dashed border-primary/40" />
+          <div className="min-w-0 flex-1 space-y-3 xs:space-y-4">
+            <h2 className="flex items-center gap-2 font-yekanBold text-sm text-balticSea-400 xs:text-base">
               {!notification.isRead && (
                 <FaCircle
                   size={8}
-                  className="text-primary shrink-0 animate-pulse"
+                  className="shrink-0 animate-pulse text-primary"
                 />
               )}
               <span className="truncate">{notification.title}</span>
             </h2>
-            <p className="font-morabbaMedium text-xs xs:text-sm text-balticSea-400 leading-6 xs:leading-7 text-justify">
+            <p className="text-justify font-morabbaMedium text-xs leading-6 text-balticSea-400 xs:text-sm xs:leading-7">
               {notification.fullText}
             </p>
           </div>

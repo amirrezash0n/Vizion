@@ -16,32 +16,24 @@ export default function BankOption({
     <button
       type="button"
       onClick={onSelect}
-      className={`
-        w-full flex items-center justify-between gap-3 
-        rounded-xl px-3 xs:px-4 py-3 
-        border transition-all
-        ${
-          selected
-            ? "border-primary bg-primary/5"
-            : "border-cloud bg-white hover:border-dawn/40"
-        }
-      `}
+      className={`flex w-full items-center justify-between gap-3 rounded-xl border px-3 py-3 transition-all xs:px-4 ${
+        selected
+          ? "border-primary bg-primary/5"
+          : "border-cloud bg-white hover:border-dawn/40"
+      } `}
       dir="rtl"
     >
       <div className="flex items-center gap-3">
-        <div className="size-5 flex items-center justify-center shrink-0">
-          <img src={logo} alt={name} className="w-full h-full object-contain" />
+        <div className="flex size-5 shrink-0 items-center justify-center">
+          <img src={logo} alt={name} className="h-full w-full object-contain" />
         </div>
-        <span className="font-yekanMedium text-xs xs:text-sm text-balticSea-400">
+        <span className="font-yekanMedium text-xs text-balticSea-400 xs:text-sm">
           درگاه پرداخت بانک {name}
         </span>
       </div>
 
       <span
-        className={`
-          size-4 rounded-full border-2 flex items-center justify-center shrink-0
-          ${selected ? "border-primary" : "border-dawn"}
-        `}
+        className={`flex size-4 shrink-0 items-center justify-center rounded-full border-2 ${selected ? "border-primary" : "border-dawn"} `}
       >
         {selected && <span className="size-2 rounded-full bg-primary" />}
       </span>

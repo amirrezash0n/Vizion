@@ -11,8 +11,8 @@ import { salesData } from "../../../../data/dashboard/salesData";
 
 export default function SalesChart() {
   return (
-    <div className="bg-balticSea-300 rounded-xl p-6 border border-white-5">
-      <div className="flex items-center justify-between mb-6">
+    <div className="rounded-xl border border-white-5 bg-balticSea-300 p-6">
+      <div className="mb-6 flex items-center justify-between">
         <h2 className="font-yekanBold text-lg text-whiteSmoke">فروش هفتگی</h2>
         <span className="font-morabbaMedium text-xs text-dawn">
           ۷ روز گذشته

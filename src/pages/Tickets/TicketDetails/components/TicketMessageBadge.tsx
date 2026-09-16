@@ -22,7 +22,7 @@ export default function TicketMessageBadge({ type }: TicketMessageBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 font-yekanBold text-[10px] xs:text-xs px-2.5 xs:px-3 py-1 xs:py-1.5 rounded-lg ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 font-yekanBold text-[10px] xs:px-3 xs:py-1.5 xs:text-xs ${className}`}
     >
       <Icon size={12} className="rotate-180" />
       <span>{label}</span>

@@ -42,8 +42,8 @@ export default function ProfileInfoCard({
   };
 
   return (
-    <div className="bg-offWhite rounded-[20px] p-4 xs:p-5 sm:p-6">
-      <div className="mb-6 pb-6 border-b border-dashed border-cloud">
+    <div className="rounded-[20px] bg-offWhite p-4 xs:p-5 sm:p-6">
+      <div className="mb-6 border-b border-dashed border-cloud pb-6">
         <ProfileAvatar
           name={username}
           phone={defaultValues.phone}
@@ -78,14 +78,14 @@ export default function ProfileInfoCard({
         />
 
         <div
-          className="flex justify-between flex-wrap gap-y-2 gap-x-2 items-center pt-2"
+          className="flex flex-wrap items-center justify-between gap-x-2 gap-y-2 pt-2"
           dir="rtl"
         >
           <Button
             type="submit"
             variant="primary"
             size="sm"
-            className="font-yekanBold rounded-xl"
+            className="rounded-xl font-yekanBold"
             disabled={!isDirty}
           >
             ذخیره تغییرات
@@ -94,7 +94,7 @@ export default function ProfileInfoCard({
             type="button"
             variant="outline"
             size="sm"
-            className="font-yekanBold rounded-xl"
+            className="rounded-xl font-yekanBold"
             onClick={onTogglePassword}
           >
             <span className="flex items-center gap-2">
