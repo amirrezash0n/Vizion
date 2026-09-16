@@ -9,7 +9,7 @@ export default function Wallet() {
   return (
     <>
       <PageHeader />
-      <div className="mt-10">
+      <div className="mt-10 animate-fadeIn">
         <div className="mt-4 flex flex-wrap items-start justify-center gap-4 xs:gap-6 lg:mt-12 xl:mt-16">
           <div className="flex w-100 flex-col gap-4 xs:gap-6 xl:h-150">
             <div className="shrink-0">

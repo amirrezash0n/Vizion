@@ -11,7 +11,7 @@ export default function Dashboard() {
       <PageHeader />
       <StatsCard />
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <div className="grid animate-fadeIn grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <SalesChart />
         </div>
