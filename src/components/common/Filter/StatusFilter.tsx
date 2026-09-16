@@ -1,19 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { FiChevronDown, FiCheck } from "react-icons/fi";
 import { cn } from "../../../utils/class.utils";
-
-export interface StatusOption {
-  value: string;
-  label: string;
-}
-
-interface StatusFilterProps {
-  label: string;
-  options: StatusOption[];
-  value: string;
-  onChange: (value: string) => void;
-  className?: string;
-}
+import { styles } from "./StatusFilterStyles";
+import type { StatusFilterProps } from "./StatusFilter.types";
 
 export default function StatusFilter({
   label,
@@ -38,6 +27,8 @@ export default function StatusFilter({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  if (options.length === 0) return null;
+
   const selectedOption = options.find((opt) => opt.value === value);
   const isActive = value !== "all";
 
@@ -46,22 +37,11 @@ export default function StatusFilter({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={cn(
-          "flex items-center gap-2 px-3 xs:px-4 py-2 rounded-xl",
-          "bg-white border transition-colors",
-          "font-yekanMedium text-xs xs:text-sm",
-          isOpen || isActive
-            ? "border-primary text-primary"
-            : "border-cloud text-balticSea-400 hover:border-primary",
-        )}
+        className={styles.button(isOpen, isActive)}
         dir="rtl"
       >
         <span className="text-dawn">{label}:</span>
-        <span
-          className={cn(
-            isActive ? "font-yekanBold text-primary" : "font-yekanBold",
-          )}
-        >
+        <span className={cn("font-yekanBold", isActive && "text-primary")}>
           {selectedOption?.label || "همه"}
         </span>
         <FiChevronDown
@@ -75,31 +55,25 @@ export default function StatusFilter({
 
       {isOpen && (
         <div
-          className="absolute top-full mt-2 right-0 min-w-45 bg-white rounded-xl border border-cloud shadow-lg z-50 overflow-hidden animate-fadeIn"
+          className="absolute top-full mt-2 right-0 w-full min-w-max bg-white rounded-xl border border-cloud shadow-lg z-50 overflow-hidden animate-fadeIn"
           dir="rtl"
         >
-          {options.map((option) => {
-            const isSelected = value === option.value;
-            return (
-              <button
-                key={option.value}
-                type="button"
-                onClick={() => {
-                  onChange(option.value);
-                  setIsOpen(false);
-                }}
-                className={cn(
-                  "w-full flex items-center justify-between gap-3 text-right px-4 py-2.5 font-yekanMedium text-xs xs:text-sm transition-colors",
-                  isSelected
-                    ? "bg-primary/10 text-primary font-yekanBold"
-                    : "text-balticSea-400 hover:bg-offWhite",
-                )}
-              >
-                <span>{option.label}</span>
-                {isSelected && <FiCheck size={14} className="text-primary" />}
-              </button>
-            );
-          })}
+          {options.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => {
+                onChange(option.value);
+                setIsOpen(false);
+              }}
+              className={styles.option(value === option.value)}
+            >
+              <span>{option.label}</span>
+              {value === option.value && (
+                <FiCheck size={14} className="text-primary" />
+              )}
+            </button>
+          ))}
         </div>
       )}
     </div>

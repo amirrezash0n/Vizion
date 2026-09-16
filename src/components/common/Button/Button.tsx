@@ -1,6 +1,6 @@
 import { cn } from "../../../utils/class.utils";
 import { baseStyles, sizeStyles, variantStyles } from "./ButtonStyles";
-import type { ButtonProps } from "./ButtonTypes";
+import type { ButtonProps } from "./Button.types";
 
 export default function Button({
   children,
