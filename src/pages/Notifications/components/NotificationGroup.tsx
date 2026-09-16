@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Notification } from "../../../types/notification";
 import NotificationItem from "./NotificationItem";
 import Button from "../../../components/common/Button/Button";
+import Badge from "../../../components/ui/Badge/Badge";
 
 interface NotificationGroupProps {
   title: string;
@@ -28,13 +29,13 @@ export default function NotificationGroup({
   return (
     <div className="space-y-2 xs:space-y-3">
       <div className="flex justify-start">
-        <span
-          className={`rounded-lg px-2.5 py-1 font-yekanBold text-[10px] xs:px-3 xs:py-1.5 xs:text-xs ${
+        <Badge
+          className={
             type === "new" ? "bg-softPink text-crimson" : "bg-cloud text-slate"
-          }`}
+          }
         >
           {title}
-        </span>
+        </Badge>
       </div>
 
       <div className="space-y-2 xs:space-y-3">

@@ -1,3 +1,4 @@
+import Badge from "../../../components/ui/Badge/Badge";
 import { transactions } from "../../../data/transactions";
 
 export default function TransactionHistory() {
@@ -27,11 +28,9 @@ export default function TransactionHistory() {
               className="flex items-center justify-between gap-3 rounded-xl bg-white px-3 py-3 xs:px-4"
               dir="rtl"
             >
-              <span
-                className={`shrink-0 rounded-lg px-2.5 py-1 font-yekanBold text-[10px] xs:px-3 xs:py-1.5 xs:text-xs ${config.className}`}
-              >
+              <Badge shrink className={config.className}>
                 {config.label}
-              </span>
+              </Badge>
 
               <div className="min-w-0 flex-1 text-right">
                 <p className="truncate font-yekanMedium text-xs text-balticSea-400 xs:text-sm">

@@ -1,5 +1,4 @@
 import { FiBellOff } from "react-icons/fi";
-import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdDoneAll, MdDeleteSweep } from "react-icons/md";
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import NoDataState from "../../components/common/EmptyState/NoDataState";
@@ -21,20 +20,8 @@ export default function Notifications() {
 
       <div className="mx-auto mt-8 w-full max-w-md animate-fadeIn overflow-hidden rounded-[20px] bg-offWhite p-4 xs:p-5 sm:p-6">
         <div className="mb-3 flex items-center justify-between xs:mb-5">
-          <div className="relative flex h-11.75 w-32.5 justify-start">
-            <div className="absolute -right-6 flex items-center gap-1.5 rounded-tl-full rounded-bl-full bg-primary px-3.5 py-2 font-morabbaBold text-white xs:-right-8 xs:px-5.5 xs:py-2.5 sm:-right-10">
-              <IoMdNotificationsOutline size={18} className="xs:hidden" />
-              <IoMdNotificationsOutline
-                size={20}
-                strokeWidth={20}
-                className="hidden xs:block"
-              />
-              <span className="text-xs xs:text-sm">اعلانات</span>
-            </div>
-          </div>
-
           {notifications.length > 0 && (
-            <div className="flex items-center gap-1.5 xs:gap-2">
+            <div className="flex w-full items-center justify-between gap-1.5 xs:gap-2">
               <Button
                 variant="soft"
                 size="tiny"
@@ -61,9 +48,7 @@ export default function Notifications() {
           )}
         </div>
 
-        {notifications.length === 0 ? (
-          <NoDataState icon={FiBellOff} title="هیچ اعلانی وجود ندارد!" />
-        ) : (
+        {notifications.length > 0 ? (
           <>
             <NotificationGroup
               title="جدید ها"
@@ -83,6 +68,8 @@ export default function Notifications() {
               />
             </div>
           </>
+        ) : (
+          <NoDataState icon={FiBellOff} title="هیچ اعلانی وجود ندارد!" />
         )}
       </div>
     </div>
