@@ -1,4 +1,3 @@
-// src/components/dashboard/DashboardTableHeader/DashboardTableHeader.tsx
 import { Link } from "react-router";
 import PageTitle from "../../../../components/common/PageTitle/PageTitle.tsx";
 import { IoIosArrowBack } from "react-icons/io";

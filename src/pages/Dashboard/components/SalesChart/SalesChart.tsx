@@ -8,45 +8,45 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { salesData } from "../../../../data/dashboard/salesData";
+import {
+  CHART_COLORS,
+  CHART_FONT,
+  CHART_TOOLTIP_STYLE,
+} from "../../../../constants/chartColors";
+import ChartCard from "./components/ChartCard";
 
 export default function SalesChart() {
   return (
-    <div className="rounded-xl border border-white-5 bg-balticSea-300 p-6">
-      <div className="mb-6 flex items-center justify-between">
-        <h2 className="font-yekanBold text-lg text-whiteSmoke">فروش هفتگی</h2>
-        <span className="font-morabbaMedium text-xs text-dawn">
-          ۷ روز گذشته
-        </span>
-      </div>
-
+    <ChartCard title="فروش هفتگی" subtitle="۷ روز گذشته">
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={salesData}>
           <defs>
             <linearGradient id="salesGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#FD295C" stopOpacity={0.4} />
-              <stop offset="100%" stopColor="#FD295C" stopOpacity={0} />
+              <stop
+                offset="0%"
+                stopColor={CHART_COLORS.primary}
+                stopOpacity={0.4}
+              />
+              <stop
+                offset="100%"
+                stopColor={CHART_COLORS.primary}
+                stopOpacity={0}
+              />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#3F3E49" />
+          <CartesianGrid strokeDasharray="3 3" stroke={CHART_COLORS.border} />
           <XAxis
             dataKey="day"
-            stroke="#A5A5A5"
-            style={{ fontFamily: "Morabba-Medium", fontSize: "12px" }}
+            stroke={CHART_COLORS.gray}
+            style={{ fontFamily: CHART_FONT.family, fontSize: CHART_FONT.size }}
           />
           <YAxis
-            stroke="#A5A5A5"
-            style={{ fontFamily: "Morabba-Medium", fontSize: "12px" }}
+            stroke={CHART_COLORS.gray}
+            style={{ fontFamily: CHART_FONT.family, fontSize: CHART_FONT.size }}
             tickFormatter={(value) => `${value / 1000000}م`}
           />
           <Tooltip
-            contentStyle={{
-              backgroundColor: "#24232B",
-              border: "1px solid #3F3E49",
-              borderRadius: "12px",
-              fontFamily: "Morabba-Medium",
-              fontSize: "12px",
-              color: "#F6F6F6",
-            }}
+            contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value) => [
               `${Number(value).toLocaleString("fa-IR")} تومان`,
               "فروش",
@@ -55,12 +55,12 @@ export default function SalesChart() {
           <Area
             type="monotone"
             dataKey="sales"
-            stroke="#FD295C"
+            stroke={CHART_COLORS.primary}
             strokeWidth={2}
             fill="url(#salesGradient)"
           />
         </AreaChart>
       </ResponsiveContainer>
-    </div>
+    </ChartCard>
   );
 }
