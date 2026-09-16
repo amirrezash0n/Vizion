@@ -14,9 +14,9 @@ import ProtectedRoute from "./ProtectedRoute";
 import AddTicket from "../pages/Tickets/AddTicket/AddTicket";
 import NotificationDetails from "../pages/Notifications/components/NotificationDetails";
 import OrderDetails from "../pages/Orders/OrderDetails/OrderDetails";
-import type { RouteHandle } from "./router.types";
 import TicketDetails from "../pages/Tickets/TicketDetails/TicketDetails";
 import { PAGE_TITLES } from "../constants/pageTitles";
+import type { RouteHandle } from "../types/common";
 
 const router = createBrowserRouter([
   {

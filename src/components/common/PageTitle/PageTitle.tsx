@@ -1,4 +1,7 @@
-import type { PageTitleProps } from "./PageTitle";
+interface PageTitleProps {
+  title: string;
+  className?: string;
+}
 
 function PageTitle({ title, className = "" }: PageTitleProps) {
   return (

@@ -1,4 +1,3 @@
-// src/pages/Wallet/Wallet.tsx
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import WalletBalanceCard from "./components/WalletBalanceCard";
 import WalletChargeForm from "./components/WalletChargeForm";
