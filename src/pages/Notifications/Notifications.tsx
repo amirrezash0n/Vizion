@@ -27,8 +27,8 @@ export default function Notifications() {
                 size="tiny"
                 onClick={markAllAsRead}
                 disabled={!hasUnread}
-                title="همه را خوانده‌شده کن"
-                className="rounded-lg font-yekanMedium transition-colors"
+                title="خوانده شدن پیام ها"
+                className="gap-x-1.5 rounded-lg font-yekanMedium transition-colors"
               >
                 <MdDoneAll size={16} />
                 <span className="hidden xs:inline">همش خوانده شد</span>
@@ -39,7 +39,7 @@ export default function Notifications() {
                 size="tiny"
                 onClick={deleteAllNotifications}
                 title="حذف همه اعلان‌ها"
-                className="rounded-lg font-yekanMedium transition-colors"
+                className="gap-x-1.5 rounded-lg font-yekanMedium transition-colors"
               >
                 <MdDeleteSweep size={16} />
                 <span className="hidden xs:inline">حذف همه</span>

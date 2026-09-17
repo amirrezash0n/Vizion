@@ -58,7 +58,7 @@ export default function NotificationDetails() {
           <Button
             variant="ghost"
             onClick={handleDelete}
-            className="group h-7 w-7 rounded-lg p-0 transition-colors hover:bg-danger/10 xs:h-8 xs:w-8"
+            className="group size-7 rounded-lg p-0 transition-colors hover:bg-danger/10 xs:h-8 xs:w-8"
           >
             <FaTrash
               size={12}
