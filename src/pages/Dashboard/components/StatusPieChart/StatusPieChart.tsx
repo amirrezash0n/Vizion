@@ -7,14 +7,16 @@ import {
   Legend,
 } from "recharts";
 import { statusData } from "../../../../data/dashboard/statusData";
+import ChartCard from "../SalesChart/components/ChartCard";
+import {
+  CHART_COLORS,
+  CHART_FONT,
+  CHART_TOOLTIP_STYLE,
+} from "../../../../constants/chartColors";
 
 export default function StatusPieChart() {
   return (
-    <div className="rounded-xl border border-white-5 bg-balticSea-300 p-6">
-      <h2 className="mb-6 font-yekanBold text-lg text-whiteSmoke">
-        وضعیت سفارشات
-      </h2>
-
+    <ChartCard title="وضعیت سفارشات">
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie
@@ -26,30 +28,23 @@ export default function StatusPieChart() {
             paddingAngle={4}
             dataKey="value"
           >
-            {statusData.map((entry, index) => (
-              <Cell key={index} fill={entry.color} stroke="none" />
+            {statusData.map((entry) => (
+              <Cell key={entry.id} fill={entry.color} stroke="none" />
             ))}
           </Pie>
           <Tooltip
-            contentStyle={{
-              backgroundColor: "#24232B",
-              border: "1px solid #3F3E49",
-              borderRadius: "12px",
-              fontFamily: "Morabba-Medium",
-              fontSize: "12px",
-              color: "#F6F6F6",
-            }}
+            contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value) => [`${value}٪`, "سهم"]}
           />
           <Legend
             wrapperStyle={{
-              fontFamily: "Morabba-Medium",
-              fontSize: "12px",
-              color: "#A5A5A5",
+              fontFamily: CHART_FONT.family,
+              fontSize: CHART_FONT.size,
+              color: CHART_COLORS.gray,
             }}
           />
         </PieChart>
       </ResponsiveContainer>
-    </div>
+    </ChartCard>
   );
 }
