@@ -39,15 +39,18 @@ export default function StatusFilter({
         onClick={() => setIsOpen(!isOpen)}
         className={styles.button(isOpen, isActive)}
         dir="rtl"
+        title={`${label}: ${selectedOption?.label || "همه"}`}
       >
-        <span className="text-dawn">{label}:</span>
-        <span className={cn("font-yekanBold", isActive && "text-primary")}>
+        <span className="shrink-0 text-dawn">{label}:</span>
+        <span
+          className={cn("truncate font-yekanBold", isActive && "text-primary")}
+        >
           {selectedOption?.label || "همه"}
         </span>
         <FiChevronDown
           size={14}
           className={cn(
-            "text-dawn transition-transform",
+            "shrink-0 text-dawn transition-transform",
             isOpen && "rotate-180",
           )}
         />

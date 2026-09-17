@@ -22,7 +22,7 @@ export default function Tickets() {
 
   return (
     <>
-      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <PageHeader />
         <div className="flex [flex-wrap:balance] items-center gap-2 xs:gap-3">
           {hasTickets && (
@@ -34,7 +34,11 @@ export default function Tickets() {
             />
           )}
           <Link to="/tickets/addTicket">
-            <Button variant="primary" size="xs">
+            <Button
+              variant="primary"
+              size="md"
+              className="h-9 rounded-xl whitespace-nowrap"
+            >
               + ایجاد تیکت جدید
             </Button>
           </Link>

@@ -14,7 +14,7 @@ export default function SearchBox({
   return (
     <div
       className={cn(
-        "flex h-11 w-60 items-center gap-3 px-4 py-3",
+        "flex h-9 w-60 items-center gap-3 px-4 py-3",
         "rounded-2xl bg-gray-100",
         "mb-4 transition-all xs:mb-0",
         className,
