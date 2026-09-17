@@ -6,7 +6,7 @@ import TicketMessage from "./components/TicketMessage";
 import TicketReplyForm from "./components/TicketReplyForm";
 import { tickets } from "../../../data/tickets";
 import BackButton from "../../../components/common/BackButton/BackButton";
-import StatusBadge from "../../../components/ui/StatusBadge/StatusBadge";
+import StatusBadge from "../../../components/common/StatusBadge/StatusBadge";
 import {
   TICKET_FALLBACK_STATUS,
   TICKET_STATUS_CONFIG,

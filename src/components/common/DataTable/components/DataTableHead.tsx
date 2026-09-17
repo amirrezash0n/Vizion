@@ -1,4 +1,4 @@
-import type { TableColumn } from "../../../../types/table";
+import type { TableColumn } from "../../../../types/table.types";
 
 interface DataTableHeadProps<T> {
   columns: TableColumn<T>[];

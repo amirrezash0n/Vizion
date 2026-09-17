@@ -1,4 +1,4 @@
-import Badge from "../../../components/ui/Badge/Badge";
+import Badge from "../../../components/common/Badge/Badge";
 import { transactions } from "../../../data/transactions";
 
 export default function TransactionHistory() {

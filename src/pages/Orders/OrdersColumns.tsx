@@ -1,8 +1,8 @@
-import type { TableColumn } from "../../types/table";
-import type { Order } from "../../types/order";
+import type { TableColumn } from "../../types/table.types.ts";
+import type { Order } from "../../types/order.types.ts";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { Link } from "react-router";
-import StatusBadge from "../../components/ui/StatusBadge/StatusBadge.tsx";
+import StatusBadge from "../../components/common/StatusBadge/StatusBadge.tsx";
 import {
   ORDER_FALLBACK_STATUS,
   ORDER_STATUS_CONFIG,

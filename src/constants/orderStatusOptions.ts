@@ -1,4 +1,4 @@
-import type { OrderStatusOptions } from "../types";
+import type { OrderStatusOptions } from "../types/index.types";
 
 export const STATUS_OPTIONS_ORDERS: OrderStatusOptions[] = [
   { value: "all", label: "همه" },

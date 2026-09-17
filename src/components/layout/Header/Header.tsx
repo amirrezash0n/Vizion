@@ -1,5 +1,5 @@
 import { FaBars } from "react-icons/fa";
-import type { HeaderProps } from "../../../types";
+import type { HeaderProps } from "../../../types/index.types";
 import UserInfo from "./components/UserInfo";
 import NotificationButton from "./components/NotificationButton";
 import DateTimeDisplay from "./components/DateTimeDisplay";

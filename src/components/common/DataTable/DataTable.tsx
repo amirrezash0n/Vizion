@@ -1,7 +1,7 @@
 // src/components/common/DataTable/DataTable.tsx
 import { useState } from "react";
 import Pagination from "../Pagination/Pagination";
-import type { TableColumn } from "../../../types/table";
+import type { TableColumn } from "../../../types/table.types";
 import DataTableHead from "./components/DataTableHead";
 import DataTableBody from "./components/DataTableBody";
 

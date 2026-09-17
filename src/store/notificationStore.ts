@@ -2,7 +2,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { notifications as initialData } from "../data/notifications";
-import type { Notification } from "../types/notification";
+import type { Notification } from "../types/notification.types";
 
 interface NotificationStore {
   notifications: Notification[];

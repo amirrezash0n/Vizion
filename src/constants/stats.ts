@@ -1,6 +1,6 @@
 import { LuLoader, LuTicketSlash } from "react-icons/lu";
 import { BsCheckLg } from "react-icons/bs";
-import type { Stat } from "../types";
+import type { Stat } from "../types/index.types";
 import { CiWallet } from "react-icons/ci";
 
 export const STATS: Stat[] = [

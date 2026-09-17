@@ -1,4 +1,4 @@
-import type { RouteHandle } from "../../../types/common";
+import type { RouteHandle } from "../../../types/common.types";
 
 interface Match {
   handle?: unknown;

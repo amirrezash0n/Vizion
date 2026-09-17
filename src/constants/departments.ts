@@ -1,4 +1,4 @@
-import type { Department } from "../types/department";
+import type { Department } from "../types/department.types";
 
 export const DEPARTMENTS: Department[] = [
   { id: "", label: "یک گزینه را انتخاب کنید" },

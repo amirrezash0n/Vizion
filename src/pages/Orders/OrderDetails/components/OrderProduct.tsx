@@ -1,9 +1,9 @@
-import StatusBadge from "../../../../components/ui/StatusBadge/StatusBadge";
+import StatusBadge from "../../../../components/common/StatusBadge/StatusBadge";
 import {
   ORDER_FALLBACK_STATUS,
   ORDER_STATUS_CONFIG,
 } from "../../../../constants/statusConfig";
-import type { Order } from "../../../../types/order";
+import type { Order } from "../../../../types/order.types";
 
 interface OrderProductProps {
   order: Order;

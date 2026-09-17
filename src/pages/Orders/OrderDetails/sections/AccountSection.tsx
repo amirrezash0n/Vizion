@@ -1,6 +1,6 @@
 import OrderInfoSection from "../components/OrderInfoSection";
 import OrderInfoRow from "../components/OrderInfoRow";
-import type { Order } from "../../../../types/order";
+import type { Order } from "../../../../types/order.types";
 
 interface AccountSectionProps {
   order: Order;

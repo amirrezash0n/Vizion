@@ -1,7 +1,7 @@
 import { useForm, useWatch } from "react-hook-form";
 import FormInput from "./FormInput";
 import Button from "../../../components/common/Button/Button";
-import type { PasswordFormData } from "../../../types/profile";
+import type { PasswordFormData } from "../../../types/profile.types";
 
 export default function PasswordChangeCard() {
   const {

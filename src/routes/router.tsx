@@ -16,7 +16,7 @@ import NotificationDetails from "../pages/Notifications/components/NotificationD
 import OrderDetails from "../pages/Orders/OrderDetails/OrderDetails";
 import TicketDetails from "../pages/Tickets/TicketDetails/TicketDetails";
 import { PAGE_TITLES } from "../constants/pageTitles";
-import type { RouteHandle } from "../types/common";
+import type { RouteHandle } from "../types/common.types";
 
 const router = createBrowserRouter([
   {

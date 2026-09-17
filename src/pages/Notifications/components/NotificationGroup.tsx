@@ -1,8 +1,8 @@
 import { useState } from "react";
-import type { Notification } from "../../../types/notification";
+import type { Notification } from "../../../types/notification.types";
 import NotificationItem from "./NotificationItem";
 import Button from "../../../components/common/Button/Button";
-import Badge from "../../../components/ui/Badge/Badge";
+import Badge from "../../../components/common/Badge/Badge";
 
 interface NotificationGroupProps {
   title: string;

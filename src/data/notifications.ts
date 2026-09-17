@@ -1,5 +1,5 @@
 // src/data/notifications.ts
-import type { Notification } from "../types/notification";
+import type { Notification } from "../types/notification.types";
 
 export const notifications: Notification[] = [
   // ===== اعلان‌های جدید (خوانده‌نشده) =====

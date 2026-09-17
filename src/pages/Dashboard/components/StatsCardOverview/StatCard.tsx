@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { HiArrowSmallLeft } from "react-icons/hi2";
-import type { Stat } from "../../../../types";
+import type { Stat } from "../../../../types/index.types";
 
 interface StatCardProps {
   stat: Stat;

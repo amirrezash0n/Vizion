@@ -1,6 +1,6 @@
-import type { StatusConfig } from "../types";
-import type { Order } from "../types/order";
-import type { Ticket } from "../types/ticket";
+import type { StatusConfig } from "../types/index.types";
+import type { Order } from "../types/order.types";
+import type { Ticket } from "../types/ticket.types";
 
 // Order Status
 export const ORDER_STATUS_CONFIG: Record<Order["status"], StatusConfig> = {

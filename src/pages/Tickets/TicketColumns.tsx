@@ -1,8 +1,8 @@
 import { RiArrowLeftSLine } from "react-icons/ri";
-import type { TableColumn } from "../../types/table";
-import type { Ticket } from "../../types/ticket";
+import type { TableColumn } from "../../types/table.types.ts";
+import type { Ticket } from "../../types/ticket.types.ts";
 import { Link } from "react-router";
-import StatusBadge from "../../components/ui/StatusBadge/StatusBadge.tsx";
+import StatusBadge from "../../components/common/StatusBadge/StatusBadge.tsx";
 import {
   TICKET_FALLBACK_STATUS,
   TICKET_STATUS_CONFIG,

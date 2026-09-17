@@ -1,4 +1,4 @@
-import type { TicketStatusOptions } from "../types";
+import type { TicketStatusOptions } from "../types/index.types";
 
 export const STATUS_OPTIONS_TICKETS: TicketStatusOptions[] = [
   { value: "all", label: "همه" },

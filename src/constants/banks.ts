@@ -1,4 +1,4 @@
-import type { Bank } from "../types/bank";
+import type { Bank } from "../types/bank.types";
 
 export const BANKS: Bank[] = [
   { id: "saman", name: "سامان", logo: "/images/saman.png" },

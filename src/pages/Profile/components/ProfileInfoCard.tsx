@@ -3,7 +3,7 @@ import FormInput from "./FormInput";
 import ProfileAvatar from "./ProfileAvatar";
 import Button from "../../../components/common/Button/Button";
 import { PROFILE_VALIDATION } from "../schemas/profileValidation";
-import type { ProfileFormData } from "../../../types/profile";
+import type { ProfileFormData } from "../../../types/profile.types";
 import { FiLock, FiX } from "react-icons/fi";
 
 interface ProfileInfoCardProps {

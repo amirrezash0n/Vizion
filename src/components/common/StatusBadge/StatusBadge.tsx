@@ -1,4 +1,4 @@
-import type { StatusConfig } from "../../../types";
+import type { StatusConfig } from "../../../types/index.types";
 
 interface StatusBadgeProps<T extends string> {
   status: T;

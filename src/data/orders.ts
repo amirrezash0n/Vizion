@@ -1,5 +1,5 @@
 // src/data/orders.ts
-import type { Order } from "../types/order";
+import type { Order } from "../types/order.types";
 
 export const orders: Order[] = [
   {
