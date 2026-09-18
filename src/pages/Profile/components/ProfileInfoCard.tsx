@@ -5,6 +5,8 @@ import Button from "../../../components/common/Button/Button";
 import { PROFILE_VALIDATION } from "../schemas/profileValidation";
 import type { ProfileFormData } from "../../../types/profile.types";
 import { FiLock, FiX } from "react-icons/fi";
+import useToast from "../../../hooks/useToast";
+import { MESSAGES } from "../../../constants/messages";
 
 interface ProfileInfoCardProps {
   defaultValues: ProfileFormData;
@@ -21,6 +23,8 @@ export default function ProfileInfoCard({
   onTogglePassword,
   isPasswordOpen,
 }: ProfileInfoCardProps) {
+  const { showToast } = useToast();
+
   const {
     register,
     handleSubmit,
@@ -36,9 +40,19 @@ export default function ProfileInfoCard({
 
   const PasswordIcon = passwordButtonConfig.icon;
 
-  const onSubmit = (data: ProfileFormData) => {
-    console.log("Profile data:", data);
-    // API call
+  const onSubmit = async (data: ProfileFormData) => {
+    try {
+      console.log("Profile data:", data);
+      showToast({
+        type: "success",
+        message: MESSAGES.saveProfile.success,
+      });
+    } catch {
+      showToast({
+        type: "failed",
+        message: MESSAGES.saveProfile.error,
+      });
+    }
   };
 
   return (

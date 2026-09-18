@@ -10,28 +10,6 @@ export const MESSAGES = {
     },
   },
 
-  deleteOrder: {
-    success: "سفارش با موفقیت حذف شد.",
-    confirm: {
-      title: "حذف سفارش",
-      message: "آیا مطمئن هستید که می‌خواهید این سفارش را حذف کنید؟",
-      confirmLabel: "بله، حذف کن",
-      cancelLabel: "انصراف",
-      variant: "danger" as const,
-    },
-  },
-
-  cancelOrder: {
-    success: "سفارش با موفقیت لغو شد.",
-    confirm: {
-      title: "لغو سفارش",
-      message: "آیا مطمئن هستید که می‌خواهید این سفارش را لغو کنید؟",
-      confirmLabel: "بله، لغو کن",
-      cancelLabel: "انصراف",
-      variant: "primary" as const,
-    },
-  },
-
   deleteAllNotifications: {
     success: "همه اعلان‌ها با موفقیت حذف شدند.",
     confirm: {
@@ -52,5 +30,15 @@ export const MESSAGES = {
       cancelLabel: "انصراف",
       variant: "primary" as const,
     },
+  },
+
+  changePassword: {
+    success: "رمز عبور با موفقیت تغییر کرد.",
+    error: "خطا در تغییر رمز عبور!",
+  },
+
+  saveProfile: {
+    success: "اطلاعات پروفایل با موفقیت ذخیره شد.",
+    error: "خطا در ذخیره اطلاعات!",
   },
 } as const;

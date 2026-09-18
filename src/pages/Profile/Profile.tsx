@@ -4,7 +4,7 @@ import ProfileInfoCard from "./components/ProfileInfoCard";
 import PasswordChangeCard from "./components/PasswordChangeCard";
 
 const user = {
-  username: "امیررضا شورورزی",
+  username: "amirrezash0n",
   avatar: "/images/avatar1.jpg",
   phone: "09154188878",
   fullName: "امیررضا شورورزی",
@@ -31,7 +31,7 @@ export default function Profile() {
         />
         {isPasswordOpen && (
           <div className="animate-fadeIn">
-            <PasswordChangeCard />
+            <PasswordChangeCard onSuccess={() => setIsPasswordOpen(false)} />
           </div>
         )}
       </div>

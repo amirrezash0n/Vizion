@@ -1,9 +1,19 @@
 import { useForm, useWatch } from "react-hook-form";
 import FormInput from "./FormInput";
 import Button from "../../../components/common/Button/Button";
+import useToast from "../../../hooks/useToast";
+import { MESSAGES } from "../../../constants/messages";
 import type { PasswordFormData } from "../../../types/profile.types";
 
-export default function PasswordChangeCard() {
+interface PasswordChangeCardProps {
+  onSuccess: () => void;
+}
+
+export default function PasswordChangeCard({
+  onSuccess,
+}: PasswordChangeCardProps) {
+  const { showToast } = useToast();
+
   const {
     register,
     handleSubmit,
@@ -19,9 +29,21 @@ export default function PasswordChangeCard() {
     name: "newPassword",
   });
 
-  const onSubmit = (data: PasswordFormData) => {
-    console.log("Password data:", data);
-    reset();
+  const onSubmit = async (data: PasswordFormData) => {
+    try {
+      console.log("Password data:", data);
+      reset();
+      showToast({
+        type: "success",
+        message: MESSAGES.changePassword.success,
+      });
+      onSuccess();
+    } catch {
+      showToast({
+        type: "failed",
+        message: MESSAGES.changePassword.error,
+      });
+    }
   };
 
   return (
