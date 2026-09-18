@@ -51,4 +51,9 @@ export const MESSAGES = {
     success: "تیکت شما با موفقیت ارسال شد.",
     error: "خطا در ارسال تیکت!",
   },
+
+  chargeWallet: {
+    success: "کیف پول شما با موفقیت شارژ شد.",
+    error: "خطا در شارژ کیف پول!",
+  },
 } as const;

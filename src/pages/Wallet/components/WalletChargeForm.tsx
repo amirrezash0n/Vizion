@@ -6,10 +6,13 @@ import {
   formatPersianNumber,
 } from "../../../utils/number.utils";
 import { BANKS } from "../../../constants/banks";
+import useToast from "../../../hooks/useToast";
+import { MESSAGES } from "../../../constants/messages";
 
 export default function WalletChargeForm() {
   const [amount, setAmount] = useState("");
   const [selectedBank, setSelectedBank] = useState("saman");
+  const { showToast } = useToast();
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let raw = toEnglishDigits(e.target.value);
@@ -18,10 +21,25 @@ export default function WalletChargeForm() {
     setAmount(formatPersianNumber(raw));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const finalAmount = toEnglishDigits(amount).replace(/,/g, "");
-    console.log({ amount: finalAmount, bank: selectedBank });
+
+    if (!amount) return;
+
+    try {
+      const finalAmount = toEnglishDigits(amount).replace(/,/g, "");
+      console.log({ amount: finalAmount, bank: selectedBank });
+      showToast({
+        type: "success",
+        message: MESSAGES.chargeWallet.success,
+      });
+      setAmount("");
+    } catch {
+      showToast({
+        type: "failed",
+        message: MESSAGES.chargeWallet.error,
+      });
+    }
   };
 
   return (
@@ -73,6 +91,7 @@ export default function WalletChargeForm() {
         variant="primary"
         size="full"
         className="rounded-xl font-yekanBold"
+        disabled={!amount}
       >
         شارژ کیف پول
       </Button>

@@ -16,7 +16,7 @@ export default function TicketForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
+    if (!title.trim() || !department || !message.trim()) return;
     try {
       console.log({ title, department, message });
       showToast({
@@ -106,6 +106,7 @@ export default function TicketForm() {
           variant="primary"
           size="xs"
           className="rounded-xl font-yekanBold"
+          disabled={!title.trim() || !department || !message.trim()}
         >
           ارسال تیکت
         </Button>
