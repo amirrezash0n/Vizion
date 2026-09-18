@@ -18,8 +18,8 @@ export default function CustomToast({ type, message }: CustomToastProps) {
       variants={toastVariants}
       className={cn(
         toastTypes[type],
-        "flex items-center justify-start gap-4 rounded-2xl p-4",
-        "font-yekanMedium text-sm text-whiteSmoke",
+        "flex items-center justify-start gap-3 rounded-2xl p-3 xs:gap-4 xs:p-4",
+        "font-yekanMedium text-xs text-whiteSmoke xs:text-sm",
       )}
       dir="rtl"
     >

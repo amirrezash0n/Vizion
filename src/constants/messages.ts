@@ -6,7 +6,7 @@ export const MESSAGES = {
       message: "آیا مطمئن هستید که می‌خواهید از حساب کاربری خود خارج شوید؟",
       confirmLabel: "بله، خارج شو",
       cancelLabel: "انصراف",
-      variant: "danger" as const,
+      variant: "primary" as const,
     },
   },
 
@@ -39,7 +39,18 @@ export const MESSAGES = {
       message: "آیا مطمئن هستید که می‌خواهید همه اعلان‌ها را حذف کنید؟",
       confirmLabel: "بله، حذف کن",
       cancelLabel: "انصراف",
-      variant: "danger" as const,
+      variant: "primary" as const,
+    },
+  },
+
+  markAllAsRead: {
+    success: "همه اعلان‌ها خوانده شدند.",
+    confirm: {
+      title: "خوانده شدن همه اعلان‌ها",
+      message: "آیا مطمئن هستید که می‌خواهید همه اعلان‌ها را خوانده‌شده کنید؟",
+      confirmLabel: "بله، خوانده کن",
+      cancelLabel: "انصراف",
+      variant: "primary" as const,
     },
   },
 } as const;

@@ -1,6 +1,6 @@
 import type { CustomToastType } from "../../../types/toast.types";
 
-export const iconBaseStyles = "size-6 block shrink-0";
+export const iconBaseStyles = "size-5 block shrink-0 xs:size-6";
 
 export const toastTypes: Record<CustomToastType, string> = {
   success: "bg-success/10 border border-success/30",

@@ -45,14 +45,14 @@ export default function ConfirmModal({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="w-full max-w-md rounded-2xl border border-white-5 bg-balticSea-300 p-6"
+            className="w-full max-w-md rounded-2xl border border-white-5 bg-balticSea-300 p-4 xs:p-5 sm:p-6"
             onClick={(e) => e.stopPropagation()}
             dir="rtl"
           >
-            <h3 className="mb-3 font-yekanBold text-lg text-whiteSmoke">
+            <h3 className="mb-3 font-yekanBold text-base text-whiteSmoke xs:text-lg">
               {title}
             </h3>
-            <p className="mb-6 font-morabbaMedium text-sm text-dawn">
+            <p className="mb-5 font-morabbaMedium text-xs text-dawn xs:mb-6 xs:text-sm">
               {message}
             </p>
 

@@ -32,6 +32,19 @@ export default function Notifications() {
     });
   }
 
+  function handleMarkAllAsRead() {
+    confirm({
+      ...MESSAGES.markAllAsRead.confirm,
+      onConfirm: () => {
+        markAllAsRead();
+        showToast({
+          type: "success",
+          message: MESSAGES.markAllAsRead.success,
+        });
+      },
+    });
+  }
+
   return (
     <div>
       <PageHeader />
@@ -43,7 +56,7 @@ export default function Notifications() {
               <Button
                 variant="soft"
                 size="tiny"
-                onClick={markAllAsRead}
+                onClick={handleMarkAllAsRead}
                 disabled={!hasUnread}
                 title="خوانده شدن پیام ها"
                 className="gap-x-1.5 rounded-lg font-yekanMedium transition-colors"
