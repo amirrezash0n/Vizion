@@ -1,4 +1,14 @@
 export const MESSAGES = {
+  login: {
+    success: "با موفقیت وارد حساب کاربری شدید.",
+    error: "خطا در ورود!",
+  },
+
+  signup: {
+    success: "ثبت‌نام شما با موفقیت انجام شد.",
+    error: "خطا در ثبت‌نام!",
+  },
+
   logout: {
     success: "شما با موفقیت از حساب کاربری خود خارج شدید.",
     confirm: {

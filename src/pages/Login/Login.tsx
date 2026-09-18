@@ -1,23 +1,49 @@
 import { Link, useNavigate } from "react-router";
-import useAuthStore from "../../store/authStore";
+import { useForm } from "react-hook-form";
 import Button from "../../components/common/Button/Button";
+import useAuthStore from "../../store/authStore";
+import useToast from "../../hooks/useToast";
+import { MESSAGES } from "../../constants/messages";
+import type { LoginForm } from "../../types/auth.types";
+import FormInput from "../Profile/components/FormInput";
 
 export default function Login() {
   const navigate = useNavigate();
   const login = useAuthStore((state) => state.login);
+  const { showToast } = useToast();
 
-  const handleLogin = () => {
-    login(
-      {
-        id: 1,
-        fullName: "امیررضا شورورزی",
-        email: "shourvarziamirreza@gmail.com",
-        avatar: "/images/panel-Image.jpg",
-      },
-      "fake-token",
-    );
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<LoginForm>({
+    mode: "onBlur",
+  });
 
-    navigate("/", { replace: true });
+  const onSubmit = async (data: LoginForm) => {
+    try {
+      login(
+        {
+          id: 1,
+          fullName: "امیررضا شورورزی",
+          email: data.email,
+          avatar: "/images/panel-Image.jpg",
+        },
+        "fake-token",
+      );
+
+      showToast({
+        type: "success",
+        message: MESSAGES.login.success,
+      });
+
+      navigate("/", { replace: true });
+    } catch {
+      showToast({
+        type: "failed",
+        message: MESSAGES.login.error,
+      });
+    }
   };
 
   return (
@@ -38,15 +64,49 @@ export default function Login() {
           </p>
         </div>
 
-        <Button
-          type="button"
-          variant="primary"
-          size="full"
-          onClick={handleLogin}
-          className="mb-4 rounded-xl font-yekanBold"
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="mb-4 space-y-4"
+          dir="rtl"
         >
-          ورود به حساب کاربری
-        </Button>
+          <FormInput
+            label="ایمیل"
+            placeholder="ایمیل خود را وارد کنید ..."
+            type="email"
+            error={errors.email?.message}
+            {...register("email", {
+              required: "ایمیل الزامی است",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "فرمت ایمیل صحیح نیست",
+              },
+            })}
+          />
+
+          <FormInput
+            label="رمز عبور"
+            placeholder="رمز عبور خود را وارد کنید ..."
+            type="password"
+            error={errors.password?.message}
+            {...register("password", {
+              required: "رمز عبور الزامی است",
+              minLength: {
+                value: 8,
+                message: "رمز عبور باید حداقل ۸ کاراکتر باشد",
+              },
+            })}
+          />
+
+          <Button
+            type="submit"
+            variant="primary"
+            size="full"
+            className="rounded-xl font-yekanBold"
+            disabled={isSubmitting}
+          >
+            ورود به حساب کاربری
+          </Button>
+        </form>
 
         <p
           className="text-center font-morabbaMedium text-xs text-dawn xs:text-sm"
