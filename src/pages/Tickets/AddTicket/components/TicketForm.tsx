@@ -1,17 +1,35 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import Button from "../../../../components/common/Button/Button";
 import ImageUploadButton from "./ImageUploadButton";
 import { FiChevronDown } from "react-icons/fi";
 import { DEPARTMENTS } from "../../../../constants/departments";
+import useToast from "../../../../hooks/useToast";
+import { MESSAGES } from "../../../../constants/messages";
 
 export default function TicketForm() {
   const [title, setTitle] = useState("");
   const [department, setDepartment] = useState("");
   const [message, setMessage] = useState("");
+  const { showToast } = useToast();
+  const navigate = useNavigate();
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log({ title, department, message });
+
+    try {
+      console.log({ title, department, message });
+      showToast({
+        type: "success",
+        message: MESSAGES.sendTicket.success,
+      });
+      navigate("/tickets");
+    } catch {
+      showToast({
+        type: "failed",
+        message: MESSAGES.sendTicket.error,
+      });
+    }
   }
 
   return (
@@ -74,6 +92,7 @@ export default function TicketForm() {
           className="w-full resize-none rounded-xl border border-cloud bg-white px-3 py-2.5 font-yekanMedium text-xs text-balticSea-400 transition-colors outline-none placeholder:font-yekanRegular placeholder:text-dawn focus:border-danger xs:px-4 xs:py-3 xs:text-sm"
         />
       </div>
+
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
           <ImageUploadButton onUpload={() => {}} />

@@ -46,4 +46,9 @@ export const MESSAGES = {
     success: "پاسخ شما با موفقیت ارسال شد.",
     error: "خطا در ارسال پاسخ!",
   },
+
+  sendTicket: {
+    success: "تیکت شما با موفقیت ارسال شد.",
+    error: "خطا در ارسال تیکت!",
+  },
 } as const;
