@@ -4,15 +4,33 @@ import PageHeader from "../../components/common/PageHeader/PageHeader";
 import NoDataState from "../../components/common/EmptyState/NoDataState";
 import Button from "../../components/common/Button/Button";
 import { useNotificationStore } from "../../store/notificationStore";
+import { useConfirmContext } from "../../context/ConfirmContext";
+import useToast from "../../hooks/useToast";
+import { MESSAGES } from "../../constants/messages";
 import NotificationGroup from "./components/NotificationGroup";
 
 export default function Notifications() {
   const { notifications, markAllAsRead, deleteAllNotifications } =
     useNotificationStore();
+  const { confirm } = useConfirmContext();
+  const { showToast } = useToast();
 
   const newNotifications = notifications.filter((n) => !n.isRead);
   const readNotifications = notifications.filter((n) => n.isRead);
   const hasUnread = newNotifications.length > 0;
+
+  function handleDeleteAll() {
+    confirm({
+      ...MESSAGES.deleteAllNotifications.confirm,
+      onConfirm: () => {
+        deleteAllNotifications();
+        showToast({
+          type: "success",
+          message: MESSAGES.deleteAllNotifications.success,
+        });
+      },
+    });
+  }
 
   return (
     <div>
@@ -37,7 +55,7 @@ export default function Notifications() {
               <Button
                 variant="danger"
                 size="tiny"
-                onClick={deleteAllNotifications}
+                onClick={handleDeleteAll}
                 title="حذف همه اعلان‌ها"
                 className="gap-x-1.5 rounded-lg font-yekanMedium transition-colors"
               >

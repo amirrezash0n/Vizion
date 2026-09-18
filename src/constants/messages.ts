@@ -31,4 +31,15 @@ export const MESSAGES = {
       variant: "primary" as const,
     },
   },
+
+  deleteAllNotifications: {
+    success: "همه اعلان‌ها با موفقیت حذف شدند.",
+    confirm: {
+      title: "حذف همه اعلان‌ها",
+      message: "آیا مطمئن هستید که می‌خواهید همه اعلان‌ها را حذف کنید؟",
+      confirmLabel: "بله، حذف کن",
+      cancelLabel: "انصراف",
+      variant: "danger" as const,
+    },
+  },
 } as const;
