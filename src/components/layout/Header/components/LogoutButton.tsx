@@ -1,16 +1,34 @@
 import { LuLogOut } from "react-icons/lu";
-import Button from "../../../common/Button/Button";
 import { useNavigate } from "react-router";
+import Button from "../../../common/Button/Button";
 import useAuthStore from "../../../../store/authStore";
+import useToast from "../../../../hooks/useToast";
+import { useConfirmContext } from "../../../../context/ConfirmContext";
 
 function LogoutButton() {
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const logout = useAuthStore((state) => state.logout);
+  const { confirm } = useConfirmContext();
 
   function handleLogout() {
     logout();
     navigate("/login", { replace: true });
-    // Show Toast to logout
+    showToast({
+      type: "success",
+      message: "شما با موفقیت از حساب کاربری خود خارج شدید.",
+    });
+  }
+
+  function handleClick() {
+    confirm({
+      title: "خروج از حساب کاربری",
+      message: "آیا مطمئن هستید که می‌خواهید از حساب کاربری خود خارج شوید؟",
+      confirmLabel: "بله، خارج شو",
+      cancelLabel: "انصراف",
+      variant: "danger",
+      onConfirm: handleLogout,
+    });
   }
 
   return (
@@ -18,7 +36,7 @@ function LogoutButton() {
       variant="icon"
       size="icon"
       className="text-primary"
-      onClick={handleLogout}
+      onClick={handleClick}
     >
       <LuLogOut size={20} className="rotate-180" />
     </Button>
