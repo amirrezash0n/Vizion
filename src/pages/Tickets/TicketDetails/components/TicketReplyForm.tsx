@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import Button from "../../../../components/common/Button/Button";
+import useToast from "../../../../hooks/useToast";
+import { MESSAGES } from "../../../../constants/messages";
 
 interface TicketReplyFormProps {
   onSubmit: (text: string) => void;
@@ -8,12 +10,25 @@ interface TicketReplyFormProps {
 
 export default function TicketReplyForm({ onSubmit }: TicketReplyFormProps) {
   const [text, setText] = useState("");
+  const { showToast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!text.trim()) return;
-    onSubmit(text);
-    setText("");
+
+    try {
+      onSubmit(text);
+      setText("");
+      showToast({
+        type: "success",
+        message: MESSAGES.sendReply.success,
+      });
+    } catch {
+      showToast({
+        type: "failed",
+        message: MESSAGES.sendReply.error,
+      });
+    }
   };
 
   return (

@@ -41,4 +41,9 @@ export const MESSAGES = {
     success: "اطلاعات پروفایل با موفقیت ذخیره شد.",
     error: "خطا در ذخیره اطلاعات!",
   },
+
+  sendReply: {
+    success: "پاسخ شما با موفقیت ارسال شد.",
+    error: "خطا در ارسال پاسخ!",
+  },
 } as const;
