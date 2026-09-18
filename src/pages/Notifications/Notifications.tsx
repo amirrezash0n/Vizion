@@ -18,7 +18,7 @@ export default function Notifications() {
     <div>
       <PageHeader />
 
-      <div className="mx-auto mt-8 w-full max-w-md animate-fadeIn overflow-hidden rounded-[20px] bg-offWhite p-4 xs:p-5 sm:p-6">
+      <div className="mx-auto mt-6.5 w-full max-w-md animate-fadeIn overflow-hidden rounded-[20px] bg-offWhite p-4 xs:p-5 sm:p-6">
         <div className="mb-3 flex items-center justify-between xs:mb-5">
           {notifications.length > 0 && (
             <div className="flex w-full items-center justify-between gap-1.5 xs:gap-2">
@@ -63,7 +63,7 @@ export default function Notifications() {
                 title="خوانده شده"
                 type="read"
                 notifications={readNotifications}
-                initialCount={3}
+                initialCount={2}
                 step={3}
               />
             </div>
