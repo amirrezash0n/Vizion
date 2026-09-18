@@ -3,12 +3,14 @@ import { FiSend } from "react-icons/fi";
 import Button from "../../../../components/common/Button/Button";
 import useToast from "../../../../hooks/useToast";
 import { MESSAGES } from "../../../../constants/messages";
+import { useScrollToTop } from "../../../../hooks/useScrollToTop";
 
 interface TicketReplyFormProps {
   onSubmit: (text: string) => void;
 }
 
 export default function TicketReplyForm({ onSubmit }: TicketReplyFormProps) {
+  const { scrollToTop } = useScrollToTop();
   const [text, setText] = useState("");
   const { showToast } = useToast();
 
@@ -19,11 +21,13 @@ export default function TicketReplyForm({ onSubmit }: TicketReplyFormProps) {
     try {
       onSubmit(text);
       setText("");
+      scrollToTop();
       showToast({
         type: "success",
         message: MESSAGES.sendReply.success,
       });
     } catch {
+      scrollToTop();
       showToast({
         type: "failed",
         message: MESSAGES.sendReply.error,

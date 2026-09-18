@@ -6,12 +6,14 @@ import { FiChevronDown } from "react-icons/fi";
 import { DEPARTMENTS } from "../../../../constants/departments";
 import useToast from "../../../../hooks/useToast";
 import { MESSAGES } from "../../../../constants/messages";
+import { useScrollToTop } from "../../../../hooks/useScrollToTop";
 
 export default function TicketForm() {
   const [title, setTitle] = useState("");
   const [department, setDepartment] = useState("");
   const [message, setMessage] = useState("");
   const { showToast } = useToast();
+  const { scrollToTop } = useScrollToTop();
   const navigate = useNavigate();
 
   async function handleSubmit(e: React.FormEvent) {
@@ -19,12 +21,14 @@ export default function TicketForm() {
     if (!title.trim() || !department || !message.trim()) return;
     try {
       console.log({ title, department, message });
+      scrollToTop();
       showToast({
         type: "success",
         message: MESSAGES.sendTicket.success,
       });
       navigate("/tickets");
     } catch {
+      scrollToTop();
       showToast({
         type: "failed",
         message: MESSAGES.sendTicket.error,

@@ -8,11 +8,13 @@ import {
 import { BANKS } from "../../../constants/banks";
 import useToast from "../../../hooks/useToast";
 import { MESSAGES } from "../../../constants/messages";
+import { useScrollToTop } from "../../../hooks/useScrollToTop";
 
 export default function WalletChargeForm() {
   const [amount, setAmount] = useState("");
   const [selectedBank, setSelectedBank] = useState("saman");
   const { showToast } = useToast();
+  const { scrollToTop } = useScrollToTop();
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let raw = toEnglishDigits(e.target.value);
@@ -29,12 +31,14 @@ export default function WalletChargeForm() {
     try {
       const finalAmount = toEnglishDigits(amount).replace(/,/g, "");
       console.log({ amount: finalAmount, bank: selectedBank });
+      scrollToTop();
       showToast({
         type: "success",
         message: MESSAGES.chargeWallet.success,
       });
       setAmount("");
     } catch {
+      scrollToTop();
       showToast({
         type: "failed",
         message: MESSAGES.chargeWallet.error,
