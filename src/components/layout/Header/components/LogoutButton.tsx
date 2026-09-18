@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import Button from "../../../common/Button/Button";
 import useAuthStore from "../../../../store/authStore";
 import useToast from "../../../../hooks/useToast";
+import { MESSAGES } from "../../../../constants/messages";
 import { useConfirmContext } from "../../../../context/ConfirmContext";
 
 function LogoutButton() {
@@ -16,17 +17,13 @@ function LogoutButton() {
     navigate("/login", { replace: true });
     showToast({
       type: "success",
-      message: "شما با موفقیت از حساب کاربری خود خارج شدید.",
+      message: MESSAGES.logout.success,
     });
   }
 
   function handleClick() {
     confirm({
-      title: "خروج از حساب کاربری",
-      message: "آیا مطمئن هستید که می‌خواهید از حساب کاربری خود خارج شوید؟",
-      confirmLabel: "بله، خارج شو",
-      cancelLabel: "انصراف",
-      variant: "danger",
+      ...MESSAGES.logout.confirm,
       onConfirm: handleLogout,
     });
   }
