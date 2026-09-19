@@ -39,6 +39,7 @@ export default function Orders() {
             <SearchBox
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onClear={() => setSearch("")}
             />
           </div>
         )}

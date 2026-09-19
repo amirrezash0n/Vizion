@@ -13,7 +13,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | "paginationActive"
     | "link"
     | "soft"
-    | "danger";
+    | "danger"
+    | "fix";
   size?:
     | "xs"
     | "sm"

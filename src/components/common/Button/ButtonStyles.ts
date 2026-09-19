@@ -10,6 +10,7 @@ export const variantStyles = {
   link: "bg-transparent text-primary hover:opacity-80",
   soft: "bg-transparent text-slate hover:bg-cloud",
   danger: "bg-transparent text-danger hover:bg-danger/10",
+  fix: "shrink-0 text-dawn hover:text-danger",
 };
 
 export const sizeStyles = {
