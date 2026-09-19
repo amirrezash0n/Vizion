@@ -32,15 +32,39 @@ export default function StatusPieChart() {
               <Cell key={entry.id} fill={entry.color} stroke="none" />
             ))}
           </Pie>
+
           <Tooltip
             contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value) => [`${value}٪`, "سهم"]}
           />
+
           <Legend
-            wrapperStyle={{
-              fontFamily: CHART_FONT.family,
-              fontSize: CHART_FONT.size,
-              color: CHART_COLORS.gray,
+            content={(props) => {
+              const { payload } = props;
+              return (
+                <ul
+                  className="mt-4 flex flex-wrap items-center justify-center gap-4"
+                  dir="rtl"
+                >
+                  {payload?.map((entry, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <span
+                        className="inline-block size-3 rounded-sm"
+                        style={{ backgroundColor: entry.color }}
+                      />
+                      <span
+                        style={{
+                          fontFamily: CHART_FONT.family,
+                          fontSize: CHART_FONT.size,
+                          color: CHART_COLORS.gray,
+                        }}
+                      >
+                        {entry.value}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              );
             }}
           />
         </PieChart>
