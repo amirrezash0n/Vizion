@@ -1,11 +1,5 @@
 import type { Ticket, TicketMessage } from "../types/ticket.types";
 
-const loremText =
-  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد. کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می‌طلبد.";
-
-const shortLorem =
-  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.";
-
 const makeMessage = (
   id: number,
   name: string,
@@ -15,35 +9,38 @@ const makeMessage = (
   text: string,
 ): TicketMessage => ({ id, name, avatar, date, type, text });
 
-const singleQuestion = (date: string, text?: string): TicketMessage[] => [
-  makeMessage(
-    1,
-    "علی جاهد",
-    "/images/avatar1.jpg",
-    date,
-    "question",
-    text || loremText,
-  ),
+const singleQuestion = (
+  name: string,
+  avatar: string,
+  date: string,
+  text: string,
+): TicketMessage[] => [makeMessage(1, name, avatar, date, "question", text)];
+
+const questionAndAnswer = (
+  qName: string,
+  qAvatar: string,
+  qDate: string,
+  qText: string,
+  aName: string,
+  aAvatar: string,
+  aDate: string,
+  aText: string,
+): TicketMessage[] => [
+  makeMessage(1, qName, qAvatar, qDate, "question", qText),
+  makeMessage(2, aName, aAvatar, aDate, "answer", aText),
 ];
 
-const questionAndAnswer = (qDate: string, aDate: string): TicketMessage[] => [
-  makeMessage(
-    1,
-    "سروش محمدی",
-    "/images/avatar2.jpg",
-    qDate,
-    "question",
-    loremText,
-  ),
-  makeMessage(
-    2,
-    "نرگس بیات",
-    "/images/avatar3.jpg",
-    aDate,
-    "answer",
-    shortLorem,
-  ),
-];
+const AVATARS = {
+  ali: "/images/avatar1.jpg",
+  soroush: "/images/avatar2.jpg",
+  narges: "/images/avatar3.jpg",
+  support: "/images/avatar4.jpg",
+};
+
+const SUPPORT = {
+  name: "نرگس بیات",
+  avatar: AVATARS.narges,
+};
 
 export const tickets: Ticket[] = [
   {
@@ -54,7 +51,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "مشکل سفارش",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۱ - ۱۰:۱۵", "۱۴۰۴/۰۴/۰۱ - ۱۱:۲۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۰۱ - ۱۰:۱۵",
+      "سلام. من دیروز اکانت اسپاتیفای خریدم ولی هنوز فعال نشده. لطفاً بررسی کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۰۱ - ۱۱:۲۰",
+      "سلام، سفارش شما بررسی شد و اکانتتون فعال شد. اطلاعات ورود به ایمیلتون ارسال شد. اگر مشکلی بود دوباره تیکت بزنید.",
+    ),
   },
   {
     id: 2,
@@ -65,8 +71,10 @@ export const tickets: Ticket[] = [
     type: "پرداخت",
     status: "pending",
     messages: singleQuestion(
+      "علی جاهد",
+      AVATARS.ali,
       "۱۴۰۴/۰۴/۰۲ - ۱۲:۳۰",
-      "سلام، پرداخت من انجام شده ولی سفارش هنوز تایید نشده. لطفاً بررسی کنید.",
+      "سلام، مبلغ ۳۲۰ هزار تومان از حسابم کم شد ولی سفارشم ثبت نشده. لطفاً پیگیری کنید.",
     ),
   },
   {
@@ -77,7 +85,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "حساب کاربری",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۳ - ۰۹:۴۵", "۱۴۰۴/۰۴/۰۳ - ۱۰:۳۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۰۳ - ۰۹:۴۵",
+      "می‌خواستم شماره تلفنی که موقع ثبت‌نام دادم رو عوض کنم. الان شماره‌ام عوض شده.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۰۳ - ۱۰:۳۰",
+      "سلام، برای تغییر شماره تماس لطفاً از بخش تنظیمات حساب کاربری اقدام کنید. اگر به مشکل خوردید بگید تا از سمت ما انجام بشه.",
+    ),
   },
   {
     id: 4,
@@ -87,7 +104,16 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "پیگیری",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۴ - ۱۶:۲۰", "۱۴۰۴/۰۴/۰۴ - ۱۷:۰۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۰۴ - ۱۶:۲۰",
+      "سفارش من ۲ روزه در حال پردازشه. کی تحویل داده میشه؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۰۴ - ۱۷:۰۰",
+      "سلام، سفارش شما امروز تحویل داده شده. اطلاعات اکانت به ایمیلتون ارسال شده. لطفاً بررسی کنید.",
+    ),
   },
   {
     id: 5,
@@ -98,8 +124,10 @@ export const tickets: Ticket[] = [
     type: "ورود",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۴/۰۴/۰۵ - ۱۱:۱۰",
-      "نمی‌تونم وارد حساب کاربری‌ام بشم. رمز عبورم رو هم درست وارد می‌کنم.",
+      "نمی‌تونم وارد حساب کاربری‌ام بشم. پیام میده رمز عبور اشتباهه، در حالی که رمزمو درست می‌زنم.",
     ),
   },
   {
@@ -110,7 +138,16 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "بازگشت وجه",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۶ - ۱۴:۵۵", "۱۴۰۴/۰۴/۰۶ - ۱۵:۴۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۰۶ - ۱۴:۵۵",
+      "من دیروز یه اکانت خریدم ولی به کارم نمیاد. میخواستم وجه‌ام رو برگردونید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۰۶ - ۱۵:۴۰",
+      "سلام، طبق قوانین فروشگاه، تا ۲۴ ساعت پس از خرید امکان بازگشت وجه وجود داره. درخواستتون ثبت شد و ظرف ۷۲ ساعت آینده مبلغ به حسابتون برمی‌گرده.",
+    ),
   },
   {
     id: 7,
@@ -120,7 +157,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "مشکل سفارش",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۷ - ۱۸:۳۰", "۱۴۰۴/۰۴/۰۷ - ۱۹:۱۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۰۷ - ۱۸:۳۰",
+      "ایمیل اطلاعات اکانت رو دریافت نکردم. پوشه اسپم رو هم چک کردم.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۰۷ - ۱۹:۱۰",
+      "سلام، مجدداً اطلاعات اکانت به ایمیلتون ارسال شد. اگر بازم دریافت نکردید، از یه ایمیل دیگه استفاده کنید یا با پشتیبانی تماس بگیرید.",
+    ),
   },
   {
     id: 8,
@@ -130,7 +176,16 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "پرداخت",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۰۸ - ۰۸:۴۰", "۱۴۰۴/۰۴/۰۸ - ۰۹:۳۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۰۸ - ۰۸:۴۰",
+      "امکان پرداخت از طریق ارز دیجیتال وجود داره؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۰۸ - ۰۹:۳۰",
+      "سلام، در حال حاضر پرداخت فقط از طریق درگاه‌های بانکی (سامان و ملی) انجام میشه. به زودی ارز دیجیتال هم اضافه میشه.",
+    ),
   },
   {
     id: 9,
@@ -141,8 +196,10 @@ export const tickets: Ticket[] = [
     type: "فعال سازی",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۴/۰۴/۰۹ - ۱۳:۲۵",
-      "محصولی که خریدم هنوز فعال نشده. لطفاً پیگیری کنید.",
+      "اکانت اوریجینی که خریدم هنوز فعال نشده. ۲۴ ساعت گذشته. لطفاً پیگیری کنید.",
     ),
   },
   {
@@ -153,7 +210,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "پیگیری",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۰ - ۱۵:۴۵", "۱۴۰۴/۰۴/۱۰ - ۱۶:۳۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۱۰ - ۱۵:۴۵",
+      "تیکت قبلی من ۳ روزه پاسخی نگرفته. لطفاً پیگیری کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۱۰ - ۱۶:۳۰",
+      "سلام، عذرخواهی می‌کنیم بابت تأخیر. تیکتتون بررسی شد و پاسخ داده شد. لطفاً بخش تیکت‌های من رو چک کنید.",
+    ),
   },
   {
     id: 11,
@@ -164,8 +230,10 @@ export const tickets: Ticket[] = [
     type: "ثبت سفارش",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۴/۰۴/۱۱ - ۱۰:۲۰",
-      "موقع ثبت سفارش خطا میده و سفارش ثبت نمیشه.",
+      "موقع ثبت سفارش خطای 'خطا در ارتباط با سرور' میده. چند بار تلاش کردم.",
     ),
   },
   {
@@ -176,7 +244,16 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "تراکنش",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۲ - ۱۷:۱۰", "۱۴۰۴/۰۴/۱۲ - ۱۸:۰۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۱۲ - ۱۷:۱۰",
+      "تراکنش من به مبلغ ۴۲۰ هزار تومان ثبت شده ولی سفارشم تایید نشده. لطفاً بررسی کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۱۲ - ۱۸:۰۰",
+      "سلام، تراکنش شما بررسی شد و مشکلی نداشت. سفارشتون تایید شد و اطلاعات اکانت ارسال شد. بابت تأخیر عذرخواهی می‌کنیم.",
+    ),
   },
   {
     id: 13,
@@ -186,7 +263,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "فعال سازی",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۳ - ۰۹:۳۰", "۱۴۰۴/۰۴/۱۳ - ۱۰:۴۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۱۳ - ۰۹:۳۰",
+      "اکانت نتفلیکسی که خریدم لینک فعال‌سازی‌اش کار نمی‌کنه.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۱۳ - ۱۰:۴۰",
+      "سلام، لینک فعال‌سازی جدید براتون ارسال شد. اگر بازم مشکل داشتید بگید تا اکانت رو تعویض کنیم.",
+    ),
   },
   {
     id: 14,
@@ -197,8 +283,10 @@ export const tickets: Ticket[] = [
     type: "اطلاعات حساب",
     status: "pending",
     messages: singleQuestion(
+      "علی جاهد",
+      AVATARS.ali,
       "۱۴۰۴/۰۴/۱۴ - ۱۲:۴۰",
-      "می‌خوام ایمیل حساب کاربری‌ام رو تغییر بدم.",
+      "می‌خوام ایمیل حساب کاربری‌ام رو از Gmail به Yahoo تغییر بدم. چیکار کنم؟",
     ),
   },
   {
@@ -209,7 +297,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "مشکل فنی",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۵ - ۱۴:۲۰", "۱۴۰۴/۰۴/۱۵ - ۱۵:۱۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۱۵ - ۱۴:۲۰",
+      "صفحه سفارشات من باز نمیشه و صفحه سفید نشون میده.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۱۵ - ۱۵:۱۰",
+      "سلام، این مشکل از کش مرورگرتون هست. لطفاً Ctrl+Shift+R بزنید یا از حالت ناشناس استفاده کنید. اگر حل نشد دوباره بگید.",
+    ),
   },
   {
     id: 16,
@@ -219,7 +316,16 @@ export const tickets: Ticket[] = [
     department: "فروش",
     type: "تمدید",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۶ - ۱۶:۱۵", "۱۴۰۴/۰۴/۱۶ - ۱۷:۰۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۱۶ - ۱۶:۱۵",
+      "اکانتم ۱۰ روز دیگه تموم میشه. برای تمدید تخفیف دارید؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۱۶ - ۱۷:۰۰",
+      "سلام، برای تمدید ۱۵٪ تخفیف در نظر گرفتیم. کافیه از بخش سفارشات، گزینه تمدید رو انتخاب کنید. کد تخفیف: RENEW15",
+    ),
   },
   {
     id: 17,
@@ -230,8 +336,10 @@ export const tickets: Ticket[] = [
     type: "پرداخت",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۴/۰۴/۱۷ - ۱۱:۵۰",
-      "پرداخت آنلاین من ناموفق بود ولی مبلغ کم شد.",
+      "پرداخت آنلاین من ناموفق بود ولی مبلغ از حسابم کم شد. لطفاً بررسی کنید.",
     ),
   },
   {
@@ -242,7 +350,16 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "پیگیری",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۱۸ - ۱۳:۱۰", "۱۴۰۴/۰۴/۱۸ - ۱۴:۰۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۱۸ - ۱۳:۱۰",
+      "سفارش اخیرم رو کی تحویل میدید؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۱۸ - ۱۴:۰۰",
+      "سلام، سفارش شما امروز تحویل داده شد. اطلاعات اکانت به ایمیلتون ارسال شده. لطفاً چک کنید.",
+    ),
   },
   {
     id: 19,
@@ -253,8 +370,10 @@ export const tickets: Ticket[] = [
     type: "تحویل",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۴/۰۴/۱۹ - ۱۵:۳۰",
-      "محصول رو خریدم ولی هنوز دریافت نکردم.",
+      "محصول رو خریدم ولی هنوز دریافت نکردم. ۳ روز گذشته.",
     ),
   },
   {
@@ -265,7 +384,16 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "لغو سفارش",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۰ - ۱۰:۴۵", "۱۴۰۴/۰۴/۲۰ - ۱۱:۳۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۲۰ - ۱۰:۴۵",
+      "میخوام سفارشم رو لغو کنم. امکانش هست؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۲۰ - ۱۱:۳۰",
+      "سلام، سفارشتون لغو شد و مبلغ ظرف ۷۲ ساعت به حسابتون برمی‌گرده. بابت ناراحتی عذرخواهی می‌کنیم.",
+    ),
   },
   {
     id: 21,
@@ -275,7 +403,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "حساب کاربری",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۱ - ۱۷:۲۵", "۱۴۰۴/۰۴/۲۱ - ۱۸:۱۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۲۱ - ۱۷:۲۵",
+      "اطلاعات حساب کاربری من اشتباه نمایش داده میشه. اسمم رو اشتباه نوشته.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۲۱ - ۱۸:۱۰",
+      "سلام، اطلاعات حساب شما اصلاح شد. لطفاً دوباره وارد بشید و چک کنید. اگر بازم مشکل بود بگید.",
+    ),
   },
   {
     id: 22,
@@ -286,8 +423,10 @@ export const tickets: Ticket[] = [
     type: "بازگشت وجه",
     status: "pending",
     messages: singleQuestion(
+      "علی جاهد",
+      AVATARS.ali,
       "۱۴۰۴/۰۴/۲۲ - ۰۹:۱۵",
-      "درخواست بازگشت وجه من هنوز بررسی نشده.",
+      "درخواست بازگشت وجه من ۵ روزه بررسی نشده. لطفاً پیگیری کنید.",
     ),
   },
   {
@@ -298,7 +437,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "فعال سازی",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۳ - ۱۲:۵۵", "۱۴۰۴/۰۴/۲۳ - ۱۳:۴۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۲۳ - ۱۲:۵۵",
+      "اکانت آیتونز من فعال نمیشه. لطفاً بررسی کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۲۳ - ۱۳:۴۰",
+      "سلام، اکانتتون بررسی شد و مشکل از سمت سرور بود. اکانت جدید براتون فعال شد و اطلاعاتش ارسال شد.",
+    ),
   },
   {
     id: 24,
@@ -308,7 +456,16 @@ export const tickets: Ticket[] = [
     department: "حساب کاربری",
     type: "امنیت",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۴ - ۱۴:۳۳", "۱۴۰۴/۰۴/۲۴ - ۱۵:۱۵"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۲۴ - ۱۴:۳۳",
+      "میخوام رمز عبورم رو عوض کنم ولی گزینه‌اش رو پیدا نمیکنم.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۲۴ - ۱۵:۱۵",
+      "سلام، برای تغییر رمز عبور به بخش اطلاعات حساب کاربری برید و روی 'تغییر رمز عبور' کلیک کنید. اگر بازم مشکل داشتید بگید.",
+    ),
   },
   {
     id: 25,
@@ -319,8 +476,10 @@ export const tickets: Ticket[] = [
     type: "پرداخت",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۴/۰۴/۲۵ - ۱۶:۴۰",
-      "پرداخت من دوبار کم شد ولی سفارش ثبت نشد.",
+      "پرداخت من دوبار کم شد ولی سفارش ثبت نشد. لطفاً پیگیری کنید.",
     ),
   },
   {
@@ -331,7 +490,16 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "پیگیری",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۶ - ۱۰:۱۰", "۱۴۰۴/۰۴/۲۶ - ۱۱:۰۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۲۶ - ۱۰:۱۰",
+      "سفارش جدیدم رو ثبت کردم. کی تایید میشه؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۲۶ - ۱۱:۰۰",
+      "سلام، سفارش شما تایید شد و اطلاعات اکانت به ایمیلتون ارسال شد. لطفاً چک کنید.",
+    ),
   },
   {
     id: 27,
@@ -342,8 +510,10 @@ export const tickets: Ticket[] = [
     type: "تحویل",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۴/۰۴/۲۷ - ۱۳:۲۰",
-      "لینک محصول برام ارسال نشده.",
+      "لینک محصول برام ارسال نشده. لطفاً بررسی کنید.",
     ),
   },
   {
@@ -354,7 +524,16 @@ export const tickets: Ticket[] = [
     department: "مالی",
     type: "استرداد",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۸ - ۱۵:۵۰", "۱۴۰۴/۰۴/۲۸ - ۱۶:۳۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۲۸ - ۱۵:۵۰",
+      "میخوام سفارشم رو استرداد کنم. چیکار کنم؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۲۸ - ۱۶:۳۰",
+      "سلام، درخواست استرداد شما ثبت شد. ظرف ۷۲ ساعت آینده مبلغ به حسابتون برمی‌گرده. بابت ناراحتی عذرخواهی می‌کنیم.",
+    ),
   },
   {
     id: 29,
@@ -364,7 +543,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "ورود",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۲۹ - ۱۱:۳۵", "۱۴۰۴/۰۴/۲۹ - ۱۲:۲۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۴/۰۴/۲۹ - ۱۱:۳۵",
+      "نمی‌تونم به پنل کاربری‌ام وارد بشم. خطای ۵۰۰ میده.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۲۹ - ۱۲:۲۰",
+      "سلام، این مشکل از سرور بود و برطرف شد. لطفاً دوباره تلاش کنید. اگر بازم مشکل بود بگید.",
+    ),
   },
   {
     id: 30,
@@ -374,7 +562,16 @@ export const tickets: Ticket[] = [
     department: "فروش",
     type: "محصول",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۴/۰۴/۳۰ - ۱۸:۱۰", "۱۴۰۴/۰۴/۳۰ - ۱۹:۰۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۴/۰۴/۳۰ - ۱۸:۱۰",
+      "اکانت نتفلیکس ریجن آمریکا با ریجن ترکیه چه فرقی داره؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۴/۰۴/۳۰ - ۱۹:۰۰",
+      "سلام، اکانت آمریکا محتوای بیشتری داره (مخصوصاً فیلم‌های جدید) ولی گرون‌تره. اکانت ترکیه ارزون‌تره ولی محتواش محدودتره.",
+    ),
   },
   {
     id: 31,
@@ -385,8 +582,10 @@ export const tickets: Ticket[] = [
     type: "تراکنش",
     status: "pending",
     messages: singleQuestion(
+      "سروش محمدی",
+      AVATARS.soroush,
       "۱۴۰۵/۰۵/۰۱ - ۰۹:۴۰",
-      "تراکنش من ثبت نشده ولی مبلغ کم شد.",
+      "تراکنش من ثبت نشده ولی مبلغ کم شد. لطفاً بررسی کنید.",
     ),
   },
   {
@@ -397,7 +596,16 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "بررسی سفارش",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۲ - ۱۲:۱۰", "۱۴۰۵/۰۵/۰۲ - ۱۳:۰۰"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۵/۰۵/۰۲ - ۱۲:۱۰",
+      "سفارش من ۵ روزه در حال پردازشه. لطفاً بررسی کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۵/۰۵/۰۲ - ۱۳:۰۰",
+      "سلام، سفارش شما بررسی شد و امروز تحویل داده میشه. اطلاعات اکانت به ایمیلتون ارسال میشه. بابت تأخیر عذرخواهی می‌کنیم.",
+    ),
   },
   {
     id: 33,
@@ -407,7 +615,16 @@ export const tickets: Ticket[] = [
     department: "حساب کاربری",
     type: "اطلاعات حساب",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۳ - ۱۴:۴۵", "۱۴۰۵/۰۵/۰۳ - ۱۵:۳۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۵/۰۵/۰۳ - ۱۴:۴۵",
+      "اطلاعات حساب کاربری من اشتباهه. لطفاً اصلاح کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۵/۰۵/۰۳ - ۱۵:۳۰",
+      "سلام، اطلاعات حساب شما اصلاح شد. لطفاً دوباره وارد بشید و چک کنید.",
+    ),
   },
   {
     id: 34,
@@ -418,8 +635,10 @@ export const tickets: Ticket[] = [
     type: "تحویل",
     status: "pending",
     messages: singleQuestion(
+      "علی جاهد",
+      AVATARS.ali,
       "۱۴۰۵/۰۵/۰۴ - ۱۶:۳۰",
-      "محصولی که خریدم رو دریافت نکردم.",
+      "محصولی که خریدم رو دریافت نکردم. لطفاً پیگیری کنید.",
     ),
   },
   {
@@ -430,7 +649,16 @@ export const tickets: Ticket[] = [
     department: "فروش",
     type: "تمدید",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۵ - ۱۰:۲۵", "۱۴۰۵/۰۵/۰۵ - ۱۱:۱۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۵/۰۵/۰۵ - ۱۰:۲۵",
+      "میخوام اشتراکم رو تمدید کنم. تخفیف دارید؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۵/۰۵/۰۵ - ۱۱:۱۰",
+      "سلام، برای تمدید ۱۵٪ تخفیف داریم. کد تخفیف: RENEW15. از بخش سفارشات میتونید تمدید کنید.",
+    ),
   },
   {
     id: 36,
@@ -441,8 +669,10 @@ export const tickets: Ticket[] = [
     type: "مشکل سفارش",
     status: "pending",
     messages: singleQuestion(
+      "علی جاهد",
+      AVATARS.ali,
       "۱۴۰۵/۰۵/۰۶ - ۱۳:۵۵",
-      "سفارش اخیرم با مشکل مواجه شده.",
+      "سفارش اخیرم با مشکل مواجه شده. لطفاً بررسی کنید.",
     ),
   },
   {
@@ -453,7 +683,16 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "پیگیری",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۷ - ۱۵:۱۵", "۱۴۰۵/۰۵/۰۷ - ۱۶:۰۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۵/۰۵/۰۷ - ۱۵:۱۵",
+      "درخواست پشتیبانی من ۳ روزه پاسخی نگرفته. لطفاً پیگیری کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۵/۰۵/۰۷ - ۱۶:۰۰",
+      "سلام، عذرخواهی می‌کنیم بابت تأخیر. درخواستتون بررسی شد و پاسخ داده شد. لطفاً بخش تیکت‌های من رو چک کنید.",
+    ),
   },
   {
     id: 38,
@@ -464,8 +703,10 @@ export const tickets: Ticket[] = [
     type: "پرداخت",
     status: "pending",
     messages: singleQuestion(
+      "علی جاهد",
+      AVATARS.ali,
       "۱۴۰۵/۰۵/۰۸ - ۱۱:۴۰",
-      "پرداخت اینترنتی من ناموفق بود.",
+      "پرداخت اینترنتی من ناموفق بود ولی مبلغ کم شد. لطفاً پیگیری کنید.",
     ),
   },
   {
@@ -476,7 +717,16 @@ export const tickets: Ticket[] = [
     department: "سفارشات",
     type: "لغو سفارش",
     status: "closed",
-    messages: questionAndAnswer("۱۴۰۵/۰۵/۰۹ - ۱۷:۲۰", "۱۴۰۵/۰۵/۰۹ - ۱۸:۱۰"),
+    messages: questionAndAnswer(
+      "سروش محمدی",
+      AVATARS.soroush,
+      "۱۴۰۵/۰۵/۰۹ - ۱۷:۲۰",
+      "میخوام سفارشم رو حذف کنم. امکانش هست؟",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۵/۰۵/۰۹ - ۱۸:۱۰",
+      "سلام، سفارشتون حذف شد و مبلغ ظرف ۷۲ ساعت به حسابتون برمی‌گرده. بابت ناراحتی عذرخواهی می‌کنیم.",
+    ),
   },
   {
     id: 40,
@@ -486,6 +736,15 @@ export const tickets: Ticket[] = [
     department: "پشتیبانی",
     type: "فعال سازی",
     status: "answered",
-    messages: questionAndAnswer("۱۴۰۵/۰۵/۱۰ - ۱۹:۰۰", "۱۴۰۵/۰۵/۱۰ - ۱۹:۴۵"),
+    messages: questionAndAnswer(
+      "علی جاهد",
+      AVATARS.ali,
+      "۱۴۰۵/۰۵/۱۰ - ۱۹:۰۰",
+      "حساب کاربری من فعال نشده. لطفاً بررسی کنید.",
+      SUPPORT.name,
+      SUPPORT.avatar,
+      "۱۴۰۵/۰۵/۱۰ - ۱۹:۴۵",
+      "سلام، حساب کاربری شما فعال شد. لطفاً دوباره وارد بشید. اگر مشکلی بود بگید.",
+    ),
   },
 ];

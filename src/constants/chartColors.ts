@@ -11,7 +11,7 @@ export const CHART_COLORS = {
 };
 
 export const CHART_FONT = {
-  family: "Morabba-Medium",
+  family: "YekanBakh-Regular",
   size: "12px",
 };
 

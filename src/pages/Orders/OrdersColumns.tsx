@@ -24,9 +24,7 @@ export const orderColumns: TableColumn<Order>[] = [
             {order.title}
           </p>
           {order.subtitle && (
-            <p className="mt-1 font-yekanMedium text-xs text-dawn">
-              {order.subtitle}
-            </p>
+            <p className="mt-1 font-mono text-xs text-dawn">{order.subtitle}</p>
           )}
         </div>
       </div>

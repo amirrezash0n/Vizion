@@ -25,4 +25,4 @@ export const sizeStyles = {
 };
 
 export const baseStyles =
-  "flex items-center justify-center rounded-xl transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed";
+  "flex items-center justify-center rounded-xl transition-all duration-200 cursor-pointer disabled:opacity-50";
